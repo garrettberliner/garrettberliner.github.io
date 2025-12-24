@@ -48,3 +48,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Function to load HTML content into a specific element
+function loadSection(sectionId, filePath) {
+    fetch(filePath)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Failed to load ${filePath}`);
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById(sectionId).innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Error loading section:', error);
+        });
+}
+
+// Load sections dynamically
+document.addEventListener('DOMContentLoaded', () => {
+    loadSection('about', 'sections/about.html');
+    loadSection('projects', 'sections/projects.html');
+    loadSection('resume-cv', 'sections/resume.html');
+});

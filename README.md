@@ -5,18 +5,20 @@ This is a personal website project that showcases my work, skills, and interests
 ## Project Structure
 
 ```
-personal-website
-├── src
-│   ├── index.html          # Main HTML document for the website
-│   ├── styles              # Folder containing CSS styles
-│   │   └── main.css        # Main stylesheet for the website
-│   ├── scripts             # Folder containing JavaScript files
-│   │   └── main.js         # Main JavaScript file for interactivity
-│   └── assets              # Folder for images and other resources
-│       └── README.md       # Documentation for assets used in the website
-├── .gitignore              # Specifies files to be ignored by Git
-├── README.md               # Documentation for the project
-└── LICENSE                 # Licensing information for the project
+garrettberliner.github.io/
+├── src/
+│   ├── assets/
+│   │   ├── Dec-25-Resume.pdf
+│   │   ├── Dec-25-CV.pdf
+│   ├── sections/
+│   │   ├── about.html
+│   │   ├── projects.html
+│   │   ├── resume.html
+│   ├── scripts/
+│   │   ├── main.js
+│   ├── styles/
+│   │   ├── main.css
+│   ├── index.html
 ```
 
 ## Getting Started

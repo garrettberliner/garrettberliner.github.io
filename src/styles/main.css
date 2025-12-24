@@ -1,32 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+/* General body styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #FFF8E7; /* Warm beige background */
+    color: #5A3E36; /* Warm brown text */
 }
 
+/* Header styling */
 header {
-    background: #35424a;
-    color: #ffffff;
-    padding: 20px 0;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #DAB88B; /* Warm tan */
+    color: #5A3E36;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-h1 {
+header h1 {
     margin: 0;
+    font-size: 1.8em;
+    display: flex;
+    align-items: center;
+    cursor: pointer; /* Make it clear the name is clickable */
 }
 
-nav {
-    margin: 20px 0;
+header h1 img {
+    width: 50px; /* Adjust size of the headshot */
+    height: 50px;
+    border-radius: 50%; /* Make the image circular */
+    margin-right: 10px; /* Space between the image and name */
+    border: 2px solid #5A3E36; /* Add a border to the headshot */
 }
 
-nav a {
-    color: #ffffff;
-    text-decoration: none;
+header h1 img:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.nav-bar {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar li {
     margin: 0 15px;
 }
 
-nav a:hover {
+.nav-bar a {
+    color: #5A3E36;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.nav-bar a:hover {
     text-decoration: underline;
 }
 
@@ -66,11 +98,12 @@ main {
 }
 
 
+/* Footer styling */
 footer {
     text-align: center;
     padding: 10px 0;
-    background: #35424a;
-    color: #ffffff;
+    background: #DAB88B;
+    color: #5A3E36;
     position: relative;
     bottom: 0;
     width: 100%;
