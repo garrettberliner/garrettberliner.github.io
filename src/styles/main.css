@@ -252,3 +252,37 @@ footer {
 .accordion-item.active .accordion-header .icon {
     transform: rotate(45deg);
 }
+
+/* ======================
+   Experience Header
+====================== */
+
+.experience-header {
+    margin: 1.2rem 0 1.5rem;
+}
+
+.experience-header h3 {
+    margin: 0 0 0.4rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #5A3E36;
+}
+
+.experience-meta {
+    font-size: 0.9rem;
+    color: rgba(90, 62, 54, 0.7);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.experience-meta .dot {
+    opacity: 0.6;
+}
+
+/* Slight separation from accordion header */
+.accordion-header {
+    margin-bottom: 0.5rem;
+}
+
+
