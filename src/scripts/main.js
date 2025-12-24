@@ -3,18 +3,17 @@
 // ======================
 
 document.addEventListener("DOMContentLoaded", () => {
+
     // ----------------------
-    // 1️⃣ Load Navbar
+    // 1️⃣ Load Navbar & Adjust Links
     // ----------------------
     const navbarElement = document.getElementById("navbar");
-  
     if (navbarElement) {
-      // Determine relative path based on current folder
       let navbarPath = "src/partials/nav.html"; // default root
       const path = window.location.pathname;
   
       // Adjust for subfolders
-      if (path.includes("/cv/") || path.includes("/experience/") || path.includes("/resume/")) {
+      if (path.includes("/cv/") || path.includes("/experience/") || path.includes("/resume/") || path.includes("/about/")) {
         navbarPath = "../src/partials/nav.html";
       }
   
@@ -25,45 +24,25 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .then(data => {
           navbarElement.innerHTML = data;
-        })
-        .catch(error => console.error("Error loading navbar:", error));
-    }
-
-
-    // Adjust navbar links dynamically
-    function adjustNavLinks() {
-        const links = document.querySelectorAll(".nav-bar a");
-        const path = window.location.pathname; // e.g., "/cv/" or "/"
-        
-        links.forEach(link => {
-        const target = link.getAttribute("data-link");
-        let href = `/${target}`; // default root
-        if (path !== "/") {
-            // If in a subfolder, keep href relative
-            href = `/${target}`;
-        }
-        link.setAttribute("href", href);
-        });
-    }
-    fetch(navbarPath)
-        .then(response => {
-            if (!response.ok) throw new Error(`Failed to load navbar from ${navbarPath}`);
-            return response.text();
-        })
-        .then(data => {
-            navbarElement.innerHTML = data;
-            adjustNavLinks(); // ✅ Set correct hrefs
-        })
-        .catch(error => console.error("Error loading navbar:", error));
-
   
+          // Dynamically fix navbar links for subfolders
+          const links = document.querySelectorAll(".nav-bar a");
+          let prefix = "/";
+          if (path.split("/").length > 2) prefix = "../";
+  
+          links.forEach(link => {
+            const target = link.getAttribute("data-link");
+            if (target) link.setAttribute("href", `${prefix}${target}/`);
+          });
+        })
+        .catch(error => console.error("Error loading navbar:", error));
+    }
   
     // ----------------------
-    // 2️⃣ Toggle mobile menu
+    // 2️⃣ Toggle Mobile Menu
     // ----------------------
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
-  
     if (menuToggle && navMenu) {
       menuToggle.addEventListener('click', () => {
         navMenu.classList.toggle('active');
@@ -71,28 +50,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   
     // ----------------------
-    // 3️⃣ Smooth scrolling for anchor links
+    // 3️⃣ Smooth Scrolling for Anchor Links
     // ----------------------
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
+      anchor.addEventListener('click', e => {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
       });
     });
   
     // ----------------------
-    // 4️⃣ Update footer year
+    // 4️⃣ Update Footer Year
     // ----------------------
     const yearElement = document.querySelector('.current-year');
-    if (yearElement) {
-      yearElement.textContent = new Date().getFullYear();
-    }
+    if (yearElement) yearElement.textContent = new Date().getFullYear();
   
     // ----------------------
-    // 5️⃣ Form validation
+    // 5️⃣ Form Validation
     // ----------------------
     const form = document.querySelector('form');
     if (form) {
@@ -109,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   
     // ----------------------
-    // 6️⃣ Experience accordion
+    // 6️⃣ Experience Accordion
     // ----------------------
     const headers = document.querySelectorAll(".accordion-header");
     headers.forEach(header => {
@@ -134,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   
     // ----------------------
-    // 7️⃣ Load sections dynamically
+    // 7️⃣ Load Sections Dynamically
     // ----------------------
     function loadSection(sectionId, filePath) {
       const sectionElement = document.getElementById(sectionId);
@@ -151,14 +126,14 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(error => console.error('Error loading section:', error));
     }
   
-    // Adjust paths for subfolders
-    let basePath = "";
-    if (path.includes("/cv/") || path.includes("/experience/") || path.includes("/resume/")) {
+    let basePath = "/";
+    if (path.includes("/cv/") || path.includes("/experience/") || path.includes("/resume/") || path.includes("/about/")) {
       basePath = "../";
     }
   
     loadSection('about', `${basePath}sections/about.html`);
     loadSection('projects', `${basePath}sections/projects.html`);
     loadSection('resume-cv', `${basePath}sections/resume.html`);
+  
   });
   
