@@ -285,4 +285,16 @@ footer {
     margin-bottom: 0.5rem;
 }
 
+/* ======================
+   Experience Entry
+====================== */
+
+.experience-entry {
+    padding: 1.5rem 0;
+}
+
+.experience-entry:not(:last-child) {
+    border-bottom: 1px dashed rgba(90, 62, 54, 0.25);
+    margin-bottom: 1.5rem;
+}
 
