@@ -7,17 +7,8 @@
     <link rel="stylesheet" href="../src/styles/main.css">
 </head>
 <body>
-    <script>
-        fetch("../src/partials/nav.html") // <-- Note the "../"
-          .then(response => response.text())
-          .then(data => {
-            document.getElementById("navbar").innerHTML = data;
-          })
-          .catch(error => {
-            console.error("Error loading navbar:", error);
-          });
-        </script>
-    
+    <div id="navbar"></div> <!-- <-- THIS IS REQUIRED -->
+
     <main>
         <h2>Cirriculum Vitae</h2>
         <p>
@@ -33,7 +24,17 @@
     <footer>
         <p>&copy; 2026 Garrett Berliner. All rights reserved.</p>
     </footer>
-    <!-- ✅ REQUIRED for navbar + accordion -->
+<!-- SCRIPTS -->
     <script src="../src/scripts/main.js"></script>
+    <script>
+        fetch("../src/partials/nav.html") // <-- Note the "../"
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("navbar").innerHTML = data;
+        })
+        .catch(error => {
+            console.error("Error loading navbar:", error);
+        });
+    </script>
 </body>
 </html>
