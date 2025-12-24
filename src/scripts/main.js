@@ -72,3 +72,12 @@ document.addEventListener('DOMContentLoaded', () => {
     loadSection('projects', 'sections/projects.html');
     loadSection('resume-cv', 'sections/resume.html');
 });
+
+fetch("src/partials/nav.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+  })
+  .catch(error => {
+    console.error("Error loading navbar:", error);
+  });
