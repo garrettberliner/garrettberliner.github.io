@@ -7,7 +7,17 @@
     <link rel="stylesheet" href="../src/styles/main.css">
 </head>
 <body>
-    <div id="navbar"></div> 
+    <script>
+        fetch("../src/partials/nav.html") // <-- Note the "../"
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("navbar").innerHTML = data;
+          })
+          .catch(error => {
+            console.error("Error loading navbar:", error);
+          });
+    </script>
+    
     <main>
         <h2>About Me</h2>
         <p>
