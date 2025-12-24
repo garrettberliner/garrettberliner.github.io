@@ -81,3 +81,25 @@ fetch("src/partials/nav.html")
   .catch(error => {
     console.error("Error loading navbar:", error);
   });
+
+
+//   Experience
+document.addEventListener("DOMContentLoaded", () => {
+    const headers = document.querySelectorAll(".accordion-header");
+  
+    headers.forEach(header => {
+      header.addEventListener("click", () => {
+        const item = header.closest(".accordion-item");
+  
+        // Optional: close other sections
+        document.querySelectorAll(".accordion-item").forEach(other => {
+          if (other !== item) {
+            other.classList.remove("active");
+          }
+        });
+  
+        item.classList.toggle("active");
+      });
+    });
+  });
+  
