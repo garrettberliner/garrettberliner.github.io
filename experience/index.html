@@ -191,15 +191,5 @@
 
     <!-- SCRIPTS  -->
     <script src="../src/scripts/main.js"></script>
-    <script>
-        fetch("../src/partials/nav.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("navbar").innerHTML = data;
-        })
-        .catch(error => {
-            console.error("Error loading navbar:", error);
-        });
-    </script>
 </body>
 </html>
