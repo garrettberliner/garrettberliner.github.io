@@ -1,0 +1,1 @@
+# This file serves as documentation for the assets folder. It includes information about images, fonts, or other resources used in the website.
