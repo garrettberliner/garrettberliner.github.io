@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadSection('resume-cv', 'sections/resume.html');
 });
 
-fetch("src/partials/nav.html")
+fetch("../partials/nav.html")
   .then(response => response.text())
   .then(data => {
     document.getElementById("navbar").innerHTML = data;
@@ -82,6 +82,12 @@ fetch("src/partials/nav.html")
     console.error("Error loading navbar:", error);
   });
 
+document.querySelectorAll(".experience-entry .accordion-preview").forEach(preview => {
+    preview.addEventListener("click", () => {
+        const hidden = preview.nextElementSibling; // accordion-hidden
+        hidden.classList.toggle("active");
+    });
+});
 
 //   Experience
 document.addEventListener("DOMContentLoaded", () => {

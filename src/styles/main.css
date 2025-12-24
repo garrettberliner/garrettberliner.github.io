@@ -244,7 +244,7 @@ footer {
 }
 
 /* Expanded state */
-.accordion-item.active .accordion-hidden {
+.accordion-item.active {
     max-height: 500px; /* enough for multiple paragraphs */
 }
 
@@ -297,4 +297,6 @@ footer {
     border-bottom: 1px dashed rgba(90, 62, 54, 0.25);
     margin-bottom: 1.5rem;
 }
+
+
 
