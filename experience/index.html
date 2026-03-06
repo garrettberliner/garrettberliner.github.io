@@ -4,192 +4,343 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Experience - Garrett Berliner</title>
-    <link rel="stylesheet" href="../src/styles/main.css">
+    <link rel="stylesheet" href="/src/styles/main.css">
 </head>
 <body>
     <div id="navbar"></div>
-    <main>
+    <div class="page-wrapper">
+        <div class="organic-shape organic-shape--red" style="width:450px;height:450px;top:0;right:-200px;"></div>
+        <div class="organic-shape organic-shape--orange" style="width:350px;height:350px;bottom:30%;left:-120px;"></div>
+        <div class="organic-shape organic-shape--brown" style="width:300px;height:300px;bottom:5%;right:-100px;"></div>
 
-        <section class="content-section">
-            <h2>Experience</h2>
-
-            <div class="accordion">
+        <main>
+            <section class="content-section">
+                <div class="section-header fade-in">
+                    <div class="section-divider"><span class="leaf-icon">🌿</span><hr></div>
+                    <h2>Experience</h2>
+                    <p>My professional journey across tech, research, education, &amp; leadership.</p>
+                </div>
 
                 <!-- PROFESSIONAL -->
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                      Professional
-                      <span class="icon">+</span>
-                    </button>
-                  
-                    <!-- EXPERIENCE ENTRY 1 -->
-                    <div class="experience-entry">
-                      <div class="experience-header">
-                        <h3>Technical Program Manager</h3>
-                        <div class="experience-meta">
-                          <span class="company">Microsoft</span>
-                          <span class="dot">•</span>
-                          <span class="date">Aug 2025 – Present</span>
-                          <span class="dot">•</span>
-                          <span class="location">Seattle, WA</span>
-                        </div>
-                      </div>
-                  
-                      <div class="accordion-preview">
-                        <p>Windows Engineering Systems, AI Developer Productivity.</p>
-                      </div>
-                  
-                      <div class="accordion-hidden">
-                        <p>Led cross-team initiatives improving developer productivity.</p>
-                        <p>Partnered with engineering and design teams.</p>
-                      </div>
-                    </div>
-                  
-                    <!-- EXPERIENCE ENTRY 2 -->
-                    <div class="experience-entry">
-                      <div class="experience-header">
-                        <h3>Machine Learning Engineer Intern</h3>
-                        <div class="experience-meta">
-                          <span class="company">HP Inc.</span>
-                          <span class="dot">•</span>
-                          <span class="date">June 2024 – September 2024</span>
-                          <span class="dot">•</span>
-                          <span class="location">Vancouver, WA</span>
-                        </div>
-                      </div>
-                  
-                      <div class="accordion-preview">
-                        <p>Built internal tooling and performance dashboards.</p>
-                      </div>
-                  
-                      <div class="accordion-hidden">
-                        <p>Refactored legacy systems and improved API performance.</p>
-                        <p>Worked closely with senior engineers.</p>
-                      </div>
-                    </div>
-                  
-                  </div>                  
+                <div class="exp-category fade-in">
+                    <div class="exp-category-label">💼 Professional</div>
+                    <div class="exp-timeline">
 
-                <!-- LEADERSHIP -->
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        Leadership
-                        <span class="icon">+</span>
-                    </button>
-
-                    <!-- EXPERIENCE ENTRY 1 -->
-                    <div class="experience-entry">
-                        <div class="experience-header">
-                            <h3>Technical Program Manager</h3>
-                            <div class="experience-meta">
-                            <span class="company">Microsoft</span>
-                            <span class="dot">•</span>
-                            <span class="date">Aug 2025 – Present</span>
-                            <span class="dot">•</span>
-                            <span class="location">Seattle, WA</span>
+                        <!-- Microsoft TPM (current) -->
+                        <div class="exp-item fade-in">
+                            <div class="card">
+                                <div class="exp-role">Technical Program Manager</div>
+                                <div class="exp-company">Microsoft</div>
+                                <div class="exp-meta">
+                                    <span>📅 Aug 2025 – Present</span>
+                                    <span>📍 Redmond, WA</span>
+                                </div>
+                                <ul class="exp-details">
+                                    <li>Lead cross-organizational programs &amp; products within Windows + Devices &amp; Windows Engineering Systems that help developers work more efficiently with AI to empower over 1.2 billion monthly active Windows users</li>
+                                    <li>Streamline onboarding experiences across Windows + Devices, building data-driven dashboards that track success &amp; engineering systems health</li>
+                                    <li>Coordinate across teams to get the right tools &amp; resources into the right hands at the right time</li>
+                                </ul>
                             </div>
                         </div>
-                    
-                        <div class="accordion-preview">
-                            <p>Windows Engineering Systems, AI Developer Productivity.</p>
-                        </div>
-                    
-                        <div class="accordion-hidden">
-                            <p>Led cross-team initiatives improving developer productivity.</p>
-                            <p>Partnered with engineering and design teams.</p>
-                        </div>
-                        </div>
-                    
-                        <!-- EXPERIENCE ENTRY 2 -->
-                        <div class="experience-entry">
-                        <div class="experience-header">
-                            <h3>Machine Learning Engineer Intern</h3>
-                            <div class="experience-meta">
-                            <span class="company">HP Inc.</span>
-                            <span class="dot">•</span>
-                            <span class="date">June 2024 – September 2024</span>
-                            <span class="dot">•</span>
-                            <span class="location">Vancouver, WA</span>
+
+                        <!-- Microsoft TPM Intern -->
+                        <div class="exp-item fade-in">
+                            <div class="card">
+                                <div class="exp-role">Technical Program Manager Intern</div>
+                                <div class="exp-company">Microsoft</div>
+                                <div class="exp-meta">
+                                    <span>📅 June 2024 – Sept 2024</span>
+                                    <span>📍 Seattle, WA</span>
+                                </div>
+                                <ul class="exp-details">
+                                    <li>Developed a 0→1 MVP status dashboard centralizing Azure &amp; Windows service health, performance, &amp; outage history into PowerBI to mitigate the prevalent developer pain point of unknown service outages</li>
+                                    <li>Interviewed 27 customers, coordinated with 11 internal team partners, presented to 4 CVPs, &amp; integrated 28 points of telemetry</li>
+                                </ul>
+                                <div class="exp-hidden">
+                                    <ul class="exp-details">
+                                        <li>Collaborated with multiple UI/UX designers, incorporating feedback across 3 dashboard iterations &amp; 5 future web-based Figma mockups</li>
+                                        <li>Established short-term (12-week) &amp; long-term (6 &amp; 12-month) project timelines; completed initial scope in 7 weeks &amp; began expansion into separate business groups</li>
+                                        <li>Co-founded an Intern Co-Creation club centered around sustainability &amp; upcycling to foster community amongst interns</li>
+                                    </ul>
+                                </div>
+                                <button class="exp-toggle">Show more <span class="arrow">▼</span></button>
                             </div>
                         </div>
-                    
-                        <div class="accordion-preview">
-                            <p>Built internal tooling and performance dashboards.</p>
-                        </div>
-                    
-                        <div class="accordion-hidden">
-                            <p>Refactored legacy systems and improved API performance.</p>
-                            <p>Worked closely with senior engineers.</p>
-                        </div>
-                        </div>
-                    
-                    </div>  
 
-                <!-- VOLUNTEER -->
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        Volunteer
-                        <span class="icon">+</span>
-                    </button>
+                        <!-- HP -->
+                        <div class="exp-item fade-in">
+                            <div class="card">
+                                <div class="exp-role">Machine Learning Engineer Intern</div>
+                                <div class="exp-company">HP Inc.</div>
+                                <div class="exp-meta">
+                                    <span>📅 June 2023 – Sept 2023</span>
+                                    <span>📍 Vancouver, WA</span>
+                                </div>
+                                <ul class="exp-details">
+                                    <li>Achieved 1st place at Vancouver Site intern project fair — "Does That Seem Right? Pipelined Telemetry Event Forecasting + Alert System for Big Data Quality Assurance"</li>
+                                    <li>Developed ML telemetry forecasting models using Prophet &amp; Pandas within Databricks Warehouses for big data quality assurance amongst millions of daily-collected records</li>
+                                </ul>
+                                <div class="exp-hidden">
+                                    <ul class="exp-details">
+                                        <li>Expanded forecasting models into multiple business areas &amp; organizations; presented progress &amp; new ideas weekly to stakeholders</li>
+                                        <li>Ensured intellectual property through Neural Network anomaly detection models using TensorFlow</li>
+                                        <li>Worked towards shifting a 15M+ record data warehouse from 1NF to 3NF, reducing compute resources by ~35%</li>
+                                    </ul>
+                                </div>
+                                <button class="exp-toggle">Show more <span class="arrow">▼</span></button>
+                            </div>
+                        </div>
 
-              <!-- EXPERIENCE ENTRY 1 -->
-              <div class="experience-entry">
-                <div class="experience-header">
-                    <h3>Technical Program Manager</h3>
-                    <div class="experience-meta">
-                    <span class="company">Microsoft</span>
-                    <span class="dot">•</span>
-                    <span class="date">Aug 2025 – Present</span>
-                    <span class="dot">•</span>
-                    <span class="location">Seattle, WA</span>
+                        <!-- Lockheed Martin -->
+                        <div class="exp-item fade-in">
+                            <div class="card">
+                                <div class="exp-role">Senior Software Engineer Intern</div>
+                                <div class="exp-company">Lockheed Martin Rotary &amp; Mission Systems</div>
+                                <div class="exp-meta">
+                                    <span>📅 June 2022 – Sept 2022</span>
+                                    <span>📍 Syracuse, NY</span>
+                                </div>
+                                <ul class="exp-details">
+                                    <li>Peer-elected Software AI/ML Lead for a 12-person multidisciplinary intern engineering team</li>
+                                    <li>Generated ML models via PyTorch &amp; NumPy for prediction &amp; detection of structures within a wildfire path; achieved ~87% accuracy via hyperparameter tuning &amp; Bayesian classification</li>
+                                </ul>
+                                <div class="exp-hidden">
+                                    <ul class="exp-details">
+                                        <li>Utilized complex C++ &amp; Linux commands for large-scale &amp; object-oriented projects</li>
+                                        <li>Granted secret-level security clearance</li>
+                                    </ul>
+                                </div>
+                                <button class="exp-toggle">Show more <span class="arrow">▼</span></button>
+                            </div>
+                        </div>
+
+                        <!-- Hallmark Cards -->
+                        <div class="exp-item fade-in">
+                            <div class="card">
+                                <div class="exp-role">Sales Associate</div>
+                                <div class="exp-company">Hallmark Cards</div>
+                                <div class="exp-meta">
+                                    <span>📅 Sept 2019 – Aug 2021</span>
+                                    <span>📍 Clackamas County, OR</span>
+                                </div>
+                                <ul class="exp-details">
+                                    <li>Part-time sales associate with responsibilities in inventory management, store upkeep, &amp; customer service</li>
+                                    <li>Trusted with counting money, solo store operations, &amp; helped plan &amp; organize large annual events</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            
-                <div class="accordion-preview">
-                    <p>Windows Engineering Systems, AI Developer Productivity.</p>
-                </div>
-            
-                <div class="accordion-hidden">
-                    <p>Led cross-team initiatives improving developer productivity.</p>
-                    <p>Partnered with engineering and design teams.</p>
-                </div>
-                </div>
-            
-                <!-- EXPERIENCE ENTRY 2 -->
-                <div class="experience-entry">
-                <div class="experience-header">
-                    <h3>Machine Learning Engineer Intern</h3>
-                    <div class="experience-meta">
-                    <span class="company">HP Inc.</span>
-                    <span class="dot">•</span>
-                    <span class="date">June 2024 – September 2024</span>
-                    <span class="dot">•</span>
-                    <span class="location">Vancouver, WA</span>
+
+                <!-- RESEARCH & TEACHING -->
+                <div class="exp-category fade-in">
+                    <div class="exp-category-label">🔬 Research &amp; Teaching</div>
+                    <div class="exp-timeline">
+
+                        <!-- GTA -->
+                        <div class="exp-item fade-in">
+                            <div class="card">
+                                <div class="exp-role">Graduate Teaching Assistant</div>
+                                <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a></div>
+                                <div class="exp-meta">
+                                    <span>📅 Sept 2024 – June 2025</span>
+                                    <span>📍 Corvallis, OR</span>
+                                </div>
+                                <ul class="exp-details">
+                                    <li>Spring '25: CS362 Software Engineering 2 — held weekly grading demos &amp; office hours, meeting with 40 students each week for 10 min to grade &amp; provide feedback. 198-student class</li>
+                                    <li>Winter '25: CS362 — Product manager for 5 teams of 8 students each; met weekly to track progress, provide feedback, &amp; assist with unique term-wide projects. 133-student class</li>
+                                    <li>Fall '24: ENGR 100 Honors: The Oregon State Engineer — designed 3 hands-on computational thinking studio activities; developed &amp; provided a lecture on research opportunities for undergrads. 147-student class</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Research -->
+                        <div class="exp-item fade-in">
+                            <div class="card">
+                                <div class="exp-role">Undergraduate CS Research Assistant</div>
+                                <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a></div>
+                                <div class="exp-meta">
+                                    <span>📅 June 2021 – Aug 2024</span>
+                                    <span>📍 Corvallis, OR</span>
+                                </div>
+                                <ul class="exp-details">
+                                    <li>Conducted CS education research under Dr. Jennifer Parham-Mocello for 3+ years</li>
+                                    <li>Co-authored 4 double-blind peer-reviewed publications &amp; defended an undergraduate honors thesis (Spring 2023) centered around innovative practices to increase student engagement with computational thinking &amp; CS</li>
+                                    <li>Tasked with developing, updating, improving, &amp; creating CS curriculum &amp; publications</li>
+                                </ul>
+                                <div class="exp-hidden">
+                                    <ul class="exp-details">
+                                        <li>Participated in NSF-funded CSforALL Research Experience for Undergraduates (REU) in Summer 2021, working towards making CS more equitable through game-oriented curriculum &amp; a new functional programming language</li>
+                                        <li>Presented data analysis section of co-authored publication at SIGCSE 2023 in Toronto, ON — the largest ACM technical symposium (~30% acceptance rate, CORE A-ranked)</li>
+                                        <li>Presented synthesized Master's thesis publication at IEEE Frontiers in Education (FIE) 2025 in Nashville, TN</li>
+                                        <li>Research focused on empowering K-12 CS teachers &amp; making CS more accessible through innovative, game-based approaches</li>
+                                    </ul>
+                                </div>
+                                <button class="exp-toggle">Show more <span class="arrow">▼</span></button>
+                            </div>
+                        </div>
+
+                        <!-- Learning Assistant -->
+                        <div class="exp-item fade-in">
+                            <div class="card">
+                                <div class="exp-role">Undergraduate Learning Assistant</div>
+                                <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a> — College of Engineering</div>
+                                <div class="exp-meta">
+                                    <span>📅 Sept 2021 – June 2023</span>
+                                    <span>📍 Corvallis, OR</span>
+                                </div>
+                                <ul class="exp-details">
+                                    <li>LA for CS261: Data Structures &amp; ENGR 10x: Intro to Engineering series</li>
+                                    <li>Delegated entire responsibility for teaching 30+ students during weekly recitations for CS261</li>
+                                    <li>Supported students via in-person office hours with problem-solving, debugging, &amp; conceptual understanding</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            
-                <div class="accordion-preview">
-                    <p>Built internal tooling and performance dashboards.</p>
-                </div>
-            
-                <div class="accordion-hidden">
-                    <p>Refactored legacy systems and improved API performance.</p>
-                    <p>Worked closely with senior engineers.</p>
-                </div>
-                </div>
-    
-            </div>  
 
+                <!-- LEADERSHIP & INVOLVEMENT -->
+                <div class="exp-category fade-in">
+                    <div class="exp-category-label">🌟 Leadership &amp; Involvement</div>
+                    <div class="exp-timeline">
+
+                        <!-- LEAP -->
+                        <div class="exp-item fade-in">
+                            <div class="card">
+                                <div class="exp-role">LEAP — Leadership, Empowerment, &amp; Purpose (2× Graduate)</div>
+                                <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a> — College of Engineering</div>
+                                <div class="exp-meta">
+                                    <span>📅 2022–2023 &amp; 2024–2025</span>
+                                    <span>📍 Corvallis, OR</span>
+                                </div>
+                                <ul class="exp-details">
+                                    <li>Two-time graduate of the <a href="https://engineering.oregonstate.edu/student-life/leap" target="_blank" rel="noopener">LEAP program</a> — a year-long leadership development experience within the College of Engineering designed to help students discover their strengths, develop leadership skills aligned with their passions, &amp; build meaningful connections with industry mentors &amp; peers</li>
+                                    <li>LEAP focuses on self-awareness, communication, teamwork, &amp; professional growth through workshops, mentorship pairings, &amp; a culminating summit project</li>
+                                    <li>Summit project "LinkedIn Workshop for Queer Individuals" — guiding queer college students through the process of creating a LinkedIn profile — selected as one of the top 5 presentations</li>
+                                    <li>Fostered industry connections &amp; mentors, developed leadership skills aligned with personal passions, &amp; strengthened communication &amp; presentation skills across both cohorts</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- oSTEM -->
+                        <div class="exp-item fade-in">
+                            <div class="card">
+                                <div class="exp-role">Out in STEM (oSTEM) — Club Officer</div>
+                                <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a></div>
+                                <div class="exp-meta">
+                                    <span>📅 2021–2025</span>
+                                    <span>📍 Corvallis, OR</span>
+                                </div>
+                                <ul class="exp-details">
+                                    <li>President (Engineering) during M.S. · Secretary during B.S.</li>
+                                    <li>Part of the planning committee that sent the chapter to its first national oSTEM conference in 2023</li>
+                                    <li>Fostered community &amp; belonging for LGBTQ+ students in STEM</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Engineering Ambassador -->
+                        <div class="exp-item fade-in">
+                            <div class="card">
+                                <div class="exp-role">College of Engineering Ambassador</div>
+                                <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a></div>
+                                <div class="exp-meta">
+                                    <span>📅 June 2023 – June 2024</span>
+                                    <span>📍 Corvallis, OR</span>
+                                </div>
+                                <ul class="exp-details">
+                                    <li>Selected as 1 of ~35 representatives of 10,000+ College of Engineering students</li>
+                                    <li>Engaged with alumni, industry partners, &amp; prospective students through two-hour-long tours &amp; community outreach</li>
+                                    <li>Memorized 15-page script; provided weekly tours; answered a wide range of factual &amp; anecdotal questions</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- LSAMP -->
+                        <div class="exp-item fade-in">
+                            <div class="card">
+                                <div class="exp-role">Louis Stokes Alliances for Minority Participation (LSAMP)</div>
+                                <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a> — NSF-funded Program</div>
+                                <div class="exp-meta">
+                                    <span>📍 Corvallis, OR</span>
+                                </div>
+                                <ul class="exp-details">
+                                    <li>Member of the <a href="https://www.nsf.gov/funding/opportunities/lsamp-louis-stokes-alliances-minority-participation" target="_blank" rel="noopener">LSAMP</a> program — an NSF-funded, alliance-based initiative that invests in colleges &amp; universities to diversify the nation’s STEM workforce by increasing baccalaureate &amp; graduate degrees awarded to underrepresented populations</li>
+                                    <li>LSAMP takes a comprehensive approach to the STEM learning ecosystem, implementing evidence-based &amp; innovative strategies that result in well-prepared, highly competitive students who pursue graduate studies or careers in STEM</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EDUCATION -->
+                <div class="exp-category fade-in">
+                    <div class="exp-category-label">🎓 Education</div>
+                    <div class="exp-timeline">
+                        <div class="exp-item fade-in">
+                            <div class="card">
+                                <div class="exp-role">Master of Science — Computer Science</div>
+                                <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a></div>
+                                <div class="exp-meta">
+                                    <span>📅 Sept 2023 – June 2025</span>
+                                    <span>📍 Corvallis, OR</span>
+                                    <span>⭐ 4.00 / 4.00</span>
+                                </div>
+                                <ul class="exp-details">
+                                    <li>Minor in Mathematics · 18-credit GCCUT · Concentration in AI</li>
+                                    <li>Thesis: <em>Impacts of Professional Development on Knowledge for Teaching CS</em> — Unanimous pass, no edits</li>
+                                    <li>Advised by Dr. Jennifer Parham-Mocello</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="exp-item fade-in">
+                            <div class="card">
+                                <div class="exp-role">Honors Bachelor of Science — Computer Science</div>
+                                <div class="exp-company"><a href="https://honors.oregonstate.edu/" target="_blank" rel="noopener">Oregon State University Honors College</a></div>
+                                <div class="exp-meta">
+                                    <span>📅 Sept 2020 – June 2024</span>
+                                    <span>📍 Corvallis, OR</span>
+                                    <span>⭐ 3.96 / 4.00</span>
+                                </div>
+                                <ul class="exp-details">
+                                    <li>Minor in Mathematics · AI Concentration · Summa Cum Laude · Dean's List 15/15 terms</li>
+                                    <li>Thesis: <em>Teaching Fundamental CS Concepts Utilizing Manipulatives</em> — Defended one year early in June 2023</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Garrett Berliner</h3>
+                    <p>Connecting &amp; amplifying people through technology.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-group">
+                        <h4>Navigate</h4>
+                        <a href="/">Home</a>
+                        <a href="/about/">About</a>
+                        <a href="/publications/">Publications</a>
+                    </div>
+                    <div class="footer-links-group">
+                        <h4>Connect</h4>
+                        <a href="https://www.linkedin.com/in/garrettberliner" target="_blank" rel="noopener">LinkedIn</a>
+                        <a href="mailto:garrettberliner@gmail.com">Email</a>
+                    </div>
+                </div>
             </div>
-        </section>
+            <div class="footer-bottom">
+                <span>&copy; <span class="current-year">2026</span> Garrett Berliner</span>
+                <span>Built with care 🌿</span>
+            </div>
+        </footer>
+    </div>
 
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Garrett Berliner. All rights reserved.</p>
-    </footer>
-
-    <!-- SCRIPTS  -->
-    <script src="../src/scripts/main.js"></script>
+    <script src="/src/scripts/main.js"></script>
 </body>
 </html>

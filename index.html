@@ -3,29 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Garrett Miguel Berliner </title>
+    <title>Garrett Miguel Berliner</title>
     <link rel="stylesheet" href="/src/styles/main.css">
 </head>
 <body>
     <div id="navbar"></div>
-    <main>
-        Welcome to my website!
-    </main>
-    <footer>
-        <p>&copy; 2026 Garrett Berliner. All rights reserved.</p>
-    </footer>
+    <div class="page-wrapper">
+        <!-- Organic background shapes -->
+        <div class="organic-shape organic-shape--red" style="width:500px;height:500px;top:-100px;right:-200px;"></div>
+        <div class="organic-shape organic-shape--orange" style="width:400px;height:400px;bottom:20%;left:-150px;"></div>
+        <div class="organic-shape organic-shape--brown" style="width:300px;height:300px;bottom:-50px;right:10%;"></div>
 
-    <!-- SCRIPTS -->
+        <main>
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-content fade-in">
+                    <div class="hero-eyebrow">
+                        <div class="dot-pulse"></div>
+                        <span>Technical Program / Product Manager @ Microsoft</span>
+                    </div>
+                    <h1>Hi, I'm <span class="accent">Garrett</span>.</h1>
+                    <p class="hero-description">
+                        I have a passion for connecting &amp; amplifying people through technology, data science, &amp; computing education 🚀. I lead cross-organizational programs within Windows + Devices that help developers work more efficiently with AI to empower over 1.2 billion monthly active Windows users. I'm fascinated by the intersection of product management, data science, &amp; education 💻🌟.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="/experience/" class="btn btn-primary">View Experience →</a>
+                        <a href="/about/" class="btn btn-secondary">About Me</a>
+                    </div>
+                </div>
+                <div class="hero-visual fade-in-right">
+                    <div class="hero-image-wrapper">
+                        <img src="/src/assets/IMG_3456.jpg" alt="Garrett Berliner" loading="eager">
+                        <span class="hero-leaf">🍃</span>
+                        <span class="hero-leaf">🌿</span>
+                        <span class="hero-leaf">🍂</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Highlights -->
+            <section class="content-section fade-in">
+                <div class="section-header">
+                    <div class="section-divider">
+                        <span class="leaf-icon">🌱</span>
+                        <hr>
+                    </div>
+                    <h2>At a Glance</h2>
+                    <p>A snapshot of what I've been up to:</p>
+                </div>
+                <div class="about-highlights stagger-children">
+                    <div class="highlight-item">
+                        <span class="icon">💻</span>
+                        <h4>Microsoft</h4>
+                        <p>TPM on Windows Engineering Systems, AI Developer Productivity</p>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="icon">🎓</span>
+                        <h4>Oregon State University</h4>
+                        <p>M.S. Computer Science; Minor in Mathematics</p>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="icon">📄</span>
+                        <h4>Researcher</h4>
+                        <p>Co-authored 4 Computing Education publications, 1st author publication at FIE 2025 &amp; presented at SIGCSE 2023 in Toronto.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="icon">🌎</span>
+                        <h4>Traveler</h4>
+                        <p>Lived in every region of the U.S. which shaped me into a collaborative worker &amp; thinker.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-gradient-bar"></div>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Garrett Berliner</h3>
+                    <p>Connecting &amp; amplifying people through technology, data science, &amp; computing education.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-group">
+                        <h4>Navigate</h4>
+                        <a href="/about/">About</a>
+                        <a href="/experience/">Experience</a>
+                        <a href="/diary/">Diary</a>
+                    </div>
+                    <div class="footer-links-group">
+                        <h4>Connect</h4>
+                        <a href="https://www.linkedin.com/in/garrettberliner" target="_blank" rel="noopener">LinkedIn</a>
+                        <a href="mailto:garrettberliner@gmail.com">Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; <span class="current-year">2026</span> Garrett Berliner</span>
+                <span>Built with care 🌿</span>
+            </div>
+        </footer>
+    </div>
+
     <script src="/src/scripts/main.js"></script>
-    <!-- <script>
-        fetch("src/partials/nav.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("navbar").innerHTML = data;
-        })
-        .catch(error => {
-            console.error("Error loading navbar:", error);
-        });
-    </script> -->
 </body>
 </html>

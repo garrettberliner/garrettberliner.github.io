@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diary - Garrett Berliner</title>
+    <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="page-wrapper">
+        <div class="organic-shape organic-shape--green" style="width:400px;height:400px;top:5%;right:-150px;"></div>
+        <div class="organic-shape organic-shape--orange" style="width:350px;height:350px;bottom:20%;left:-120px;"></div>
+
+        <main>
+            <section class="content-section">
+                <div class="section-header fade-in">
+                    <div class="section-divider"><span class="leaf-icon">📔</span><hr></div>
+                    <h2>Diary &amp; Hobbies</h2>
+                    <p>Personal reflections, adventures, &amp; things I enjoy outside of work.</p>
+                </div>
+
+                <div class="diary-intro fade-in">
+                    <p>
+                        This is my little corner of the internet where I share thoughts, hobbies, travel stories, &amp; random things that make life interesting. New entries are added to <code>/diary/entries.json</code> — just add an object &amp; it shows up here automatically!
+                    </p>
+                </div>
+
+                <!-- Filter buttons (auto-generated from tags in entries.json) -->
+                <div id="diary-filters" class="diary-filters fade-in"></div>
+
+                <!-- Diary cards (loaded from entries.json) -->
+                <div id="diary-grid" class="diary-grid"></div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Garrett Berliner</h3>
+                    <p>Connecting &amp; amplifying people through technology.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-group">
+                        <h4>Navigate</h4>
+                        <a href="/">Home</a>
+                        <a href="/about/">About</a>
+                        <a href="/experience/">Experience</a>
+                    </div>
+                    <div class="footer-links-group">
+                        <h4>Connect</h4>
+                        <a href="https://www.linkedin.com/in/garrettberliner" target="_blank" rel="noopener">LinkedIn</a>
+                        <a href="mailto:garrettberliner@gmail.com">Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; <span class="current-year">2026</span> Garrett Berliner</span>
+                <span>Built with care 🌿</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/src/scripts/main.js"></script>
+</body>
+</html>
