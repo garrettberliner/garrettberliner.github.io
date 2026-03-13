@@ -11,7 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
         initNav();
         highlightCurrentPage();
       })
-      .catch(e => console.error("Error loading navbar:", e));
+      .catch(e => {
+        console.error("Error loading navbar:", e);
+        // noscript fallback is already in the HTML
+      });
   }
 
   function initNav() {
@@ -21,10 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!toggle || !navMenu) return;
 
     toggle.addEventListener('click', () => {
+      const isActive = navMenu.classList.contains('active');
       toggle.classList.toggle('active');
       navMenu.classList.toggle('active');
       if (navOverlay) navOverlay.classList.toggle('active');
-      document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+      document.body.style.overflow = !isActive ? 'hidden' : '';
+      toggle.setAttribute('aria-expanded', !isActive);
     });
 
     navMenu.querySelectorAll('a').forEach(link => {
@@ -33,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
         navMenu.classList.remove('active');
         if (navOverlay) navOverlay.classList.remove('active');
         document.body.style.overflow = '';
+        toggle.setAttribute('aria-expanded', 'false');
       });
     });
 
@@ -42,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
         navMenu.classList.remove('active');
         navOverlay.classList.remove('active');
         document.body.style.overflow = '';
+        toggle.setAttribute('aria-expanded', 'false');
       });
     }
   }
@@ -73,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ----------------------
   // 3. Scroll-triggered animations
   // ----------------------
-  const animEls = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .scale-in, .stagger-children');
+  const animEls = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .scale-in, .stagger-children, .exp-item');
   if (animEls.length) {
     const obs = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -95,6 +102,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (hidden) {
         hidden.classList.toggle('open');
         btn.classList.toggle('expanded');
+        const isOpen = hidden.classList.contains('open');
+        btn.innerHTML = isOpen
+          ? 'Show less <span class="arrow">▲</span>'
+          : 'Show more <span class="arrow">▼</span>';
       }
     });
   });
@@ -196,7 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      document.title = `${entry.title} - Diary - Garrett Berliner`;
+      document.title = `${entry.title} - Diary - Garrett Miguel Berliner`;
 
       const detailText = (entry.detail || entry.content)
         .split('\n')
@@ -251,5 +262,91 @@ document.addEventListener("DOMContentLoaded", () => {
       if (target) target.scrollIntoView({ behavior: 'smooth' });
     });
   });
+
+  // ----------------------
+  // 10. Typewriter effect on hero heading
+  // ----------------------
+  const heroAccent = document.querySelector('.hero h1 .accent');
+  if (heroAccent && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const fullText = heroAccent.textContent;
+    heroAccent.textContent = '';
+    const cursor = document.createElement('span');
+    cursor.className = 'typewriter-cursor';
+    heroAccent.parentElement.appendChild(cursor);
+
+    let i = 0;
+    const typeSpeed = 70;
+    setTimeout(() => {
+      const typeInterval = setInterval(() => {
+        if (i < fullText.length) {
+          heroAccent.textContent += fullText[i];
+          i++;
+        } else {
+          clearInterval(typeInterval);
+          setTimeout(() => cursor.classList.add('done'), 1500);
+        }
+      }, typeSpeed);
+    }, 400);
+  }
+
+  // ----------------------
+  // 11. Magnetic button effect (desktop)
+  // ----------------------
+  if (window.innerWidth > 768 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        const maxMove = 6;
+        const moveX = (x / rect.width) * maxMove * 2;
+        const moveY = (y / rect.height) * maxMove * 2;
+        btn.style.transform = `translate(${moveX}px, ${moveY}px)`;
+      });
+
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = '';
+      });
+    });
+  }
+
+  // ----------------------
+  // 12. Animated counters on highlight items
+  // ----------------------
+  function animateCounter(el, target, suffix = '') {
+    const duration = 1500;
+    const start = performance.now();
+    const isFloat = String(target).includes('.');
+    
+    function update(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out cubic
+      const ease = 1 - Math.pow(1 - progress, 3);
+      const current = isFloat 
+        ? (target * ease).toFixed(2) 
+        : Math.round(target * ease);
+      el.textContent = current + suffix;
+      if (progress < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  }
+
+  const counterEls = document.querySelectorAll('[data-counter]');
+  if (counterEls.length) {
+    const counterObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseFloat(el.dataset.counter);
+          const suffix = el.dataset.counterSuffix || '';
+          animateCounter(el, target, suffix);
+          counterObs.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    counterEls.forEach(el => counterObs.observe(el));
+  }
+
 });
   

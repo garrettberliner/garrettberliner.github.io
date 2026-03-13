@@ -3,22 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experience - Garrett Berliner</title>
+    <title>Experience - Garrett Miguel Berliner</title>
+    <meta name="description" content="Professional experience, research, teaching, and leadership of Garrett Miguel Berliner - Microsoft TPM, HP, Lockheed Martin, and Oregon State University.">
+    <meta property="og:title" content="Experience - Garrett Miguel Berliner">
+    <meta property="og:description" content="Professional experience, research, teaching, and leadership of Garrett Miguel Berliner.">
+    <meta property="og:image" content="/src/assets/IMG_3456.jpg">
+    <meta property="og:url" content="https://garrettberliner.github.io/experience/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌈</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/src/styles/main.css">
 </head>
 <body>
-    <div id="navbar"></div>
-    <div class="page-wrapper">
+    <div id="navbar">
+        <noscript>
+            <nav style="display:flex;gap:1rem;padding:1rem 2rem;background:var(--color-cream,#F5EDE3);">
+                <a href="/about/">About</a><a href="/experience/">Experience</a><a href="/research/">Research</a><a href="/resume/">Resume</a><a href="/cv/">CV</a>
+            </nav>
+        </noscript>
+    </div>
+    <div class="page-wrapper page-wrapper--experience">
         <div class="organic-shape organic-shape--red" style="width:450px;height:450px;top:0;right:-200px;"></div>
         <div class="organic-shape organic-shape--orange" style="width:350px;height:350px;bottom:30%;left:-120px;"></div>
         <div class="organic-shape organic-shape--brown" style="width:300px;height:300px;bottom:5%;right:-100px;"></div>
+        <div class="organic-shape organic-shape--orange" style="width:200px;height:200px;top:20%;left:5%;opacity:0.06;"></div>
 
-        <main>
+        <main id="main-content">
             <section class="content-section">
                 <div class="section-header fade-in">
                     <div class="section-divider"><span class="leaf-icon">🌿</span><hr></div>
                     <h2>Experience</h2>
-                    <p>My professional journey across tech, research, education, &amp; leadership.</p>
+                    <p>My professional journey across tech, <a href="/research/">research</a>, education, &amp; leadership.</p>
                 </div>
 
                 <!-- PROFESSIONAL -->
@@ -26,7 +44,6 @@
                     <div class="exp-category-label">💼 Professional</div>
                     <div class="exp-timeline">
 
-                        <!-- Microsoft TPM (current) -->
                         <div class="exp-item fade-in">
                             <div class="card">
                                 <div class="exp-role">Technical Program Manager</div>
@@ -43,23 +60,22 @@
                             </div>
                         </div>
 
-                        <!-- Microsoft TPM Intern -->
                         <div class="exp-item fade-in">
                             <div class="card">
                                 <div class="exp-role">Technical Program Manager Intern</div>
                                 <div class="exp-company">Microsoft</div>
                                 <div class="exp-meta">
                                     <span>📅 June 2024 – Sept 2024</span>
-                                    <span>📍 Seattle, WA</span>
+                                    <span>📍 Redmond, WA</span>
                                 </div>
                                 <ul class="exp-details">
-                                    <li>Developed a 0→1 MVP status dashboard centralizing Azure &amp; Windows service health, performance, &amp; outage history into PowerBI to mitigate the prevalent developer pain point of unknown service outages</li>
-                                    <li>Interviewed 27 customers, coordinated with 11 internal team partners, presented to 4 CVPs, &amp; integrated 28 points of telemetry</li>
+                                    <li>Developed a 0→1 MVP status dashboard centralizing Azure &amp; Windows service health, performance, &amp; outage history into PowerBI to improve developer productivity &amp; experience</li>
+                                    <li>Interviewed 25+ developers, coordinated with 10+ internal team partners, presented to 4 VPs, &amp; integrated 28 Kusto Queries</li>
                                 </ul>
                                 <div class="exp-hidden">
                                     <ul class="exp-details">
-                                        <li>Collaborated with multiple UI/UX designers, incorporating feedback across 3 dashboard iterations &amp; 5 future web-based Figma mockups</li>
-                                        <li>Established short-term (12-week) &amp; long-term (6 &amp; 12-month) project timelines; completed initial scope in 7 weeks &amp; began expansion into separate business groups</li>
+                                        <li>Iterated feedback from UI/UX designers across 3 dashboard iterations &amp; created 5 future web-based Figma mockups</li>
+                                        <li>Established short-term (12-week) &amp; long-term (6 &amp; 12-month) project timelines through goals &amp; deliverables; completed initial scope in 7 weeks &amp; began expansion into separate business groups</li>
                                         <li>Co-founded an Intern Co-Creation club centered around sustainability &amp; upcycling to foster community amongst interns</li>
                                     </ul>
                                 </div>
@@ -67,7 +83,6 @@
                             </div>
                         </div>
 
-                        <!-- HP -->
                         <div class="exp-item fade-in">
                             <div class="card">
                                 <div class="exp-role">Machine Learning Engineer Intern</div>
@@ -77,56 +92,38 @@
                                     <span>📍 Vancouver, WA</span>
                                 </div>
                                 <ul class="exp-details">
-                                    <li>Achieved 1st place at Vancouver Site intern project fair — "Does That Seem Right? Pipelined Telemetry Event Forecasting + Alert System for Big Data Quality Assurance"</li>
-                                    <li>Developed ML telemetry forecasting models using Prophet &amp; Pandas within Databricks Warehouses for big data quality assurance amongst millions of daily-collected records</li>
+                                    <li>Won 1st place at HP Vancouver site-wide intern presentation fair - "Does That Seem Right? Pipelined Telemetry Event Forecasting + Alert System for Big Data Quality Assurance"</li>
+                                    <li>Created &amp; trained ML telemetry forecasting models using Prophet &amp; Pandas within Databricks Warehouses for big data quality assurance among millions of daily-collected records; developed, tested, &amp; deployed models through AWS cloud service data pipelines on live services</li>
                                 </ul>
                                 <div class="exp-hidden">
                                     <ul class="exp-details">
-                                        <li>Expanded forecasting models into multiple business areas &amp; organizations; presented progress &amp; new ideas weekly to stakeholders</li>
-                                        <li>Ensured intellectual property through Neural Network anomaly detection models using TensorFlow</li>
-                                        <li>Worked towards shifting a 15M+ record data warehouse from 1NF to 3NF, reducing compute resources by ~35%</li>
+                                        <li>Completed initial forecasting project in 8 weeks, then expanded into two separate business areas including models for another business group/organization</li>
+                                        <li>Created schema &amp; started shifting a data warehouse with 15M+ records from 1NF to 3NF, reducing compute resources by ~35%</li>
                                     </ul>
                                 </div>
                                 <button class="exp-toggle">Show more <span class="arrow">▼</span></button>
                             </div>
                         </div>
 
-                        <!-- Lockheed Martin -->
                         <div class="exp-item fade-in">
                             <div class="card">
                                 <div class="exp-role">Senior Software Engineer Intern</div>
-                                <div class="exp-company">Lockheed Martin Rotary &amp; Mission Systems</div>
+                                <div class="exp-company">Lockheed Martin</div>
                                 <div class="exp-meta">
                                     <span>📅 June 2022 – Sept 2022</span>
                                     <span>📍 Syracuse, NY</span>
                                 </div>
                                 <ul class="exp-details">
-                                    <li>Peer-elected Software AI/ML Lead for a 12-person multidisciplinary intern engineering team</li>
-                                    <li>Generated ML models via PyTorch &amp; NumPy for prediction &amp; detection of structures within a wildfire path; achieved ~87% accuracy via hyperparameter tuning &amp; Bayesian classification</li>
+                                    <li>Peer-elected AI/ML Software Team Lead on an intern project team of 12+ multidisciplinary engineer interns (Mechanical, Electrical, Software, etc.)</li>
+                                    <li>Generated ML models via PyTorch &amp; NumPy in Kubeflow to predict &amp; detect structures within a wildfire path via images; achieved ~87% accuracy using hyperparameter tuning &amp; Bayesian classification</li>
                                 </ul>
                                 <div class="exp-hidden">
                                     <ul class="exp-details">
-                                        <li>Utilized complex C++ &amp; Linux commands for large-scale &amp; object-oriented projects</li>
+                                        <li>Aided 4 team members on multiple projects utilizing Linux &amp; C++</li>
                                         <li>Granted secret-level security clearance</li>
                                     </ul>
                                 </div>
                                 <button class="exp-toggle">Show more <span class="arrow">▼</span></button>
-                            </div>
-                        </div>
-
-                        <!-- Hallmark Cards -->
-                        <div class="exp-item fade-in">
-                            <div class="card">
-                                <div class="exp-role">Sales Associate</div>
-                                <div class="exp-company">Hallmark Cards</div>
-                                <div class="exp-meta">
-                                    <span>📅 Sept 2019 – Aug 2021</span>
-                                    <span>📍 Clackamas County, OR</span>
-                                </div>
-                                <ul class="exp-details">
-                                    <li>Part-time sales associate with responsibilities in inventory management, store upkeep, &amp; customer service</li>
-                                    <li>Trusted with counting money, solo store operations, &amp; helped plan &amp; organize large annual events</li>
-                                </ul>
                             </div>
                         </div>
                     </div>
@@ -137,7 +134,6 @@
                     <div class="exp-category-label">🔬 Research &amp; Teaching</div>
                     <div class="exp-timeline">
 
-                        <!-- GTA -->
                         <div class="exp-item fade-in">
                             <div class="card">
                                 <div class="exp-role">Graduate Teaching Assistant</div>
@@ -147,32 +143,31 @@
                                     <span>📍 Corvallis, OR</span>
                                 </div>
                                 <ul class="exp-details">
-                                    <li>Spring '25: CS362 Software Engineering 2 — held weekly grading demos &amp; office hours, meeting with 40 students each week for 10 min to grade &amp; provide feedback. 198-student class</li>
-                                    <li>Winter '25: CS362 — Product manager for 5 teams of 8 students each; met weekly to track progress, provide feedback, &amp; assist with unique term-wide projects. 133-student class</li>
-                                    <li>Fall '24: ENGR 100 Honors: The Oregon State Engineer — designed 3 hands-on computational thinking studio activities; developed &amp; provided a lecture on research opportunities for undergrads. 147-student class</li>
+                                    <li>Spring '25: CS362 Software Engineering 2 - held weekly grading demos, meeting with 40 students each week for 10 min to grade &amp; provide feedback on programming assignments. 198-student class</li>
+                                    <li>Winter '25: CS362 - Product manager for 5 teams of 8 students each; met weekly to track progress &amp; provide feedback on each group's unique term-wide project. 133-student class</li>
+                                    <li>Fall '24: ENGR 100 Honors: The Oregon State Engineer - designed 3 hands-on computational thinking studio activities &amp; provided a lecture on research opportunities for undergrads. 147-student class</li>
                                 </ul>
                             </div>
                         </div>
 
-                        <!-- Research -->
                         <div class="exp-item fade-in">
                             <div class="card">
                                 <div class="exp-role">Undergraduate CS Research Assistant</div>
                                 <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a></div>
                                 <div class="exp-meta">
-                                    <span>📅 June 2021 – Aug 2024</span>
+                                    <span>📅 June 2021 – June 2024</span>
                                     <span>📍 Corvallis, OR</span>
                                 </div>
                                 <ul class="exp-details">
-                                    <li>Conducted CS education research under Dr. Jennifer Parham-Mocello for 3+ years</li>
-                                    <li>Co-authored 4 double-blind peer-reviewed publications &amp; defended an undergraduate honors thesis (Spring 2023) centered around innovative practices to increase student engagement with computational thinking &amp; CS</li>
-                                    <li>Tasked with developing, updating, improving, &amp; creating CS curriculum &amp; publications</li>
+                                    <li>Conducted CS education research under Dr. Jennifer Parham-Mocello for 3+ years - see <a href="/research/">all publications &amp; research →</a></li>
+                                    <li>Appointed to assist, develop, manage, &amp; optimize computer science curriculum, observations, &amp; <a href="/research/">research publications</a></li>
+                                    <li>Defended undergraduate honors thesis one year early (Spring 2023) - centered around developing &amp; implementing three innovative practices to increase student engagement with CS at the middle school level</li>
                                 </ul>
                                 <div class="exp-hidden">
                                     <ul class="exp-details">
-                                        <li>Participated in NSF-funded CSforALL Research Experience for Undergraduates (REU) in Summer 2021, working towards making CS more equitable through game-oriented curriculum &amp; a new functional programming language</li>
-                                        <li>Presented data analysis section of co-authored publication at SIGCSE 2023 in Toronto, ON — the largest ACM technical symposium (~30% acceptance rate, CORE A-ranked)</li>
-                                        <li>Presented synthesized Master's thesis publication at IEEE Frontiers in Education (FIE) 2025 in Nashville, TN</li>
+                                        <li>Participated in NSF-funded CSforALL Research Experience for Undergraduates (REU) Summer 2021, working towards making CS more equitable through game-oriented curriculum &amp; a new functional programming language</li>
+                                        <li>Presented data analysis section of <a href="/research/">co-authored publication at SIGCSE 2023</a> in Toronto, ON - the largest ACM technical symposium (~30% acceptance rate, CORE A-ranked)</li>
+                                        <li>Presented synthesized Master's thesis <a href="/research/">publication at IEEE FIE 2025</a> in Nashville, TN</li>
                                         <li>Research focused on empowering K-12 CS teachers &amp; making CS more accessible through innovative, game-based approaches</li>
                                     </ul>
                                 </div>
@@ -180,19 +175,73 @@
                             </div>
                         </div>
 
-                        <!-- Learning Assistant -->
                         <div class="exp-item fade-in">
                             <div class="card">
                                 <div class="exp-role">Undergraduate Learning Assistant</div>
-                                <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a> — College of Engineering</div>
+                                <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a> - College of Engineering</div>
                                 <div class="exp-meta">
                                     <span>📅 Sept 2021 – June 2023</span>
                                     <span>📍 Corvallis, OR</span>
                                 </div>
                                 <ul class="exp-details">
-                                    <li>LA for CS261: Data Structures &amp; ENGR 10x: Intro to Engineering series</li>
-                                    <li>Delegated entire responsibility for teaching 30+ students during weekly recitations for CS261</li>
-                                    <li>Supported students via in-person office hours with problem-solving, debugging, &amp; conceptual understanding</li>
+                                    <li>Assigned CS261: Data Structures &amp; ENGR 10x Intro to Engineering; supervised classes with 150+ undergraduate students</li>
+                                    <li>Delegated entire responsibility for teaching 30+ students &amp; administering quizzes during weekly recitations for Data Structures</li>
+                                    <li>Supported students through in-person office hours with problem-solving, project debugging, &amp; conceptual understanding</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRESENTATIONS -->
+                <div class="exp-category fade-in">
+                    <div class="exp-category-label">🎤 Presentations</div>
+                    <div class="exp-timeline">
+
+                        <div class="exp-item fade-in">
+                            <div class="card">
+                                <div class="exp-role">oSTEM 2024 National Conference - Workshop Host</div>
+                                <div class="exp-company">Portland, OR</div>
+                                <div class="exp-meta"><span>📅 October 2024</span></div>
+                                <ul class="exp-details">
+                                    <li>Hosted "Improving Meeting Attendance: Recruitment and Retention" workshop with 50+ attendees</li>
+                                    <li>Highlighted how Oregon State's oSTEM chapter netted a ~250% increase in club engagement over the 2023–2024 year</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="exp-item fade-in">
+                            <div class="card">
+                                <div class="exp-role">Family &amp; Community Health Spring Conference - Poster</div>
+                                <div class="exp-company">Bend, OR</div>
+                                <div class="exp-meta">
+                                    <span>📅 May 2024</span>
+                                    <span>🏷️ Y'all Means All</span>
+                                </div>
+                                <ul class="exp-details">
+                                    <li>Presented undergraduate senior capstone project poster: "Food Hero Calculator: Fun and Informative - A Nutritional App for Middle School Students to Understand Their Food Choices"</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="exp-item fade-in">
+                            <div class="card">
+                                <div class="exp-role">Oregon State LEAP Summit - Top 5 Presentation</div>
+                                <div class="exp-company">Corvallis, OR</div>
+                                <div class="exp-meta"><span>📅 May 2024</span></div>
+                                <ul class="exp-details">
+                                    <li>Presented "LinkedIn Workshop for Queer Individuals" - selected as one of the top 5 out of 46 total LEAP participants</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="exp-item fade-in">
+                            <div class="card">
+                                <div class="exp-role">ACM SIGCSE Technical Symposium - Conference Presenter</div>
+                                <div class="exp-company">Toronto, ON</div>
+                                <div class="exp-meta"><span>📅 March 2023</span></div>
+                                <ul class="exp-details">
+                                    <li>Presented the data analysis section of a <a href="/research/">co-authored publication</a> at the largest ACM technical symposium (~30% acceptance rate, CORE A-ranked)</li>
                                 </ul>
                             </div>
                         </div>
@@ -204,69 +253,138 @@
                     <div class="exp-category-label">🌟 Leadership &amp; Involvement</div>
                     <div class="exp-timeline">
 
-                        <!-- LEAP -->
                         <div class="exp-item fade-in">
                             <div class="card">
-                                <div class="exp-role">LEAP — Leadership, Empowerment, &amp; Purpose (2× Graduate)</div>
-                                <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a> — College of Engineering</div>
+                                <div class="exp-role">Out in STEM (oSTEM) - Member → Secretary → President</div>
+                                <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a></div>
+                                <div class="exp-meta">
+                                    <span>📅 Sept 2021 – June 2025</span>
+                                    <span>📍 Corvallis, OR</span>
+                                </div>
+                                <ul class="exp-details">
+                                    <li>oSTEM empowers LGBTQ+ people in STEM to succeed personally, academically, &amp; professionally by cultivating environments that nurture innovation, leadership, &amp; advocacy</li>
+                                    <li>Elected to co-orchestrate bi-weekly club meetings &amp; represent 550+ members at university-wide administrative meetings</li>
+                                    <li>Member of the 4-person committee that worked with a $10,000 budget to send 9 club members to oSTEM 2023 national conference - the first national conference attendance in the chapter's history</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="exp-item fade-in">
+                            <div class="card">
+                                <div class="exp-role">LEAP - Leadership, Empowerment, &amp; Purpose (2× Graduate)</div>
+                                <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a> - College of Engineering</div>
                                 <div class="exp-meta">
                                     <span>📅 2022–2023 &amp; 2024–2025</span>
                                     <span>📍 Corvallis, OR</span>
                                 </div>
                                 <ul class="exp-details">
-                                    <li>Two-time graduate of the <a href="https://engineering.oregonstate.edu/student-life/leap" target="_blank" rel="noopener">LEAP program</a> — a year-long leadership development experience within the College of Engineering designed to help students discover their strengths, develop leadership skills aligned with their passions, &amp; build meaningful connections with industry mentors &amp; peers</li>
-                                    <li>LEAP focuses on self-awareness, communication, teamwork, &amp; professional growth through workshops, mentorship pairings, &amp; a culminating summit project</li>
-                                    <li>Summit project "LinkedIn Workshop for Queer Individuals" — guiding queer college students through the process of creating a LinkedIn profile — selected as one of the top 5 presentations</li>
-                                    <li>Fostered industry connections &amp; mentors, developed leadership skills aligned with personal passions, &amp; strengthened communication &amp; presentation skills across both cohorts</li>
+                                    <li>Two-time graduate of the <a href="https://engineering.oregonstate.edu/student-life/leap" target="_blank" rel="noopener">LEAP program</a> - a year-long leadership development experience designed to help students discover strengths, develop leadership skills, &amp; build meaningful connections with industry mentors</li>
+                                    <li>Summit project "LinkedIn Workshop for Queer Individuals" - selected as one of top 5 presentations out of 46 participants</li>
                                 </ul>
                             </div>
                         </div>
 
-                        <!-- oSTEM -->
-                        <div class="exp-item fade-in">
-                            <div class="card">
-                                <div class="exp-role">Out in STEM (oSTEM) — Club Officer</div>
-                                <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a></div>
-                                <div class="exp-meta">
-                                    <span>📅 2021–2025</span>
-                                    <span>📍 Corvallis, OR</span>
-                                </div>
-                                <ul class="exp-details">
-                                    <li>President (Engineering) during M.S. · Secretary during B.S.</li>
-                                    <li>Part of the planning committee that sent the chapter to its first national oSTEM conference in 2023</li>
-                                    <li>Fostered community &amp; belonging for LGBTQ+ students in STEM</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Engineering Ambassador -->
                         <div class="exp-item fade-in">
                             <div class="card">
                                 <div class="exp-role">College of Engineering Ambassador</div>
                                 <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a></div>
                                 <div class="exp-meta">
-                                    <span>📅 June 2023 – June 2024</span>
+                                    <span>📅 Sept 2023 – June 2024</span>
                                     <span>📍 Corvallis, OR</span>
                                 </div>
                                 <ul class="exp-details">
-                                    <li>Selected as 1 of ~35 representatives of 10,000+ College of Engineering students</li>
-                                    <li>Engaged with alumni, industry partners, &amp; prospective students through two-hour-long tours &amp; community outreach</li>
-                                    <li>Memorized 15-page script; provided weekly tours; answered a wide range of factual &amp; anecdotal questions</li>
+                                    <li>Selected as 1 of ~35 representatives of over 10,000 College of Engineering students through engagement with industry partners &amp; alumni via college-wide events</li>
+                                    <li>Memorized a 15-page script &amp; provided weekly tours to prospective students; answered a wide range of factual &amp; anecdotal questions</li>
                                 </ul>
                             </div>
                         </div>
 
-                        <!-- LSAMP -->
+                        <div class="exp-item fade-in">
+                            <div class="card">
+                                <div class="exp-role">Out 4 Undergraduate (O4U) - Campus Ambassador</div>
+                                <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a></div>
+                                <div class="exp-meta">
+                                    <span>📅 Sept 2022 – June 2024</span>
+                                    <span>📍 Corvallis, OR</span>
+                                    <span>🏷️ Engineering [2022–2023] · Digital [2023–2024]</span>
+                                </div>
+                                <ul class="exp-details">
+                                    <li>O4U's mission is to help high-achieving LGBTQ+ undergraduates reach their full potential through a fully funded trip to an annual conference to connect with peers &amp; network with working LGBTQ+ professionals</li>
+                                    <li>Created marketing &amp; promotional material to advertise the Out4Undergraduate conferences to OSU LGBTQIA+ students in STEM</li>
+                                    <li>Met monthly with campus ambassador coordinators to relay updates &amp; coordinate with ambassadors from across the country</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="exp-item fade-in">
+                            <div class="card">
+                                <div class="exp-role">Purdue GradTrack Scholar (GTS) Participant</div>
+                                <div class="exp-company">Purdue University - Virtual Program</div>
+                                <div class="exp-meta">
+                                    <span>📅 Sept 2023 – June 2024</span>
+                                    <span>🌐 Virtual</span>
+                                </div>
+                                <ul class="exp-details">
+                                    <li>Partook in an online mentoring program designed to help undergraduate seniors from underrepresented identities apply to graduate school in engineering through mentorship &amp; professional development</li>
+                                    <li>Member of an 8-person team of undergraduates from across the United States to assist each other with graduate applications</li>
+                                </ul>
+                            </div>
+                        </div>
+
                         <div class="exp-item fade-in">
                             <div class="card">
                                 <div class="exp-role">Louis Stokes Alliances for Minority Participation (LSAMP)</div>
-                                <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a> — NSF-funded Program</div>
+                                <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a> - NSF-funded Program</div>
+                                <div class="exp-meta"><span>📍 Corvallis, OR</span></div>
+                                <ul class="exp-details">
+                                    <li>Member of the <a href="https://www.nsf.gov/funding/opportunities/lsamp-louis-stokes-alliances-minority-participation" target="_blank" rel="noopener">LSAMP</a> program - an NSF-funded initiative to diversify the nation's STEM workforce by increasing degrees awarded to underrepresented populations</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROFESSIONAL DEVELOPMENT -->
+                <div class="exp-category fade-in">
+                    <div class="exp-category-label">📋 Professional Development</div>
+                    <div class="exp-timeline">
+
+                        <div class="exp-item fade-in">
+                            <div class="card">
+                                <div class="exp-role">Graduate Certificate of College &amp; University Teaching</div>
+                                <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a></div>
                                 <div class="exp-meta">
+                                    <span>📅 June 2025</span>
                                     <span>📍 Corvallis, OR</span>
                                 </div>
                                 <ul class="exp-details">
-                                    <li>Member of the <a href="https://www.nsf.gov/funding/opportunities/lsamp-louis-stokes-alliances-minority-participation" target="_blank" rel="noopener">LSAMP</a> program — an NSF-funded, alliance-based initiative that invests in colleges &amp; universities to diversify the nation’s STEM workforce by increasing baccalaureate &amp; graduate degrees awarded to underrepresented populations</li>
-                                    <li>LSAMP takes a comprehensive approach to the STEM learning ecosystem, implementing evidence-based &amp; innovative strategies that result in well-prepared, highly competitive students who pursue graduate studies or careers in STEM</li>
+                                    <li>Obtained an 18-credit certificate in College &amp; University Teaching; completed coursework on theories &amp; applications of adult learning theory, along with a capstone seminar &amp; internship</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="exp-item fade-in">
+                            <div class="card">
+                                <div class="exp-role">Columbia University EngAGE</div>
+                                <div class="exp-company">New York, NY</div>
+                                <div class="exp-meta"><span>📅 March 2023</span></div>
+                                <ul class="exp-details">
+                                    <li>One of 23 students selected from 120+ applicants across the U.S. to participate in Engineering Achievers in Graduate Education (EngAGE) - a weekend-long prospective engineering Ph.D. mentorship program for high-achieving STEM students from historically marginalized backgrounds</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="exp-item fade-in">
+                            <div class="card">
+                                <div class="exp-role">Conferences &amp; Symposiums Attended</div>
+                                <div class="exp-company">Various Locations</div>
+                                <div class="exp-meta"><span>📅 2022 – 2024</span></div>
+                                <ul class="exp-details">
+                                    <li>ACM SIGCSE Technical Symposium - Portland, OR (Mar 2024)</li>
+                                    <li>SACNAS National Diversity in STEM Conference - Portland, OR (Oct 2023) - Self-advocated to acquire $750 in funding through the OSU Honors College</li>
+                                    <li>Out 4 Undergraduate Digital Conference - New York, NY (Oct 2023)</li>
+                                    <li>oSTEM 2023 National Conference - Anaheim, CA (Oct 2023)</li>
+                                    <li>Out 4 Undergraduate Engineering Conference - St. Paul, MN (Oct 2022)</li>
                                 </ul>
                             </div>
                         </div>
@@ -279,7 +397,7 @@
                     <div class="exp-timeline">
                         <div class="exp-item fade-in">
                             <div class="card">
-                                <div class="exp-role">Master of Science — Computer Science</div>
+                                <div class="exp-role">Master of Science - Computer Science</div>
                                 <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a></div>
                                 <div class="exp-meta">
                                     <span>📅 Sept 2023 – June 2025</span>
@@ -288,14 +406,14 @@
                                 </div>
                                 <ul class="exp-details">
                                     <li>Minor in Mathematics · 18-credit GCCUT · Concentration in AI</li>
-                                    <li>Thesis: <em>Impacts of Professional Development on Knowledge for Teaching CS</em> — Unanimous pass, no edits</li>
-                                    <li>Advised by Dr. Jennifer Parham-Mocello</li>
+                                    <li>Thesis: <em>Impacts of Professional Development on Knowledge for Teaching CS</em> - Unanimous pass, no edits</li>
+                                    <li>Advised by Dr. Jennifer Parham-Mocello · See <a href="/research/">research &amp; publications →</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="exp-item fade-in">
                             <div class="card">
-                                <div class="exp-role">Honors Bachelor of Science — Computer Science</div>
+                                <div class="exp-role">Honors Bachelor of Science - Computer Science</div>
                                 <div class="exp-company"><a href="https://honors.oregonstate.edu/" target="_blank" rel="noopener">Oregon State University Honors College</a></div>
                                 <div class="exp-meta">
                                     <span>📅 Sept 2020 – June 2024</span>
@@ -304,7 +422,7 @@
                                 </div>
                                 <ul class="exp-details">
                                     <li>Minor in Mathematics · AI Concentration · Summa Cum Laude · Dean's List 15/15 terms</li>
-                                    <li>Thesis: <em>Teaching Fundamental CS Concepts Utilizing Manipulatives</em> — Defended one year early in June 2023</li>
+                                    <li>Thesis: <em>Teaching Fundamental CS Concepts Utilizing Manipulatives</em> - Defended one year early in June 2023</li>
                                 </ul>
                             </div>
                         </div>
@@ -317,15 +435,14 @@
         <footer>
             <div class="footer-content">
                 <div class="footer-brand">
-                    <h3>Garrett Berliner</h3>
-                    <p>Connecting &amp; amplifying people through technology.</p>
+                    <h3>Garrett Miguel Berliner</h3>
+                    <p>Passionate about connecting people through technology 💻, data science 📊, &amp; education 📖.</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-links-group">
                         <h4>Navigate</h4>
-                        <a href="/">Home</a>
                         <a href="/about/">About</a>
-                        <a href="/publications/">Publications</a>
+                        <a href="/research/">Research</a>
                     </div>
                     <div class="footer-links-group">
                         <h4>Connect</h4>
@@ -335,8 +452,8 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <span>&copy; <span class="current-year">2026</span> Garrett Berliner</span>
-                <span>Built with care 🌿</span>
+                <span>&copy; <span class="current-year">2026</span> Garrett Miguel Berliner</span>
+                <span>Built with love 🫶 &amp; care 🌿</span>
             </div>
         </footer>
     </div>

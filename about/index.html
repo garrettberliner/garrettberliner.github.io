@@ -3,17 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Garrett Berliner</title>
+    <title>About - Garrett Miguel Berliner</title>
+    <meta name="description" content="Learn about Garrett Berliner - TPM at Microsoft, CS researcher, educator, and Oregon State University graduate.">
+    <meta property="og:title" content="About - Garrett Miguel Berliner">
+    <meta property="og:description" content="Learn about Garrett Berliner - TPM at Microsoft, CS researcher, educator, and Oregon State University graduate.">
+    <meta property="og:image" content="/src/assets/IMG_3456.jpg">
+    <meta property="og:url" content="https://garrettberliner.github.io/about/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌈</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/src/styles/main.css">
 </head>
 <body>
-    <div id="navbar"></div>
-    <div class="page-wrapper">
+    <div id="navbar">
+        <noscript>
+            <nav style="display:flex;gap:1rem;padding:1rem 2rem;background:var(--color-cream,#F5EDE3);">
+                <a href="/about/">About</a><a href="/experience/">Experience</a><a href="/research/">Research</a><a href="/resume/">Resume</a><a href="/cv/">CV</a>
+            </nav>
+        </noscript>
+    </div>
+    <div class="page-wrapper page-wrapper--about">
         <div class="organic-shape organic-shape--red" style="width:400px;height:400px;top:5%;right:-150px;"></div>
         <div class="organic-shape organic-shape--orange" style="width:350px;height:350px;bottom:10%;left:-100px;"></div>
         <div class="organic-shape organic-shape--brown" style="width:300px;height:300px;bottom:40%;right:-120px;"></div>
 
-        <main>
+        <main id="main-content">
             <section class="content-section">
                 <div class="about-hero">
                     <div class="about-hero-photo fade-in-left">
@@ -24,7 +41,7 @@
                         <span class="about-hero-eyebrow">About Me</span>
                         <h2>Hello 👋😄!</h2>
                         <p>
-                            I'm Garrett, a Technical Program / Product Manager at Microsoft working on improving developer productivity through AI-forward approaches 🚀. Currently, I lead cross-organizational programs &amp; products within Windows + Devices that help developers work more efficiently with AI to empower over 1.2 billion monthly active Windows users 🤖. Before Microsoft, I spent 4 years conducting Computing Education Research at <a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a> under Dr. Jennifer Parham-Mocello, co-authoring 4 double-blind peer-reviewed publications &amp; defending 2 theses. We investigated innovative practices to make CS more accessible through game-oriented curriculum &amp; empowering K-12 CS teachers 🎓📚.
+                            I'm Garrett, a Technical Program / Product Manager at Microsoft working on improving developer productivity through AI-forward approaches 🚀. Currently, I lead cross-organizational programs &amp; products within Windows + Devices that help developers work more efficiently with AI to empower over 1.2 billion monthly active Windows users 🤖. Before Microsoft, I spent 4 years conducting Computing Education Research at <a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a> under Dr. Jennifer Parham-Mocello, co-authoring <a href="/research/">4 double-blind peer-reviewed publications</a> &amp; defending 2 theses. We investigated innovative practices to make CS more accessible through game-oriented curriculum &amp; empowering K-12 CS teachers 🎓📚.
                         </p>
                         <p>
                             Outside of work, I love exploring the Pacific Northwest 🏔️, experimenting with cooking (especially Latin American recipes passed down from my Mom) 🍲, sustainability &amp; upcycling projects ♻️, hosting board game nights with friends🎲, &amp; playing soccer ⚽ or rock climbing 🧗‍♂️. Through &amp; through,  I'm passionate about finding ways to make computing more equitable &amp; accessible for everyone 🌎.
@@ -42,7 +59,7 @@
                 <div class="about-highlights stagger-children">
                     <div class="highlight-item">
                         <span class="icon">🏗️</span>
-                        <h4>Product / Technical Program Management</h4>
+                        <h4>Technical Product / Program Management</h4>
                         <p>Cross-team & Cross-organizational coordination, customer interviews, stakeholder presentations, roadmapping, 0→1 product development</p>
                     </div>
                     <div class="highlight-item">
@@ -57,8 +74,8 @@
                     </div>
                     <div class="highlight-item">
                         <span class="icon">📚</span>
-                        <h4>Curriculum &amp; Research</h4>
-                        <p>4 publications, 2 theses, NSF Research Experience for Undergraduates (REU), SIGCSE presenter, K-12 CS education, &amp; computational thinking</p>
+                        <h4>Curriculum &amp; <a href="/research/" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Research</a></h4>
+                        <p><a href="/research/">4 publications</a>, 2 theses, NSF Research Experience for Undergraduates (REU), SIGCSE presenter, K-12 CS education, &amp; computational thinking</p>
                     </div>
                     <div class="highlight-item">
                         <span class="icon">🎓</span>
@@ -67,7 +84,7 @@
                     </div>
                     <div class="highlight-item">
                         <span class="icon">🤖</span>
-                        <h4>AI &amp; Developer Productivity</h4>
+                        <h4>Developer Experience &amp; Productivity</h4>
                         <p>AI-forward developer tooling, onboarding optimization, data centralization, &amp; engineering systems health tracking</p>
                     </div>
                 </div>
@@ -84,19 +101,19 @@
                     <div class="exp-item fade-in">
                         <div class="card edu-card">
                             <a href="/src/assets/ms-highlights.pdf" target="_blank" rel="noopener" class="edu-thesis-icon" title="View M.S. Highlights">⭐</a>
-                            <div class="exp-role">Master of Science — Computer Science</div>
+                            <div class="exp-role">Master of Science - Computer Science</div>
                             <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a></div>
                             <div class="exp-meta">
                                 <span>📅 Sept 2023 – June 2025</span>
                                 <span>📍 Corvallis, OR</span>
                                 <span>⭐ GPA: 4.00 / 4.00</span>
                             </div>
-                            <p class="text-brown">Minor in Mathematics. Concentration in AI. Graduate Certificate in College &amp; University Teaching (GCCUT) — 18 credits.</p>
+                            <p class="text-brown">Minor in Mathematics. Concentration in AI. Graduate Certificate in College &amp; University Teaching (GCCUT) - 18 credits.</p>
                             <div class="edu-details">
                                 <div class="edu-detail-section">
                                     <h4>📜 Thesis</h4>
                                     <p><em>Impacts of Professional Development on Knowledge for Teaching Computer Science</em></p>
-                                    <p class="text-brown" style="font-size:0.85rem;">Committee: Dr. Jennifer Parham-Mocello, Dr. Mary Beisiegel, Dr. Mike Bailey, Dr. J. Nicole von Germeten — Unanimous pass with no edits.</p>
+                                    <p class="text-brown" style="font-size:0.85rem;">Committee: Dr. Jennifer Parham-Mocello, Dr. Mary Beisiegel, Dr. Mike Bailey, Dr. J. Nicole von Germeten - Unanimous pass with no edits.</p>
                                     <a href="/src/assets/ms-thesis.pdf" target="_blank" rel="noopener" class="thesis-link">🔗 View Thesis</a>
                                 </div>
                                 <div class="edu-detail-section">
@@ -118,7 +135,7 @@
                     <div class="exp-item fade-in">
                         <div class="card edu-card">
                             <a href="/src/assets/bs-highlights.pdf" target="_blank" rel="noopener" class="edu-thesis-icon" title="View B.S. Highlights">⭐</a>
-                            <div class="exp-role">Honors Bachelor of Science — Computer Science</div>
+                            <div class="exp-role">Honors Bachelor of Science - Computer Science</div>
                             <div class="exp-company"><a href="https://honors.oregonstate.edu/" target="_blank" rel="noopener">Oregon State University Honors College</a></div>
                             <div class="exp-meta">
                                 <span>📅 Sept 2020 – June 2024</span>
@@ -129,7 +146,7 @@
                             <div class="edu-details">
                                 <div class="edu-detail-section">
                                     <h4>📜 Honors Thesis</h4>
-                                    <p><em>Teaching Fundamental Computer Science Concepts Utilizing Manipulatives</em> — Defended June 2023</p>
+                                    <p><em>Teaching Fundamental Computer Science Concepts Utilizing Manipulatives</em> - Defended June 2023</p>
                                     <p class="text-brown" style="font-size:0.85rem;">Committee: Dr. Jennifer Parham-Mocello, Dr. Mary Beisiegel, Dr. Robin Hess</p>
                                     <a href="https://ir.library.oregonstate.edu/concern/honors_college_theses/0v8388485?locale=en" target="_blank" rel="noopener" class="thesis-link">🔗 View Thesis</a>
                                 </div>
@@ -159,13 +176,13 @@
                     <div class="gccut-header">
                         <div class="gccut-badge">🎓</div>
                         <div>
-                            <h3>GCCUT — <a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a></h3>
+                            <h3>GCCUT: <a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a></h3>
                             <p class="text-brown">Completed alongside M.S. in Computer Science · 18 credits · 2023–2025</p>
                         </div>
                     </div>
 
                     <p class="gccut-description">
-                        The <a href="https://graduate.oregonstate.edu/graduate-certificate-college-and-university-teaching" target="_blank" rel="noopener">Graduate Certificate in College &amp; University Teaching (GCCUT)</a> is a graduate-level program that prepares students for instructional roles in higher education. This interdisciplinary certificate develops skills in course design, evidence-based pedagogy, equitable instruction, &amp; reflective teaching practice — qualifying recipients to teach at the college &amp; university level.
+                        The <a href="https://graduate.oregonstate.edu/graduate-certificate-college-and-university-teaching" target="_blank" rel="noopener">Graduate Certificate in College &amp; University Teaching (GCCUT)</a> is a graduate-level program that prepares students for instructional roles in higher education. This interdisciplinary certificate develops skills in course design, evidence-based pedagogy, equitable instruction, &amp; reflective teaching practice - qualifying recipients to teach at the college &amp; university level.
                     </p>
 
                     <div class="gccut-grid">
@@ -207,7 +224,7 @@
                     <div class="highlight-item">
                         <span class="icon">🏅</span>
                         <h4>Graduate Certificate in College &amp; University Teaching</h4>
-                        <p>18-credit GCCUT from <a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a> — completed alongside M.S.</p>
+                        <p>18-credit GCCUT from <a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a> - completed alongside M.S.</p>
                     </div>
                     <div class="highlight-item">
                         <span class="icon">🎖️</span>
@@ -216,7 +233,7 @@
                     </div>
                     <div class="highlight-item">
                         <span class="icon">📋</span>
-                        <h4>Dean's List — 15/15 Terms</h4>
+                        <h4>Dean's List: 15/15 Terms</h4>
                         <p>Every single academic term during undergraduate studies at Oregon State</p>
                     </div>
                     <div class="highlight-item">
@@ -231,15 +248,14 @@
         <footer>
             <div class="footer-content">
                 <div class="footer-brand">
-                    <h3>Garrett Berliner</h3>
-                    <p>Connecting &amp; empowering people through product management, data science, &amp; computing education 💖.</p>
+                    <h3>Garrett Miguel Berliner</h3>
+                    <p>Passionate about connecting people through technology 💻, data science 📊, &amp; education 📖.</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-links-group">
                         <h4>Navigate</h4>
-                        <a href="/">Home</a>
                         <a href="/experience/">Experience</a>
-                        <a href="/publications/">Publications</a>
+                        <a href="/research/">Research</a>
                     </div>
                     <div class="footer-links-group">
                         <h4>Connect</h4>
@@ -249,8 +265,8 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <span>&copy; <span class="current-year">2026</span> Garrett Berliner</span>
-                <span>Built with love &amp; care 🌿</span>
+                <span>&copy; <span class="current-year">2026</span> Garrett Miguel Berliner</span>
+                <span>Built with love 🫦 &amp; care 🌿</span>
             </div>
         </footer>
     </div>

@@ -3,16 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diary - Garrett Berliner</title>
+    <title>Diary - Garrett Miguel Berliner</title>
+    <meta name="description" content="Personal reflections, adventures, hobbies, and things that make life interesting - by Garrett Berliner.">
+    <meta property="og:title" content="Diary - Garrett Miguel Berliner">
+    <meta property="og:description" content="Personal reflections, adventures, & things I enjoy outside of work.">
+    <meta property="og:image" content="/src/assets/IMG_3456.jpg">
+    <meta property="og:url" content="https://garrettberliner.github.io/diary/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌈</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/src/styles/main.css">
 </head>
 <body>
-    <div id="navbar"></div>
-    <div class="page-wrapper">
+    <div id="navbar">
+        <noscript>
+            <nav style="display:flex;gap:1rem;padding:1rem 2rem;background:var(--color-cream,#F5EDE3);">
+                <a href="/about/">About</a><a href="/experience/">Experience</a><a href="/research/">Research</a><a href="/resume/">Resume</a><a href="/cv/">CV</a>
+            </nav>
+        </noscript>
+    </div>
+    <div class="page-wrapper page-wrapper--about">
         <div class="organic-shape organic-shape--green" style="width:400px;height:400px;top:5%;right:-150px;"></div>
         <div class="organic-shape organic-shape--orange" style="width:350px;height:350px;bottom:20%;left:-120px;"></div>
 
-        <main>
+        <main id="main-content">
             <section class="content-section">
                 <div class="section-header fade-in">
                     <div class="section-divider"><span class="leaf-icon">📔</span><hr></div>
@@ -22,7 +39,7 @@
 
                 <div class="diary-intro fade-in">
                     <p>
-                        This is my little corner of the internet where I share thoughts, hobbies, travel stories, &amp; random things that make life interesting. New entries are added to <code>/diary/entries.json</code> — just add an object &amp; it shows up here automatically!
+                        This is my little corner of the internet where I share thoughts, hobbies, travel stories, &amp; random things that make life interesting. New entries are added to <code>/diary/entries.json</code> - just add an object &amp; it shows up here automatically!
                     </p>
                 </div>
 
@@ -37,13 +54,12 @@
         <footer>
             <div class="footer-content">
                 <div class="footer-brand">
-                    <h3>Garrett Berliner</h3>
-                    <p>Connecting &amp; amplifying people through technology.</p>
+                    <h3>Garrett Miguel Berliner</h3>
+                    <p>Passionate about connecting people through technology 💻, data science 📊, &amp; education 📖.</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-links-group">
                         <h4>Navigate</h4>
-                        <a href="/">Home</a>
                         <a href="/about/">About</a>
                         <a href="/experience/">Experience</a>
                     </div>
@@ -55,8 +71,8 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <span>&copy; <span class="current-year">2026</span> Garrett Berliner</span>
-                <span>Built with care 🌿</span>
+                <span>&copy; <span class="current-year">2026</span> Garrett Miguel Berliner</span>
+                <span>Built with love 🫦 &amp; care 🌿</span>
             </div>
         </footer>
     </div>
