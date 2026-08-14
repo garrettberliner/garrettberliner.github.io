@@ -1,98 +1,199 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-atmosphere="trailhead">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Garrett Miguel Berliner</title>
-    <meta name="description" content="Learn about Garrett Berliner - TPM at Microsoft, CS researcher, educator, and Oregon State University graduate.">
+    <meta name="description" content="Garrett Berliner grew up across seven US states &amp; territories, researched computing education for 4 years at Oregon State, &amp; now works on developer experience at Microsoft.">
+    <link rel="canonical" href="https://garrettberliner.github.io/about/">
+
     <meta property="og:title" content="About - Garrett Miguel Berliner">
-    <meta property="og:description" content="Learn about Garrett Berliner - TPM at Microsoft, CS researcher, educator, and Oregon State University graduate.">
-    <meta property="og:image" content="/src/assets/IMG_3456.jpg">
+    <meta property="og:description" content="Growing up across the US, 4 years of computing education research, &amp; a job making developers' lives easier.">
+    <meta property="og:image" content="https://garrettberliner.github.io/src/assets/og-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://garrettberliner.github.io/about/">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="profile">
+    <meta property="og:site_name" content="Garrett Miguel Berliner">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌈</text></svg>">
+
+    <meta name="theme-color" content="#F4F0E6" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#10151A" media="(prefers-color-scheme: dark)">
+    <link rel="icon" href="/src/assets/favicon.svg" type="image/svg+xml">
+
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('atmosphere');
+                var pref = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'downtown' : 'trailhead';
+                document.documentElement.setAttribute('data-atmosphere', saved || pref);
+                document.documentElement.classList.add('js');
+            } catch (e) {
+                document.documentElement.setAttribute('data-atmosphere', 'trailhead');
+                document.documentElement.classList.add('js');
+            }
+        })();
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1&family=Instrument+Sans:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/src/styles/main.css">
+    <script src="/src/scripts/main.js" defer></script>
 </head>
 <body>
-    <div id="navbar">
-        <noscript>
-            <nav style="display:flex;gap:1rem;padding:1rem 2rem;background:var(--color-cream,#F5EDE3);">
-                <a href="/about/">About</a><a href="/experience/">Experience</a><a href="/research/">Research</a><a href="/resume/">Resume</a><a href="/cv/">CV</a>
-            </nav>
-        </noscript>
-    </div>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <header class="site-header">
+        <a href="/" class="brand" aria-label="Garrett Miguel Berliner - home">
+            <svg class="brand__mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <mask id="rl-peak" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+                    <rect width="32" height="32" fill="#fff"/>
+                    <path d="M6 25.5 13.2 9.6l3.9 6.2 3.2-3.2 5.5 12.9z" fill="#000"/>
+                </mask>
+                <g mask="url(#rl-peak)">
+                    <path d="M2.6 25.5a13.4 13.4 0 0 1 26.8 0" stroke="#D2603A" stroke-width="3.1"/>
+                    <path d="M6.3 25.5a9.7 9.7 0 0 1 19.4 0" stroke="#E0A93F" stroke-width="3.1"/>
+                    <path d="M10 25.5a6 6 0 0 1 12 0" stroke="#6E9376" stroke-width="3.1"/>
+                </g>
+                <path d="M6 25.5 13.2 9.6l3.9 6.2 3.2-3.2 5.5 12.9z" fill="currentColor"/>
+            </svg>
+            <span>Garrett Berliner</span>
+        </a>
+
+        <nav aria-label="Main">
+            <ul class="nav__list">
+                <li><a class="nav__link" href="/about/" aria-current="page">About</a></li>
+                <li><a class="nav__link" href="/experience/">Experience</a></li>
+                <li><a class="nav__link" href="/research/">Research</a></li>
+                <li><a class="nav__link" href="/resume/">Resume</a></li>
+                <li><a class="nav__link" href="/cv/">CV</a></li>
+            </ul>
+        </nav>
+
+        <button class="atmosphere" type="button" aria-pressed="false">
+            <span class="atmosphere__dial" aria-hidden="true"><span class="atmosphere__sun"></span></span>
+            <span class="visually-hidden">Switch between the Trailhead &amp; Downtown atmospheres</span>
+            <span class="atmosphere__label atmosphere__label--trailhead" aria-hidden="true">Trailhead</span>
+            <span class="atmosphere__label atmosphere__label--downtown" aria-hidden="true">Downtown</span>
+        </button>
+
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+
+        <div class="nav-overlay"></div>
+    </header>
+
     <div class="page-wrapper page-wrapper--about">
-        <div class="organic-shape organic-shape--red" style="width:400px;height:400px;top:5%;right:-150px;"></div>
-        <div class="organic-shape organic-shape--orange" style="width:350px;height:350px;bottom:10%;left:-100px;"></div>
-        <div class="organic-shape organic-shape--brown" style="width:300px;height:300px;bottom:40%;right:-120px;"></div>
+        <div class="terrain" aria-hidden="true"></div>
 
         <main id="main-content">
             <section class="content-section">
                 <div class="about-hero">
                     <div class="about-hero-photo fade-in-left">
-                        <div class="about-hero-glow"></div>
-                        <img src="/src/assets/IMG_6428.jpg" alt="Garrett Berliner">
+                        <img src="/src/assets/IMG_6428.jpg" alt="Garrett Berliner outdoors" width="800" height="1000" loading="eager">
                     </div>
+
                     <div class="about-hero-card fade-in-right">
-                        <span class="about-hero-eyebrow">🧑 Here's a bit about myself :)!</span>
+                        <p class="about-hero-eyebrow">About</p>
+                        <h1>Here's a bit about myself :)!</h1>
+
                         <p>
-                            I grew up moving around the United States - in Puerto Rico, Texas, Virginia, Michigan, New York, Washington D.C., &amp; Oregon, which first-hand showed my the immense value &amp; importance diverse perspectives provide 🌎. During this time, the only way I could keep in touch with friends was through technology &amp; the internet, which spark my initial curiosity for compter science . 
+                            I grew up moving around the United States - Puerto Rico, Texas, Virginia, Michigan,
+                            New York, Washington D.C., &amp; Oregon - which showed me first-hand the immense value
+                            &amp; importance that diverse perspectives provide 🌎. During that time, the only way
+                            I could keep in touch with friends was through technology &amp; the internet, which
+                            sparked my initial curiosity for computer science.
                         </p>
+
                         <p>
-                            During my undergraduate &amp; master's, I spent over 4 years conducting <a href="/research/">Computing Education Research</a>  under <a href="https://web.engr.oregonstate.edu/~parhammj/">Dr. Jennifer Parham-Mocello</a>. We investigated innovative practices to make CS more accessible &amp; engaging through game-oriented curriculum, along with how to most effectively support &amp; empower K-12 CS teachers without a background in CS. This netted4 double-blind peer-reviewed <a href="/research/">publications</a> &amp; 2 theses.
+                            During my undergraduate &amp; master's, I spent over 4 years conducting
+                            <a href="/research/">computing education research</a> under
+                            <a href="https://web.engr.oregonstate.edu/~parhammj/" target="_blank" rel="noopener">Dr. Jennifer Parham-Mocello</a>.
+                            We investigated innovative practices to make CS more accessible &amp; engaging through
+                            game-oriented curriculum, along with how to most effectively support &amp; empower K-12
+                            CS teachers without a background in CS. This netted 4 double-blind peer-reviewed
+                            <a href="/research/">publications</a> &amp; 2 theses.
                         </p>
+
                         <p>
-                            In my free time, I love travelling &amp; experience new things! I'm extremely fortunate to live in the Pacific Northwest &amp; take the opportunity to immerse myself in nature whenever I can. A life-goal of mine is to visit all 7 continents ✈️ &amp; all 50 states. Recently, I've been enjoying cooking, playing soccer, hosting board game nights with friends, &amp; hiking 🌲.
+                            In my free time, I love travelling &amp; experiencing new things! I'm extremely fortunate
+                            to live in the Pacific Northwest &amp; take the opportunity to immerse myself in nature
+                            whenever I can. A life-goal of mine is visiting all 7 continents ✈️ &amp; all 50 states.
+                            Recently, I've been enjoying cooking, playing soccer, hosting board game nights with
+                            friends, &amp; hiking 🌲.
                         </p>
                     </div>
                 </div>
             </section>
 
-            <!-- Skills & Highlights -->
-            <section class="content-section fade-in">
-                <div class="section-header">
-                    <div class="section-divider"><span class="leaf-icon">🍂</span><hr></div>
+            <section class="content-section">
+                <div class="section-header fade-in">
+                    <p class="eyebrow">What I Work On</p>
                     <h2>Skills &amp; Interests</h2>
                 </div>
+
                 <div class="about-highlights stagger-children">
                     <div class="highlight-item">
-                        <span class="icon">🏗️</span>
-                        <h4>Technical Product / Program Management</h4>
+                        <svg class="icon-glyph icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M3 21h18"/>
+                            <path d="M5 21V8l7-5 7 5v13"/>
+                            <path d="M10 21v-6h4v6"/>
+                        </svg>
+                        <h4>Technical product &amp; program management</h4>
                         <p>Cross-organizational coordination &amp; collaboration, customer interviews, stakeholder presentations, roadmapping, 0→1 product development</p>
                     </div>
+
                     <div class="highlight-item">
-                        <span class="icon">📊</span>
-                        <h4>Statistics &amp; Data Science</h4>
-                        <p>Data analysis, ML models, telemetry forecasting, Qualitative &amp; Quantitative Analysis, TensorFlow, Pandas, Databricks, PowerBI</p>
-                    </div>
-                    <div class="highlight-item">
-                        <span class="icon">🤖</span>
-                        <h4>Developer Experience &amp; Productivity</h4>
-                        <p>AI-forward developer tooling, onboarding optimization, data centralization, &amp; engineering systems health tracking</p>
-                    </div>
-                    <div class="highlight-item">
-                        <span class="icon">🧠</span>
-                        <h4>Artificial Intelligence &amp; Machine Learning</h4>
-                        <p>Undergraduate CS concentration in AI; additionally worked as a Machine Learning Engineer at HP Inc. in the summer of 2023.</p>
-                    </div>
-                    <div class="highlight-item">
-                        <span class="icon">📚</span>
-                        <h4>Curriculum Development &amp; Computing Education</h4>
-                        <p><a href="/research/">4 publications</a>, 2 theses, NSF Research Experience for Undergraduates (REU), SIGCSE presenter, K-12 CS education, &amp; computational thinking</p>
-                    </div>
-                    <div class="highlight-item">
-                        <span class="icon">🎓</span>
-                        <h4>Teaching &amp; Mentorship</h4>
-                        <p>GTA for 500+ students, product manager for student teams &amp; senior capstone project, held weekly recitations, grading demos &amp; hundreds of office hours</p>
+                        <svg class="icon-glyph icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M3 20h18"/>
+                            <path d="M6 20v-6M11 20V8M16 20v-9M21 20V5"/>
+                        </svg>
+                        <h4>Statistics &amp; data science</h4>
+                        <p>Data analysis, ML models, telemetry forecasting, qualitative &amp; quantitative analysis, TensorFlow, Pandas, Databricks, PowerBI</p>
                     </div>
 
+                    <div class="highlight-item">
+                        <svg class="icon-glyph icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <rect x="2.5" y="4" width="19" height="15" rx="2"/>
+                            <path d="m7 9 3 2.5L7 14M12.5 14.5h4.5"/>
+                        </svg>
+                        <h4>Developer experience &amp; productivity</h4>
+                        <p>AI-forward developer tooling, onboarding optimization, data centralization, &amp; engineering systems health tracking</p>
+                    </div>
+
+                    <div class="highlight-item">
+                        <svg class="icon-glyph icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M12 3a4 4 0 0 0-4 4 3.5 3.5 0 0 0-1.5 6.6A3.5 3.5 0 0 0 9 20.5a3 3 0 0 0 3-1.8 3 3 0 0 0 3 1.8 3.5 3.5 0 0 0 2.5-6.9A3.5 3.5 0 0 0 16 7a4 4 0 0 0-4-4Z"/>
+                            <path d="M12 8v11"/>
+                        </svg>
+                        <h4>Artificial intelligence &amp; machine learning</h4>
+                        <p>Undergraduate CS concentration in AI; additionally worked as a Machine Learning Engineer at HP Inc. in the summer of 2023.</p>
+                    </div>
+
+                    <div class="highlight-item">
+                        <svg class="icon-glyph icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M3 5.5A2.5 2.5 0 0 1 5.5 3H11v17H5.5A2.5 2.5 0 0 0 3 22.5z"/>
+                            <path d="M21 5.5A2.5 2.5 0 0 0 18.5 3H13v17h5.5a2.5 2.5 0 0 1 2.5 2.5z"/>
+                        </svg>
+                        <h4>Curriculum development &amp; computing education</h4>
+                        <p><a href="/research/">4 publications</a>, 2 theses, NSF Research Experience for Undergraduates (REU), SIGCSE presenter, K-12 CS education, &amp; computational thinking</p>
+                    </div>
+
+                    <div class="highlight-item">
+                        <svg class="icon-glyph icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M12 3 1.5 8.5 12 14l10.5-5.5z"/>
+                            <path d="M6 11v5.5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5V11"/>
+                        </svg>
+                        <h4>Teaching &amp; mentorship</h4>
+                        <p>GTA for 500+ students, product manager for student teams &amp; senior capstone project, held weekly recitations, grading demos &amp; hundreds of office hours</p>
+                    </div>
                 </div>
             </section>
         </main>
+
+        <div class="horizon" aria-hidden="true"></div>
 
         <footer>
             <div class="footer-content">
@@ -103,6 +204,7 @@
                 <div class="footer-links">
                     <div class="footer-links-group">
                         <h4>Navigate</h4>
+                        <a href="/">Home</a>
                         <a href="/experience/">Experience</a>
                         <a href="/research/">Research</a>
                     </div>
@@ -115,11 +217,9 @@
             </div>
             <div class="footer-bottom">
                 <span>&copy; <span class="current-year">2026</span> Garrett Miguel Berliner</span>
-                <span>Built with love 🫶 &amp; care 🌿</span>
+                <span>Built by hand in the Pacific Northwest</span>
             </div>
         </footer>
     </div>
-
-    <script src="/src/scripts/main.js"></script>
 </body>
 </html>

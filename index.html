@@ -1,103 +1,160 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-atmosphere="trailhead">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Garrett Miguel Berliner</title>
-    <meta name="description" content="Technical Program / Product Manager at Microsoft. Passionate about connecting people through technology, data science, & education.">
+    <meta name="description" content="Technical Program Manager at Microsoft working on developer experience & productivity in Windows Engineering Systems. Computing education researcher with four peer-reviewed publications.">
+    <link rel="canonical" href="https://garrettberliner.github.io/">
+
     <meta property="og:title" content="Garrett Miguel Berliner">
-    <meta property="og:description" content="Technical Program / Product Manager at Microsoft. Passionate about connecting people through technology, data science, & education.">
-    <meta property="og:image" content="/src/assets/IMG_3456.jpg">
+    <meta property="og:description" content="Technical Program Manager at Microsoft. Developer experience, data science, & computing education.">
+    <meta property="og:image" content="https://garrettberliner.github.io/src/assets/og-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://garrettberliner.github.io/">
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Garrett Miguel Berliner">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌈</text></svg>">
+
+    <meta name="theme-color" content="#F4F0E6" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#10151A" media="(prefers-color-scheme: dark)">
+    <link rel="icon" href="/src/assets/favicon.svg" type="image/svg+xml">
+
+    <!-- Set the atmosphere before first paint, so the page never
+         flashes in the wrong world on the way in. -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('atmosphere');
+                var pref = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'downtown' : 'trailhead';
+                document.documentElement.setAttribute('data-atmosphere', saved || pref);
+                document.documentElement.classList.add('js');
+            } catch (e) {
+                document.documentElement.setAttribute('data-atmosphere', 'trailhead');
+                document.documentElement.classList.add('js');
+            }
+        })();
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1&family=Instrument+Sans:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/src/styles/main.css">
+    <script src="/src/scripts/main.js" defer></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Garrett Miguel Berliner",
+      "url": "https://garrettberliner.github.io/",
+      "image": "https://garrettberliner.github.io/src/assets/IMG_3456.jpg",
+      "jobTitle": "Technical Program Manager",
+      "worksFor": { "@type": "Organization", "name": "Microsoft" },
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Oregon State University" },
+      "homeLocation": { "@type": "Place", "name": "Seattle, Washington" },
+      "knowsAbout": [
+        "Technical Program Management",
+        "Developer Experience",
+        "Computing Education Research",
+        "Machine Learning",
+        "Data Science"
+      ],
+      "sameAs": ["https://www.linkedin.com/in/garrettberliner"]
+    }
+    </script>
 </head>
 <body>
-    <div id="navbar">
-        <noscript>
-            <nav style="display:flex;gap:1rem;padding:1rem 2rem;background:var(--color-cream,#F5EDE3);">
-                <a href="/about/">About</a><a href="/experience/">Experience</a><a href="/research/">Research</a><a href="/resume/">Resume</a><a href="/cv/">CV</a>
-            </nav>
-        </noscript>
-    </div>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <header class="site-header">
+        <a href="/" class="brand" aria-label="Garrett Miguel Berliner - home">
+            <svg class="brand__mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <mask id="rl-peak" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+                    <rect width="32" height="32" fill="#fff"/>
+                    <path d="M6 25.5 13.2 9.6l3.9 6.2 3.2-3.2 5.5 12.9z" fill="#000"/>
+                </mask>
+                <g mask="url(#rl-peak)">
+                    <path d="M2.6 25.5a13.4 13.4 0 0 1 26.8 0" stroke="#D2603A" stroke-width="3.1"/>
+                    <path d="M6.3 25.5a9.7 9.7 0 0 1 19.4 0" stroke="#E0A93F" stroke-width="3.1"/>
+                    <path d="M10 25.5a6 6 0 0 1 12 0" stroke="#6E9376" stroke-width="3.1"/>
+                </g>
+                <path d="M6 25.5 13.2 9.6l3.9 6.2 3.2-3.2 5.5 12.9z" fill="currentColor"/>
+            </svg>
+            <span>Garrett Berliner</span>
+        </a>
+
+        <nav aria-label="Main">
+            <ul class="nav__list">
+                <li><a class="nav__link" href="/about/">About</a></li>
+                <li><a class="nav__link" href="/experience/">Experience</a></li>
+                <li><a class="nav__link" href="/research/">Research</a></li>
+                <li><a class="nav__link" href="/resume/">Resume</a></li>
+                <li><a class="nav__link" href="/cv/">CV</a></li>
+            </ul>
+        </nav>
+
+        <button class="atmosphere" type="button" aria-pressed="false">
+            <span class="atmosphere__dial" aria-hidden="true"><span class="atmosphere__sun"></span></span>
+            <span class="visually-hidden">Switch between the Trailhead &amp; Downtown atmospheres</span>
+            <span class="atmosphere__label atmosphere__label--trailhead" aria-hidden="true">Trailhead</span>
+            <span class="atmosphere__label atmosphere__label--downtown" aria-hidden="true">Downtown</span>
+        </button>
+
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+
+        <div class="nav-overlay"></div>
+    </header>
+
     <div class="page-wrapper page-wrapper--hero">
-        <!-- Organic background shapes -->
-        <div class="organic-shape organic-shape--red" style="width:500px;height:500px;top:-100px;right:-200px;"></div>
-        <div class="organic-shape organic-shape--orange" style="width:400px;height:400px;bottom:20%;left:-150px;"></div>
-        <div class="organic-shape organic-shape--brown" style="width:300px;height:300px;bottom:-50px;right:10%;"></div>
-        <div class="organic-shape organic-shape--orange" style="width:250px;height:250px;top:40%;left:10%;opacity:0.07;"></div>
-        <div class="organic-shape organic-shape--red" style="width:200px;height:200px;bottom:10%;left:30%;opacity:0.06;"></div>
+        <div class="terrain" aria-hidden="true"></div>
 
         <main id="main-content">
-            <!-- Hero Section -->
             <section class="hero">
-                <div class="hero-content hero-stagger fade-in">
-                    <div class="hero-eyebrow">
-                        <div class="dot-pulse"></div>
+                <div class="hero-content fade-in">
+                    <p class="hero-eyebrow">
+                        <span class="dot-pulse" aria-hidden="true"></span>
                         <span>Technical Program / Product Manager @ Microsoft</span>
-                    </div>
-                    <h1>Hi! I'm <span class="accent">Garrett 😄</span></h1>
-                    <p class="hero-description">
-                        I'm forever curious about the intersection of technology, data science, &amp; education 🚀. Currently, I lead cross-organizational programs &amp; internal products within <a href="https://www.microsoft.com/en-us/windows">Windows + Devices</a> that improve the developer experience for over 6,000 software engineers through integrating &amp; leveraging AI in their workflows to empower over 1.2 billion monthly active Windows users. Before Microsoft, I worked as both a Software Engineer &amp; Machine Learning Engineer intern, along with conducted <a href="/research/">computing education research</a> at Oregon State University under <a href="https://web.engr.oregonstate.edu/~parhammj/">Dr. Jennifer Parham-Mocello</a>.
                     </p>
+
+                    <h1>Hi! I'm <span class="accent">Garrett</span></h1>
+
+                    <p class="hero-description">
+                        I'm forever curious about the intersection of technology, data science, &amp; education 🚀.
+                        Currently, I lead cross-organizational programs &amp; internal products within
+                        <a href="https://www.microsoft.com/en-us/windows" target="_blank" rel="noopener">Windows + Devices</a>
+                        that improve the developer experience for over 6,000 software engineers through integrating
+                        &amp; leveraging AI in their workflows to empower over 1.2 billion monthly active Windows users.
+                    </p>
+
+                    <p class="hero-description">
+                        Before Microsoft, I worked as both a Software Engineer &amp; Machine Learning Engineer intern,
+                        along with conducting <a href="/research/">computing education research</a> at
+                        Oregon State University under
+                        <a href="https://web.engr.oregonstate.edu/~parhammj/" target="_blank" rel="noopener">Dr. Jennifer Parham-Mocello</a>.
+                    </p>
+
                     <div class="hero-cta">
                         <a href="/experience/" class="btn btn-primary">View Experience →</a>
                         <a href="/about/" class="btn btn-secondary">About Me</a>
                     </div>
                 </div>
+
                 <div class="hero-visual fade-in-right">
-                    <div class="hero-image-wrapper">
-                        <img src="/src/assets/IMG_3456.jpg" alt="Garrett Berliner" loading="eager">
-                        <span class="hero-leaf">🍃</span>
-                        <span class="hero-leaf">🌿</span>
-                        <span class="hero-leaf">🍂</span>
+                    <div class="hero-image-wrapper" data-caption="Garrett, in his natural habitat">
+                        <img src="/src/assets/IMG_3456.jpg" alt="Garrett Berliner smiling, standing under a tree" width="800" height="1000" loading="eager" fetchpriority="high">
                     </div>
                 </div>
             </section>
 
-            <!-- Quick Highlights
-            <section class="content-section fade-in">
-                <div class="section-header">
-                    <div class="section-divider">
-                        <span class="leaf-icon">🌱</span>
-                        <hr>
-                    </div>
-                    <h2>At a Glance</h2>
-                    <p>A snapshot of what I've been up to:</p>
-                </div>
-                <div class="about-highlights stagger-children">
-                    <div class="highlight-item">
-                        <span class="icon">💻</span>
-                        <h4>Microsoft</h4>
-                        <p>TPM on Windows Engineering Systems, AI Developer Productivity</p>
-                    </div>
-                    <div class="highlight-item">
-                        <span class="icon">🎓</span>
-                        <h4>Oregon State University</h4>
-                        <p>M.S. Computer Science; Minor in Mathematics</p>
-                    </div>
-                    <div class="highlight-item">
-                        <span class="icon">📄</span>
-                        <h4>Researcher</h4>
-                        <p>Co-authored 4 Computing Education publications, 1st author publication at FIE 2025 &amp; presented at SIGCSE 2023 in Toronto.</p>
-                    </div>
-                    <div class="highlight-item">
-                        <span class="icon">🌎</span>
-                        <h4>Traveler</h4>
-                        <p>Lived in every region of the U.S. which shaped me into a collaborative worker &amp; thinker.</p>
-                    </div>
-                </div>
-            </section> -->
         </main>
 
-        <!-- Footer -->
+        <div class="horizon" aria-hidden="true"></div>
+
         <footer>
-            <div class="footer-gradient-bar"></div>
             <div class="footer-content">
                 <div class="footer-brand">
                     <h3>Garrett Miguel Berliner</h3>
@@ -108,7 +165,7 @@
                         <h4>Navigate</h4>
                         <a href="/about/">About</a>
                         <a href="/experience/">Experience</a>
-                        <!-- <a href="/diary/">Diary</a> -->
+                        <a href="/research/">Research</a>
                     </div>
                     <div class="footer-links-group">
                         <h4>Connect</h4>
@@ -119,11 +176,9 @@
             </div>
             <div class="footer-bottom">
                 <span>&copy; <span class="current-year">2026</span> Garrett Miguel Berliner</span>
-                <span>Built with love 🫶 &amp; care 🌿</span>
+                <span>Built by hand in the Pacific Northwest</span>
             </div>
         </footer>
     </div>
-
-    <script src="/src/scripts/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
+  <rect width="32" height="32" rx="6" fill="#F4F0E6"/>
+  <mask id="rl-peak" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+    <rect width="32" height="32" fill="#fff"/>
+    <path d="M6 25.5 13.2 9.6l3.9 6.2 3.2-3.2 5.5 12.9z" fill="#000"/>
+  </mask>
+  <g mask="url(#rl-peak)">
+    <path d="M2.6 25.5a13.4 13.4 0 0 1 26.8 0" stroke="#D2603A" stroke-width="3.1"/>
+    <path d="M6.3 25.5a9.7 9.7 0 0 1 19.4 0" stroke="#E0A93F" stroke-width="3.1"/>
+    <path d="M10 25.5a6 6 0 0 1 12 0" stroke="#6E9376" stroke-width="3.1"/>
+  </g>
+  <path d="M6 25.5 13.2 9.6l3.9 6.2 3.2-3.2 5.5 12.9z" fill="#233A2C"/>
+</svg>
