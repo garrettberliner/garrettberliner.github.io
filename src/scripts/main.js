@@ -1,352 +1,218 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // ----------------------
-  // 1. Load Navbar
-  // ----------------------
-  const navbarElement = document.getElementById("navbar");
-  if (navbarElement) {
-    fetch("/src/partials/nav.html")
-      .then(r => { if (!r.ok) throw new Error("Nav load failed"); return r.text(); })
-      .then(data => {
-        navbarElement.innerHTML = data;
-        initNav();
-        highlightCurrentPage();
-      })
-      .catch(e => {
-        console.error("Error loading navbar:", e);
-        // noscript fallback is already in the HTML
-      });
-  }
+/* =============================================================
+   RIDGELINE — behaviour
+   -------------------------------------------------------------
+   Everything here is an enhancement. Nothing here is load-bearing:
+   the nav, the footer, every word of content, & the experience
+   timeline all render fine with JavaScript switched off.
+   ============================================================= */
 
-  function initNav() {
-    const toggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    const navOverlay = document.querySelector('.nav-overlay');
-    if (!toggle || !navMenu) return;
+(() => {
+  'use strict';
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const root = document.documentElement;
+
+  /* -----------------------------------------------------------
+     Atmosphere — Trailhead ⇄ Downtown
+     The initial value is set by an inline <head> script so the
+     page never paints in the wrong world. This only handles the
+     switching after that.
+     ----------------------------------------------------------- */
+  function initAtmosphere() {
+    const toggle = document.querySelector('.atmosphere');
+    if (!toggle) return;
+
+    const apply = (name) => {
+      root.setAttribute('data-atmosphere', name);
+      toggle.setAttribute('aria-pressed', String(name === 'downtown'));
+    };
+
+    apply(root.getAttribute('data-atmosphere') || 'trailhead');
 
     toggle.addEventListener('click', () => {
-      const isActive = navMenu.classList.contains('active');
-      toggle.classList.toggle('active');
-      navMenu.classList.toggle('active');
-      if (navOverlay) navOverlay.classList.toggle('active');
-      document.body.style.overflow = !isActive ? 'hidden' : '';
-      toggle.setAttribute('aria-expanded', !isActive);
-    });
-
-    navMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        toggle.classList.remove('active');
-        navMenu.classList.remove('active');
-        if (navOverlay) navOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-        toggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    if (navOverlay) {
-      navOverlay.addEventListener('click', () => {
-        toggle.classList.remove('active');
-        navMenu.classList.remove('active');
-        navOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-        toggle.setAttribute('aria-expanded', 'false');
-      });
-    }
-  }
-
-  function highlightCurrentPage() {
-    const path = window.location.pathname;
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-      const href = link.getAttribute('href');
-      if (path === href || (href !== '/' && path.startsWith(href))) {
-        link.classList.add('active');
+      const next = root.getAttribute('data-atmosphere') === 'downtown' ? 'trailhead' : 'downtown';
+      apply(next);
+      try {
+        localStorage.setItem('atmosphere', next);
+      } catch (err) {
+        /* Private browsing. The toggle still works for this visit. */
       }
     });
   }
 
-  // ----------------------
-  // 2. Header scroll effect
-  // ----------------------
-  const header = document.querySelector('header');
-  if (header) {
+  /* -----------------------------------------------------------
+     Header hairline on scroll
+     ----------------------------------------------------------- */
+  function initHeader() {
+    const header = document.querySelector('.site-header');
+    if (!header) return;
+
+    let ticking = false;
+    const update = () => {
+      header.classList.toggle('is-scrolled', window.scrollY > 24);
+      ticking = false;
+    };
+
+    update();
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
       }
     }, { passive: true });
   }
 
-  // ----------------------
-  // 3. Scroll-triggered animations
-  // ----------------------
-  const animEls = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .scale-in, .stagger-children, .exp-item');
-  if (animEls.length) {
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    animEls.forEach(el => obs.observe(el));
-  }
+  /* -----------------------------------------------------------
+     Mobile navigation
+     ----------------------------------------------------------- */
+  function initNav() {
+    const toggle = document.querySelector('.menu-toggle');
+    const list = document.querySelector('.nav__list');
+    const overlay = document.querySelector('.nav-overlay');
+    if (!toggle || !list) return;
 
-  // ----------------------
-  // 4. Experience toggles
-  // ----------------------
-  document.querySelectorAll('.exp-toggle').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const hidden = btn.closest('.exp-item')?.querySelector('.exp-hidden');
-      if (hidden) {
-        hidden.classList.toggle('open');
-        btn.classList.toggle('expanded');
-        const isOpen = hidden.classList.contains('open');
-        btn.innerHTML = isOpen
-          ? 'Show less <span class="arrow">▲</span>'
-          : 'Show more <span class="arrow">▼</span>';
+    const setOpen = (open) => {
+      toggle.classList.toggle('is-open', open);
+      list.classList.toggle('is-open', open);
+      if (overlay) overlay.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      document.body.style.overflow = open ? 'hidden' : '';
+    };
+
+    toggle.addEventListener('click', () => setOpen(!list.classList.contains('is-open')));
+    if (overlay) overlay.addEventListener('click', () => setOpen(false));
+    list.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setOpen(false)));
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && list.classList.contains('is-open')) {
+        setOpen(false);
+        toggle.focus();
       }
-    });
-  });
-
-  // ----------------------
-  // 5. Cursor glow on hero (desktop)
-  // ----------------------
-  const hero = document.querySelector('.hero');
-  if (hero && window.innerWidth > 768) {
-    const glow = document.createElement('div');
-    glow.classList.add('cursor-glow');
-    hero.appendChild(glow);
-    hero.addEventListener('mousemove', (e) => {
-      const rect = hero.getBoundingClientRect();
-      glow.style.left = (e.clientX - rect.left) + 'px';
-      glow.style.top = (e.clientY - rect.top) + 'px';
     });
   }
 
-  // ----------------------
-  // 6. Diary entry loader
-  // ----------------------
-  const diaryGrid = document.getElementById('diary-grid');
-  const diaryFilters = document.getElementById('diary-filters');
-  const diaryDetail = document.getElementById('diary-entry-detail');
+  /* -----------------------------------------------------------
+     Scroll-triggered entrances
+     ----------------------------------------------------------- */
+  function initReveal() {
+    const targets = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .stagger-children');
+    if (!targets.length) return;
 
-  if (diaryGrid) loadDiaryEntries();
-  if (diaryDetail) loadDiaryDetail();
-
-  async function loadDiaryEntries() {
-    try {
-      const resp = await fetch('/diary/entries.json');
-      if (!resp.ok) throw new Error('Failed to load diary entries');
-      const entries = await resp.json();
-      renderDiaryEntries(entries);
-      if (diaryFilters) initDiaryFilters(entries);
-    } catch (err) {
-      console.error('Diary load error:', err);
-      if (diaryGrid) {
-        diaryGrid.innerHTML = '<p class="text-brown" style="grid-column:1/-1;text-align:center;padding:2rem;">No diary entries yet. Add entries to <code>/diary/entries.json</code>!</p>';
-      }
+    if (prefersReducedMotion.matches || !('IntersectionObserver' in window)) {
+      targets.forEach((el) => el.classList.add('is-visible'));
+      return;
     }
-  }
 
-  function renderDiaryEntries(entries, filter = 'all') {
-    if (!diaryGrid) return;
-    const filtered = filter === 'all' ? entries : entries.filter(e => e.tag === filter);
-    // Sort by date descending
-    filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
-    diaryGrid.innerHTML = filtered.map((entry, i) => `
-      <a href="/diary/entry.html?slug=${entry.slug}" class="diary-card-link fade-in" style="transition-delay: ${i * 0.06}s">
-        <article class="diary-card">
-          <div class="diary-card-header">
-            <span class="diary-card-emoji">${entry.emoji || '📝'}</span>
-            <span class="diary-card-tag ${entry.tag}">${entry.tag}</span>
-          </div>
-          <h3>${entry.title}</h3>
-          <p class="diary-card-preview">${entry.content}</p>
-          <div class="diary-card-footer">
-            <span class="diary-card-date">📅 ${entry.date}</span>
-            <span class="diary-card-read-more">Read more →</span>
-          </div>
-        </article>
-      </a>
-    `).join('');
-    requestAnimationFrame(() => {
-      diaryGrid.querySelectorAll('.fade-in').forEach(el => {
-        setTimeout(() => el.classList.add('visible'), 50);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
       });
-    });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    targets.forEach((el) => observer.observe(el));
   }
 
-  function initDiaryFilters(entries) {
-    const tags = ['all', ...new Set(entries.map(e => e.tag))];
-    diaryFilters.innerHTML = tags.map(tag =>
-      `<button class="diary-filter-btn ${tag === 'all' ? 'active' : ''}" data-filter="${tag}">${tag}</button>`
-    ).join('');
-    diaryFilters.querySelectorAll('.diary-filter-btn').forEach(btn => {
+  /* -----------------------------------------------------------
+     Experience accordions
+     ----------------------------------------------------------- */
+  function initAccordions() {
+    document.querySelectorAll('.exp-toggle').forEach((btn) => {
+      const panel = btn.closest('.exp-item')?.querySelector('.exp-hidden');
+      if (!panel) return;
+
+      if (!panel.id) panel.id = `panel-${Math.random().toString(36).slice(2, 9)}`;
+      btn.setAttribute('aria-controls', panel.id);
+      btn.setAttribute('aria-expanded', 'false');
+
       btn.addEventListener('click', () => {
-        diaryFilters.querySelectorAll('.diary-filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        renderDiaryEntries(entries, btn.dataset.filter);
+        const open = !panel.classList.contains('is-open');
+        panel.classList.toggle('is-open', open);
+        btn.classList.toggle('is-expanded', open);
+        btn.setAttribute('aria-expanded', String(open));
+        btn.querySelector('.exp-toggle__text').textContent = open ? 'Show less' : 'Show more';
       });
     });
   }
 
-  async function loadDiaryDetail() {
-    const params = new URLSearchParams(window.location.search);
-    const slug = params.get('slug');
-    if (!slug || !diaryDetail) return;
+  /* -----------------------------------------------------------
+     Footer year
+     ----------------------------------------------------------- */
+  function initYear() {
+    document.querySelectorAll('.current-year').forEach((el) => {
+      el.textContent = String(new Date().getFullYear());
+    });
+  }
 
-    try {
-      const resp = await fetch('/diary/entries.json');
-      if (!resp.ok) throw new Error('Failed to load entries');
-      const entries = await resp.json();
-      const entry = entries.find(e => e.slug === slug);
-      if (!entry) {
-        diaryDetail.innerHTML = '<p class="text-brown" style="text-align:center;padding:3rem;">Entry not found.</p>';
-        return;
-      }
+  /* -----------------------------------------------------------
+     Easter egg
+     Type "hike" & the fog rolls in off the Sound.
+     ----------------------------------------------------------- */
+  function initTrailhead() {
+    const word = 'hike';
+    let buffer = '';
 
-      document.title = `${entry.title} - Diary - Garrett Miguel Berliner`;
+    document.addEventListener('keydown', (e) => {
+      const tag = document.activeElement?.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || e.metaKey || e.ctrlKey || e.altKey) return;
+      if (e.key.length !== 1) return;
 
-      const detailText = (entry.detail || entry.content)
-        .split('\n')
-        .filter(p => p.trim())
-        .map(p => `<p>${p}</p>`)
-        .join('');
+      buffer = (buffer + e.key.toLowerCase()).slice(-word.length);
+      if (buffer !== word) return;
+      buffer = '';
 
-      const imageGallery = (entry.images && entry.images.length > 0)
-        ? `<div class="diary-detail-gallery">${entry.images.map(img =>
-            `<img src="${img}" alt="${entry.title}" class="diary-detail-image" loading="lazy">`
-          ).join('')}</div>`
-        : `<div class="diary-detail-image-placeholder">
-            <p>📷 Upload images to this entry by adding paths to the <code>images</code> array in <code>entries.json</code></p>
-          </div>`;
+      root.setAttribute('data-atmosphere', 'trailhead');
+      try {
+        localStorage.setItem('atmosphere', 'trailhead');
+      } catch (err) { /* no-op */ }
 
-      diaryDetail.innerHTML = `
-        <div class="diary-detail-header">
-          <span class="diary-card-emoji" style="font-size:3rem;">${entry.emoji || '📝'}</span>
-          <span class="diary-card-tag ${entry.tag}" style="font-size:0.85rem;">${entry.tag}</span>
-        </div>
-        <h1 class="diary-detail-title">${entry.title}</h1>
-        <div class="diary-detail-date">📅 ${entry.date}</div>
-        <div class="diary-detail-body">${detailText}</div>
-        ${imageGallery}
-      `;
+      const toggle = document.querySelector('.atmosphere');
+      if (toggle) toggle.setAttribute('aria-pressed', 'false');
 
-      diaryDetail.classList.add('visible');
-    } catch (err) {
-      console.error('Detail load error:', err);
-      diaryDetail.innerHTML = '<p class="text-brown" style="text-align:center;padding:3rem;">Could not load entry.</p>';
+      document.body.classList.add('is-fogged');
+      showMarker();
+      setTimeout(() => document.body.classList.remove('is-fogged'), 4200);
+    });
+
+    function showMarker() {
+      if (document.querySelector('.trail-marker')) return;
+
+      const marker = document.createElement('div');
+      marker.className = 'trail-marker';
+      marker.setAttribute('role', 'status');
+      marker.innerHTML =
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" ' +
+        'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+        '<path d="M3 20h18L14 5l-4 8-2-3z"/></svg>' +
+        '<span>Trail found. Fog rolling in off the Sound.</span>';
+
+      document.body.appendChild(marker);
+      requestAnimationFrame(() => marker.classList.add('is-visible'));
+
+      setTimeout(() => {
+        marker.classList.remove('is-visible');
+        setTimeout(() => marker.remove(), 600);
+      }, 4000);
     }
   }
 
-  // ----------------------
-  // 7. Page enter animation
-  // ----------------------
-  document.querySelector('main')?.classList.add('page-enter');
-
-  // ----------------------
-  // 8. Footer year
-  // ----------------------
-  const yearEl = document.querySelector('.current-year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-  // ----------------------
-  // 9. Smooth scroll for anchors
-  // ----------------------
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', e => {
-      e.preventDefault();
-      const target = document.querySelector(anchor.getAttribute('href'));
-      if (target) target.scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-
-  // ----------------------
-  // 10. Typewriter effect on hero heading
-  // ----------------------
-  const heroAccent = document.querySelector('.hero h1 .accent');
-  if (heroAccent && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const fullText = heroAccent.textContent;
-    heroAccent.textContent = '';
-    const cursor = document.createElement('span');
-    cursor.className = 'typewriter-cursor';
-    heroAccent.parentElement.appendChild(cursor);
-
-    let i = 0;
-    const typeSpeed = 70;
-    setTimeout(() => {
-      const typeInterval = setInterval(() => {
-        if (i < fullText.length) {
-          heroAccent.textContent += fullText[i];
-          i++;
-        } else {
-          clearInterval(typeInterval);
-          setTimeout(() => cursor.classList.add('done'), 1500);
-        }
-      }, typeSpeed);
-    }, 400);
+  /* -----------------------------------------------------------
+     Go
+     ----------------------------------------------------------- */
+  function init() {
+    initAtmosphere();
+    initHeader();
+    initNav();
+    initReveal();
+    initAccordions();
+    initYear();
+    initTrailhead();
   }
 
-  // ----------------------
-  // 11. Magnetic button effect (desktop)
-  // ----------------------
-  if (window.innerWidth > 768 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('.btn').forEach(btn => {
-      btn.addEventListener('mousemove', (e) => {
-        const rect = btn.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        const maxMove = 6;
-        const moveX = (x / rect.width) * maxMove * 2;
-        const moveY = (y / rect.height) * maxMove * 2;
-        btn.style.transform = `translate(${moveX}px, ${moveY}px)`;
-      });
-
-      btn.addEventListener('mouseleave', () => {
-        btn.style.transform = '';
-      });
-    });
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
-
-  // ----------------------
-  // 12. Animated counters on highlight items
-  // ----------------------
-  function animateCounter(el, target, suffix = '') {
-    const duration = 1500;
-    const start = performance.now();
-    const isFloat = String(target).includes('.');
-    
-    function update(now) {
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / duration, 1);
-      // Ease out cubic
-      const ease = 1 - Math.pow(1 - progress, 3);
-      const current = isFloat 
-        ? (target * ease).toFixed(2) 
-        : Math.round(target * ease);
-      el.textContent = current + suffix;
-      if (progress < 1) requestAnimationFrame(update);
-    }
-    requestAnimationFrame(update);
-  }
-
-  const counterEls = document.querySelectorAll('[data-counter]');
-  if (counterEls.length) {
-    const counterObs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const target = parseFloat(el.dataset.counter);
-          const suffix = el.dataset.counterSuffix || '';
-          animateCounter(el, target, suffix);
-          counterObs.unobserve(el);
-        }
-      });
-    }, { threshold: 0.5 });
-    counterEls.forEach(el => counterObs.observe(el));
-  }
-
-});
-  
+})();

@@ -1,140 +1,213 @@
 # garrettberliner.github.io
 
-Personal website for **Garrett Miguel Berliner** — Technical Program / Product Manager at Microsoft. Built with pure HTML, CSS, and vanilla JavaScript (no frameworks, no build tools).
+My personal site. Hand-written HTML, CSS, &amp; JavaScript - no framework, no build step, no dependencies.
+GitHub Pages serves these files exactly as they are in this repo.
 
-Live at: [garrettberliner.github.io](https://garrettberliner.github.io)
+**Live:** [garrettberliner.github.io](https://garrettberliner.github.io/)
 
 ---
 
-## Project Structure
+## What's here
 
 ```
-garrettberliner.github.io/
-├── index.html                  # Home / Hero page
-├── 404.html                    # Custom 404 error page
-├── LICENSE
-├── README.md
-│
-├── about/
-│   └── index.html              # About, skills, education, GCCUT, honors
-│
-├── experience/
-│   └── index.html              # Professional, research, teaching, presentations,
-│                                  leadership, professional development, education
-│
-├── publications/
-│   └── index.html              # Research & Publications (4 peer-reviewed papers)
-│
-├── cv/
-│   └── index.html              # CV page with embedded PDF viewer
-│
-├── resume/
-│   └── index.html              # Resume page with embedded PDF viewer
-│
-├── diary/                       # Diary section (currently hidden from nav)
-│   ├── index.html              # Diary listing — data-driven from JSON
-│   ├── entry.html              # Single diary entry detail page
-│   ├── entries.json            # Diary entries data
-│   └── HOW_TO_ADD_ENTRIES.md   # Instructions for adding new entries
-│
+.
+├── index.html              Home - hero
+├── about/index.html        Background, upbringing, skills & interests
+├── experience/index.html   Career, education, research, teaching, leadership (largest page)
+├── research/index.html     4 peer-reviewed publications + ScholarlyArticle structured data
+├── resume/index.html       1-page resume, inline PDF viewer + download
+├── cv/index.html           Full CV, inline PDF viewer + download
+├── 404.html                Not-found page (GitHub Pages serves this automatically)
+├── sitemap.xml             Search-engine sitemap
+├── robots.txt              Crawler rules
+├── LICENSE                 MIT
 └── src/
-    ├── assets/
-    │   ├── IMG_3456.jpg        # Profile photo (used on Home + About)
-    │   ├── Dec-25-Resume.pdf   # Resume PDF
-    │   └── Dec-25-CV.pdf       # CV PDF
-    │
-    ├── partials/
-    │   └── nav.html            # Shared navigation (loaded via fetch at runtime)
-    │
-    ├── scripts/
-    │   └── main.js             # All site JavaScript (~350 lines)
-    │
-    └── styles/
-        └── main.css            # All site CSS (~2,400 lines)
+    ├── styles/main.css     Everything visual (~1,690 lines)
+    ├── scripts/main.js     Everything interactive (~260 lines)
+    └── assets/             Images, PDFs, favicon - see src/assets/README.md
 ```
 
-## Architecture
+There is no `publications/` folder, no `diary/`, &amp; no `src/partials/`. Older versions of this
+README described those; they're gone.
 
-### Technology
+---
 
-- **Pure static HTML/CSS/JS** — no build tools, no bundler, no framework
-- **Google Fonts** — DM Serif Display (headings) + Inter (body)
-- **Navigation** — shared partial (`src/partials/nav.html`) fetched at runtime via `fetch()` and injected into each page's `#navbar` div
-- **Diary** — fully data-driven from `diary/entries.json`; cards and detail pages rendered dynamically by JavaScript
+## The design: "Ridgeline"
 
-### Design System
+The idea: **Seattle's skyline &amp; the Cascades ridgeline are the same horizon, seen from two sides
+of the same life.** The city is where I work hard; the mountains are where I reset.
+
+So the site has two atmospheres, toggled from the header:
+
+| | **Trailhead** | **Downtown** |
+|---|---|---|
+| Mood | Reconnect | Focus |
+| Paper | Fog cream | Rain slate |
+| Background pattern | Topographic contour lines | Seattle street grid, rotated 32° |
+| Horizon above the footer | Cascades ridgeline | Seattle skyline, Space Needle &amp; all |
+| Accent | Ember orange | Ember orange |
+
+Ember orange is deliberately the **same in both** - it's the through-line.
+
+The toggle doubles as light/dark mode. It's stored in `localStorage` under the key `atmosphere`
+&amp; first-time visitors get whatever their OS prefers.
+
+### Why the Seattle grid is rotated 32°
+
+Because the real one is. Downtown Seattle's street grid sits about 32° off true north. Small detail,
+but it's the difference between "a grid" &amp; "*that* grid."
+
+---
+
+## Design tokens
+
+All tokens live at the top of `src/styles/main.css`, inside `@layer tokens`. Change them there &amp;
+they propagate everywhere.
+
+### Trailhead (default, `:root`)
+
+| Token | Value | Used for |
+|---|---|---|
+| `--paper` | `#F4F0E6` | Page background |
+| `--paper-raised` | `#FAF7F0` | Cards |
+| `--ink` | `#1F2E26` | Body text |
+| `--ink-soft` | `#46574E` | Secondary text |
+| `--ink-faint` | `#7C8A81` | Metadata, captions |
+| `--ember` | `#BE5129` | Accent, links, active states |
+| `--moss` | `#4B6B4E` | Contours on About |
+| `--cedar` | `#6B4A32` | Contours on Experience |
+| `--ground` | `#3D5943` | Footer + the ground below the horizon |
+| `--rule` | hairline | Card borders, dividers |
+
+### Downtown (`[data-atmosphere='downtown']`)
 
 | Token | Value |
 |---|---|
-| Primary background | `#F5EDE3` (cream) |
-| Primary text | `#3B2A1F` (forest) |
-| Accent | `#D4764E` (burnt orange) |
-| Hover accent | `#C4553A` (terracotta) |
-| Card style | Glassmorphism — translucent backgrounds, `backdrop-filter: blur(16px)`, multi-layered shadows |
-| Card hover | 3D tilt (`perspective/rotateX/Y`) + gradient top border |
-| Border radius | `20px` (cards), `12px` (buttons) |
-| Transitions | `0.4s cubic-bezier(0.16, 1, 0.3, 1)` |
+| `--paper` | `#10151A` |
+| `--paper-raised` | `#171E25` |
+| `--ink` | `#E6EDF3` |
+| `--ember` | `#F0824C` (brighter, for contrast on dark) |
+| `--ground` | `#080C10` |
 
-### Key Features
+Both atmospheres were contrast-checked. Downtown is the riskier one - if you change a color there,
+re-check it.
 
-- **Glassmorphism cards** — frosted glass effect with `backdrop-filter` and layered shadows
-- **Animated gradient mesh** — warm-toned radial gradients animate behind the hero section
-- **Typewriter effect** — hero heading types character-by-character on page load
-- **Magnetic buttons** — CTAs subtly follow cursor on desktop (max ±6px)
-- **Drifting organic blobs** — background shapes animate with a gentle drift keyframe
-- **Publication shimmer** — gold gradient sweep on publication numbers on hover
-- **Timeline pulse** — expanding ring on experience timeline dots as they scroll into view
-- **Scroll-triggered animations** — `IntersectionObserver`-based fade/slide/stagger entrances
-- **Mobile hamburger** — full-screen overlay menu with body scroll lock
-- **Mobile PDF fallback** — on ≤768px, PDF iframes are replaced with download buttons
-- **Animated nav underlines** — gradient underline (`burnt-orange → amber`) on hover
-- **Frosted glass header** — header becomes translucent with `backdrop-filter` on scroll
-- **`prefers-reduced-motion`** — all animations suppressed for users who prefer reduced motion
-- **Focus-visible styles** — 2px burnt-orange outlines for keyboard navigation
-- **Skip-to-content link** — accessible jump link before the navigation
-- **Noscript fallback** — basic navigation renders if JavaScript fails
-- **Open Graph + Twitter Card meta** — rich previews on social media sharing
-- **Custom 404 page** — warm-styled with navigation back to the site
+---
 
-### Responsive Breakpoints
+## Typography
 
-| Breakpoint | Target |
+Three typefaces, one per identity:
+
+| Font | Where | Why |
+|---|---|---|
+| **Fraunces** | Headings | A variable serif with `SOFT` &amp; `WONK` axes - it's deliberately a little imperfect &amp; organic. The nature side. |
+| **Instrument Sans** | Body &amp; UI | Clean, neutral, urban. The city side. |
+| **JetBrains Mono** | Dates, places, venues, section labels | It's a code font. The developer-experience side. |
+
+Section labels get a `//` prefix via CSS (`::before`) - a comment marker, because that's the work I do.
+
+Loaded from Google Fonts in one request. **If you edit the font URL, keep the axes in alphabetical
+order** (lowercase standard axes first, then uppercase custom axes) or Google returns a 400.
+
+---
+
+## JavaScript
+
+`src/scripts/main.js` is one IIFE. Every function is an *enhancement* - the site is fully readable
+&amp; navigable with JavaScript turned off.
+
+| Function | What it does |
 |---|---|
-| `> 1024px` | Desktop (full layout) |
-| `≤ 1024px` | Tablet (single-column about hero, stacked doc hero) |
-| `≤ 768px` | Mobile (hamburger menu, stacked layouts, PDF fallback) |
-| `≤ 480px` | Small mobile (reduced typography, compact cards) |
+| `initAtmosphere` | Trailhead ⇄ Downtown toggle + `localStorage` persistence |
+| `initHeader` | Adds `.is-scrolled` to the header once you scroll |
+| `initNav` | Mobile menu open/close |
+| `initReveal` | Fades sections in on scroll (IntersectionObserver) |
+| `initAccordions` | "Show more" / "Show less" on experience cards |
+| `initYear` | Fills the copyright year |
+| `initTrailhead` | The easter egg |
 
-### JavaScript Modules (main.js)
+### The `js` class - important
 
-1. **Navbar loader** — fetches and injects shared nav partial
-2. **Header scroll effect** — adds frosted glass on scroll > 50px
-3. **Scroll-triggered animations** — `IntersectionObserver` for fade/slide/stagger
-4. **Experience toggles** — accordion show-more/less on experience items
-5. **Cursor glow** — radial gradient follows mouse on hero (desktop)
-6. **Diary loader** — fetches `entries.json`, renders cards + filters + detail pages
-7. **Page enter animation** — opacity/translateY entrance on `<main>`
-8. **Footer year** — auto-fills current year
-9. **Smooth scroll** — intercepts `#` anchor clicks
-10. **Typewriter** — character-by-character hero heading animation
-11. **Magnetic buttons** — cursor-following transform on `.btn` elements
-12. **Animated counters** — count-up animation for `[data-counter]` elements
+The inline `<head>` script on every page adds a `js` class to `<html>`. The fade-in CSS is written as
+`.js .fade-in { opacity: 0 }`, so **without JavaScript nothing is ever hidden**. If you remove that
+class, the whole site goes blank for anyone with JS disabled.
 
-## Local Development
+### Why the theme script is inline in `<head>`
+
+It has to run *before the first paint*, otherwise every page load flashes the wrong theme for a frame.
+A `defer`red script is too late. That's why it's duplicated in all 7 pages rather than living in
+`main.js`.
+
+### Easter egg
+
+Type `hike` anywhere on the site. Fog rolls in off the Sound. It's skippable, respects
+`prefers-reduced-motion`, &amp; never blocks content.
+
+---
+
+## Editing content
+
+### Add a publication
+
+In `research/index.html`, copy an existing `<article class="pub-card card fade-in">` block &amp; fill it
+in. Then add a matching entry to the `ScholarlyArticle` JSON-LD array in `<head>` - that's what
+Google Scholar &amp; search engines read.
+
+### Add a role
+
+In `experience/index.html`, copy an `<div class="exp-item fade-in" id="role-...">` block &amp; fill it
+in. Roles are grouped under the `// PROFESSIONAL`, `// RESEARCH`, `// EDUCATION` &amp; `// LEADERSHIP`
+section labels - drop it in the right group &amp; keep the dates in reverse-chronological order.
+
+### Swap a PDF
+
+Drop the new file in `src/assets/`, then update the `href`, `download`, &amp; `<iframe src>` in
+`resume/index.html` or `cv/index.html`. There are 3 references per page. Also bump the
+"Last Updated" stat &amp; the `<p>Last updated ...</p>` line.
+
+### Navigation
+
+The nav &amp; footer are **copy-pasted into all 7 pages**, on purpose. The old version fetched a shared
+partial at runtime, which meant every page briefly rendered with no navigation. Duplication is the
+cheaper problem.
+
+If you add a page: copy the `<header>` block, move `aria-current="page"` onto the right link, &amp; add
+the URL to `sitemap.xml`.
+
+---
+
+## Running it locally
+
+Any static file server works. From the repo root:
 
 ```bash
-# Clone the repo
-git clone https://github.com/garrettberliner/garrettberliner.github.io.git
-cd garrettberliner.github.io
-
-# Serve locally (any static server works)
-npx http-server -p 8080 -c-1
-
-# Open http://localhost:8080
+python -m http.server 8080
 ```
 
-No build step required — edit HTML/CSS/JS directly and refresh.
+Then open <http://127.0.0.1:8080>.
+
+Don't open the `.html` files directly with `file://` - all the links &amp; asset paths are
+root-relative (`/src/...`), so they'll 404.
+
+---
+
+## Deploying
+
+Push to `main`. GitHub Pages redeploys automatically, usually within a minute. There's no build
+step &amp; no CI - what's in the repo is what's on the site.
+
+---
+
+## Ground rules for future changes
+
+- **No build step.** If a change needs npm, it's the wrong change for this repo.
+- **Everything works without JavaScript.** Content first, enhancement second.
+- **Check both atmospheres.** A change that looks great in Trailhead can be unreadable in Downtown.
+- **Respect `prefers-reduced-motion`.** The block at the bottom of `main.css` handles it - don't add
+  animation that escapes it.
+
+---
 
 ## License
 
-MIT — see [LICENSE](LICENSE) for details.
+[MIT](LICENSE)

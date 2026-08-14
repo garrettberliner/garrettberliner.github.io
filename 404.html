@@ -1,45 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-atmosphere="trailhead">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Not Found - Garrett Miguel Berliner</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌈</text></svg>">
+    <meta name="description" content="This page wandered off the trail.">
+    <meta name="robots" content="noindex">
+
+    <meta name="theme-color" content="#F4F0E6" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#10151A" media="(prefers-color-scheme: dark)">
+    <link rel="icon" href="/src/assets/favicon.svg" type="image/svg+xml">
+
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('atmosphere');
+                var pref = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'downtown' : 'trailhead';
+                document.documentElement.setAttribute('data-atmosphere', saved || pref);
+                document.documentElement.classList.add('js');
+            } catch (e) {
+                document.documentElement.setAttribute('data-atmosphere', 'trailhead');
+                document.documentElement.classList.add('js');
+            }
+        })();
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1&family=Instrument+Sans:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/src/styles/main.css">
+    <script src="/src/scripts/main.js" defer></script>
 </head>
 <body>
-    <div id="navbar">
-        <noscript>
-            <nav style="display:flex;gap:1rem;padding:1rem 2rem;background:var(--color-cream,#F5EDE3);">
-                <a href="/about/">About</a><a href="/experience/">Experience</a><a href="/research/">Research</a><a href="/resume/">Resume</a><a href="/cv/">CV</a>
-            </nav>
-        </noscript>
-    </div>
-    <div class="page-wrapper page-wrapper--about">
-        <div class="organic-shape organic-shape--red" style="width:400px;height:400px;top:10%;right:-150px;"></div>
-        <div class="organic-shape organic-shape--orange" style="width:300px;height:300px;bottom:20%;left:-100px;"></div>
-        <div class="organic-shape organic-shape--brown" style="width:250px;height:250px;top:50%;left:20%;opacity:0.07;"></div>
+    <a href="#main-content" class="skip-link">Skip to content</a>
 
-        <main id="main-content" style="display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column;">
-            <section class="content-section fade-in" style="max-width:560px;">
-                <div style="font-size:6rem;margin-bottom:1rem;" aria-hidden="true">🍂</div>
-                <h1 style="font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);color:var(--color-forest);margin-bottom:0.75rem;">404</h1>
-                <p style="font-size:1.2rem;color:var(--color-brown);margin-bottom:0.5rem;font-family:var(--font-display);">Page Not Found</p>
-                <p style="color:var(--color-brown-light);margin-bottom:2.5rem;line-height:1.7;">
-                    Looks like this page wandered off the trail!
-                </p>
-                <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+    <header class="site-header">
+        <a href="/" class="brand" aria-label="Garrett Miguel Berliner - home">
+            <svg class="brand__mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <mask id="rl-peak" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+                    <rect width="32" height="32" fill="#fff"/>
+                    <path d="M6 25.5 13.2 9.6l3.9 6.2 3.2-3.2 5.5 12.9z" fill="#000"/>
+                </mask>
+                <g mask="url(#rl-peak)">
+                    <path d="M2.6 25.5a13.4 13.4 0 0 1 26.8 0" stroke="#D2603A" stroke-width="3.1"/>
+                    <path d="M6.3 25.5a9.7 9.7 0 0 1 19.4 0" stroke="#E0A93F" stroke-width="3.1"/>
+                    <path d="M10 25.5a6 6 0 0 1 12 0" stroke="#6E9376" stroke-width="3.1"/>
+                </g>
+                <path d="M6 25.5 13.2 9.6l3.9 6.2 3.2-3.2 5.5 12.9z" fill="currentColor"/>
+            </svg>
+            <span>Garrett Berliner</span>
+        </a>
+
+        <nav aria-label="Main">
+            <ul class="nav__list">
+                <li><a class="nav__link" href="/about/">About</a></li>
+                <li><a class="nav__link" href="/experience/">Experience</a></li>
+                <li><a class="nav__link" href="/research/">Research</a></li>
+                <li><a class="nav__link" href="/resume/">Resume</a></li>
+                <li><a class="nav__link" href="/cv/">CV</a></li>
+            </ul>
+        </nav>
+
+        <button class="atmosphere" type="button" aria-pressed="false">
+            <span class="atmosphere__dial" aria-hidden="true"><span class="atmosphere__sun"></span></span>
+            <span class="visually-hidden">Switch between the Trailhead &amp; Downtown atmospheres</span>
+            <span class="atmosphere__label atmosphere__label--trailhead" aria-hidden="true">Trailhead</span>
+            <span class="atmosphere__label atmosphere__label--downtown" aria-hidden="true">Downtown</span>
+        </button>
+
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+
+        <div class="nav-overlay"></div>
+    </header>
+
+    <div class="page-wrapper page-wrapper--lost">
+        <div class="terrain" aria-hidden="true"></div>
+
+        <main id="main-content">
+            <section class="lost fade-in">
+                <div class="lost__sign">
+                    <svg viewBox="0 0 120 96" fill="none" aria-hidden="true">
+                        <path d="M60 92V26" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M60 30h44l10 11-10 11H60z" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/>
+                        <path d="M60 58H16L6 69l10 11h44z" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+                <p class="lost__code">404</p>
+                <h1>Page Not <span>Found</span></h1>
+                <p class="lost__message">Looks like this page wandered off the trail!</p>
+
+                <div class="lost__actions">
                     <a href="/" class="btn btn-primary">Home</a>
-                    <!-- <a href="/about/" class="btn btn-secondary">About Me</a> -->
+                    <a href="/experience/" class="btn btn-secondary">Experience</a>
                 </div>
             </section>
         </main>
 
+        <div class="horizon" aria-hidden="true"></div>
+
         <footer>
-            <div class="footer-gradient-bar"></div>
             <div class="footer-content">
                 <div class="footer-brand">
                     <h3>Garrett Miguel Berliner</h3>
@@ -48,6 +110,7 @@
                 <div class="footer-links">
                     <div class="footer-links-group">
                         <h4>Navigate</h4>
+                        <a href="/">Home</a>
                         <a href="/experience/">Experience</a>
                         <a href="/research/">Research</a>
                     </div>
@@ -60,11 +123,9 @@
             </div>
             <div class="footer-bottom">
                 <span>&copy; <span class="current-year">2026</span> Garrett Miguel Berliner</span>
-                <span>Built with love 🫦 &amp; care 🌿</span>
+                <span>Built by hand in the Pacific Northwest</span>
             </div>
         </footer>
     </div>
-
-    <script src="/src/scripts/main.js"></script>
 </body>
 </html>
