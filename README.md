@@ -16,20 +16,20 @@ garrettberliner.github.io/
 ├── README.md
 │
 ├── about/
-│   └── index.html              # About, skills, education, GCCUT, honors
+│   └── index.html              # Photo + short overview paragraph
 │
 ├── experience/
-│   └── index.html              # Professional, research, teaching, presentations,
-│                                  leadership, professional development, education
+│   └── index.html              # Bulleted list: professional, education,
+│                                  research & teaching, leadership
 │
-├── publications/
-│   └── index.html              # Research & Publications (4 peer-reviewed papers)
+├── research/
+│   └── index.html              # Bulleted list of publications & theses
 │
 ├── cv/
-│   └── index.html              # CV page with embedded PDF viewer
+│   └── index.html              # Link to the CV PDF
 │
 ├── resume/
-│   └── index.html              # Resume page with embedded PDF viewer
+│   └── index.html              # Link to the resume PDF
 │
 ├── diary/                       # Diary section (currently hidden from nav)
 │   ├── index.html              # Diary listing — data-driven from JSON
@@ -39,18 +39,16 @@ garrettberliner.github.io/
 │
 └── src/
     ├── assets/
-    │   ├── IMG_3456.jpg        # Profile photo (used on Home + About)
+    │   ├── IMG_3456.jpg        # Profile photo (Home)
+    │   ├── IMG_6428.jpg        # Profile photo (About)
     │   ├── Dec-25-Resume.pdf   # Resume PDF
     │   └── Dec-25-CV.pdf       # CV PDF
     │
-    ├── partials/
-    │   └── nav.html            # Shared navigation (loaded via fetch at runtime)
-    │
     ├── scripts/
-    │   └── main.js             # All site JavaScript (~350 lines)
+    │   └── main.js             # Mobile menu behavior, diary rendering
     │
     └── styles/
-        └── main.css            # All site CSS (~2,400 lines)
+        └── main.css            # All site CSS
 ```
 
 ## Architecture
@@ -59,7 +57,7 @@ garrettberliner.github.io/
 
 - **Pure static HTML/CSS/JS** — no build tools, no bundler, no framework
 - **Google Fonts** — DM Serif Display (headings) + Inter (body)
-- **Navigation** — shared partial (`src/partials/nav.html`) fetched at runtime via `fetch()` and injected into each page's `#navbar` div
+- **Navigation** — static header markup in every page (no runtime fetch), so it renders instantly and works without JavaScript. The current page's link has `class="active" aria-current="page"` set in that page's HTML. When editing the nav, update all pages: `index.html`, `about/`, `experience/`, `research/`, `resume/`, `cv/`, `diary/index.html`, `diary/entry.html`, `404.html`
 - **Diary** — fully data-driven from `diary/entries.json`; cards and detail pages rendered dynamically by JavaScript
 
 ### Design System
@@ -71,30 +69,22 @@ garrettberliner.github.io/
 | Accent | `#D4764E` (burnt orange) |
 | Hover accent | `#C4553A` (terracotta) |
 | Card style | Glassmorphism — translucent backgrounds, `backdrop-filter: blur(16px)`, multi-layered shadows |
-| Card hover | 3D tilt (`perspective/rotateX/Y`) + gradient top border |
+| Card hover | Shadow + gradient top border (no movement) |
 | Border radius | `20px` (cards), `12px` (buttons) |
-| Transitions | `0.4s cubic-bezier(0.16, 1, 0.3, 1)` |
+| Transitions | Color, shadow, and opacity only — no motion animations |
 
 ### Key Features
 
-- **Glassmorphism cards** — frosted glass effect with `backdrop-filter` and layered shadows
-- **Animated gradient mesh** — warm-toned radial gradients animate behind the hero section
-- **Typewriter effect** — hero heading types character-by-character on page load
-- **Magnetic buttons** — CTAs subtly follow cursor on desktop (max ±6px)
-- **Drifting organic blobs** — background shapes animate with a gentle drift keyframe
-- **Publication shimmer** — gold gradient sweep on publication numbers on hover
-- **Timeline pulse** — expanding ring on experience timeline dots as they scroll into view
-- **Scroll-triggered animations** — `IntersectionObserver`-based fade/slide/stagger entrances
-- **Mobile hamburger** — full-screen overlay menu with body scroll lock
-- **Mobile PDF fallback** — on ≤768px, PDF iframes are replaced with download buttons
-- **Animated nav underlines** — gradient underline (`burnt-orange → amber`) on hover
-- **Frosted glass header** — header becomes translucent with `backdrop-filter` on scroll
-- **`prefers-reduced-motion`** — all animations suppressed for users who prefer reduced motion
+- **No motion animations** — no entrance, typewriter, floating, drifting, pulsing, or hover-lift effects
+- **Simple list pages** — Experience and Research are plain bulleted lists
+- **Direct PDF links** — Resume and CV pages link straight to the PDFs
+- **Mobile menu** — full-screen menu at ≤768px; closes via the toggle, a link, tapping empty space, Escape, or widening past the breakpoint; keeps keyboard focus inside while open
+- **Nav states** — hover shows a light background; only the current page is underlined
 - **Focus-visible styles** — 2px burnt-orange outlines for keyboard navigation
 - **Skip-to-content link** — accessible jump link before the navigation
-- **Noscript fallback** — basic navigation renders if JavaScript fails
+- **No-JavaScript support** — an inline `<head>` script adds `js` to `<html>`; without it, mobile nav links render inline instead of behind the menu button
 - **Open Graph + Twitter Card meta** — rich previews on social media sharing
-- **Custom 404 page** — warm-styled with navigation back to the site
+- **Custom 404 page** — with navigation back to the site
 
 ### Responsive Breakpoints
 
@@ -107,18 +97,8 @@ garrettberliner.github.io/
 
 ### JavaScript Modules (main.js)
 
-1. **Navbar loader** — fetches and injects shared nav partial
-2. **Header scroll effect** — adds frosted glass on scroll > 50px
-3. **Scroll-triggered animations** — `IntersectionObserver` for fade/slide/stagger
-4. **Experience toggles** — accordion show-more/less on experience items
-5. **Cursor glow** — radial gradient follows mouse on hero (desktop)
-6. **Diary loader** — fetches `entries.json`, renders cards + filters + detail pages
-7. **Page enter animation** — opacity/translateY entrance on `<main>`
-8. **Footer year** — auto-fills current year
-9. **Smooth scroll** — intercepts `#` anchor clicks
-10. **Typewriter** — character-by-character hero heading animation
-11. **Magnetic buttons** — cursor-following transform on `.btn` elements
-12. **Animated counters** — count-up animation for `[data-counter]` elements
+1. **Mobile menu** — open/close, Escape, tap-outside, focus trap, `inert` background, breakpoint reset
+2. **Diary loader** — fetches `entries.json`, renders cards, filters, and detail pages (entry text is HTML-escaped)
 
 ## Local Development
 

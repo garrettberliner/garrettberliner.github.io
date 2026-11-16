@@ -4,27 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Not Found - Garrett Miguel Berliner</title>
+    <meta name="description" content="The page you were looking for could not be found.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌈</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>document.documentElement.classList.add('js');</script>
     <link rel="stylesheet" href="/src/styles/main.css">
 </head>
 <body>
-    <div id="navbar">
-        <noscript>
-            <nav style="display:flex;gap:1rem;padding:1rem 2rem;background:var(--color-cream,#F5EDE3);">
-                <a href="/about/">About</a><a href="/experience/">Experience</a><a href="/research/">Research</a><a href="/resume/">Resume</a><a href="/cv/">CV</a>
-            </nav>
-        </noscript>
-    </div>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <header>
+        <a href="/" class="header-logo header-logo--home" aria-label="Garrett Berliner - Home" title="Home">
+            <span aria-hidden="true">🌈</span>
+        </a>
+
+        <nav aria-label="Main navigation">
+            <ul class="nav-menu" id="primary-nav">
+                <li><a href="/about/">About</a></li>
+                <li><a href="/experience/">Experience</a></li>
+                <li><a href="/research/">Research</a></li>
+                <li><a href="/resume/">Resume</a></li>
+                <li><a href="/cv/">CV</a></li>
+            </ul>
+        </nav>
+
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
     <div class="page-wrapper page-wrapper--about">
         <div class="organic-shape organic-shape--red" style="width:400px;height:400px;top:10%;right:-150px;"></div>
         <div class="organic-shape organic-shape--orange" style="width:300px;height:300px;bottom:20%;left:-100px;"></div>
         <div class="organic-shape organic-shape--brown" style="width:250px;height:250px;top:50%;left:20%;opacity:0.07;"></div>
 
-        <main id="main-content" style="display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column;">
-            <section class="content-section fade-in" style="max-width:560px;">
+        <main id="main-content" tabindex="-1" style="display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column;">
+            <section class="content-section" style="max-width:560px;">
                 <div style="font-size:6rem;margin-bottom:1rem;" aria-hidden="true">🍂</div>
                 <h1 style="font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);color:var(--color-forest);margin-bottom:0.75rem;">404</h1>
                 <p style="font-size:1.2rem;color:var(--color-brown);margin-bottom:0.5rem;font-family:var(--font-display);">Page Not Found</p>
@@ -39,32 +56,23 @@
         </main>
 
         <footer>
-            <div class="footer-gradient-bar"></div>
             <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>Garrett Miguel Berliner</h3>
-                    <p>Passionate about connecting people through technology 💻, data science 📊, &amp; education 📖.</p>
-                </div>
                 <div class="footer-links">
                     <div class="footer-links-group">
-                        <h4>Navigate</h4>
+                        <h2>Navigate</h2>
                         <a href="/experience/">Experience</a>
                         <a href="/research/">Research</a>
                     </div>
                     <div class="footer-links-group">
-                        <h4>Connect</h4>
+                        <h2>Connect</h2>
                         <a href="https://www.linkedin.com/in/garrettberliner" target="_blank" rel="noopener">LinkedIn</a>
                         <a href="mailto:garrettberliner@gmail.com">Email</a>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <span>&copy; <span class="current-year">2026</span> Garrett Miguel Berliner</span>
-                <span>Built with love 🫦 &amp; care 🌿</span>
-            </div>
         </footer>
     </div>
 
-    <script src="/src/scripts/main.js"></script>
+    <script src="/src/scripts/main.js" onerror="document.documentElement.classList.remove('js')"></script>
 </body>
 </html>

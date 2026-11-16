@@ -15,113 +15,43 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>document.documentElement.classList.add('js');</script>
     <link rel="stylesheet" href="/src/styles/main.css">
 </head>
 <body>
-    <div id="navbar">
-        <noscript>
-            <nav style="display:flex;gap:1rem;padding:1rem 2rem;background:var(--color-cream,#F5EDE3);">
-                <a href="/about/">About</a><a href="/experience/">Experience</a><a href="/research/">Research</a><a href="/resume/">Resume</a><a href="/cv/">CV</a>
-            </nav>
-        </noscript>
-    </div>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <header>
+        <a href="/" class="header-logo header-logo--home" aria-label="Garrett Berliner - Home" title="Home">
+            <span aria-hidden="true">🌈</span>
+        </a>
+
+        <nav aria-label="Main navigation">
+            <ul class="nav-menu" id="primary-nav">
+                <li><a href="/about/">About</a></li>
+                <li><a href="/experience/">Experience</a></li>
+                <li><a href="/research/">Research</a></li>
+                <li><a href="/resume/" class="active" aria-current="page">Resume</a></li>
+                <li><a href="/cv/">CV</a></li>
+            </ul>
+        </nav>
+
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
     <div class="page-wrapper page-wrapper--resume">
-        <div class="organic-shape organic-shape--red" style="width:400px;height:400px;top:10%;right:-180px;"></div>
-        <div class="organic-shape organic-shape--orange" style="width:300px;height:300px;bottom:20%;left:-120px;"></div>
-
-        <main id="main-content">
-            <!-- Document Hero -->
-            <section class="doc-hero fade-in">
-                <div class="doc-hero-content">
-                    <span class="doc-hero-eyebrow">📄 Resume</span>
-                    <h1 class="doc-hero-title">Professional<br><span>Summary</span></h1>
-                    <p class="doc-hero-subtitle">A concise overview of my experience, skills, &amp; education - available for download or inline viewing.</p>
-                    <div class="doc-hero-actions">
-                        <a href="/src/assets/Dec-25-Resume.pdf" download="Garrett_Berliner_Resume.pdf" class="btn btn-primary">Download PDF →</a>
-                        <a href="#viewer" class="btn btn-secondary">View Below ↓</a>
-                    </div>
-                </div>
-                <div class="doc-hero-meta">
-                    <div class="doc-stat">
-                        <span class="doc-stat-number">1</span>
-                        <span class="doc-stat-label">Page</span>
-                    </div>
-                    <div class="doc-stat">
-                        <span class="doc-stat-number">Dec '25</span>
-                        <span class="doc-stat-label">Last Updated</span>
-                    </div>
-                    <div class="doc-stat">
-                        <span class="doc-stat-number">PDF</span>
-                        <span class="doc-stat-label">Format</span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Quick Links -->
-            <section class="doc-quick-links fade-in">
-                <a href="/experience/" class="doc-quick-link">
-                    <span>💼</span> Full Experience
-                </a>
-                <a href="/research/" class="doc-quick-link">
-                    <span>📜</span> Publications
-                </a>
-                <a href="/cv/" class="doc-quick-link">
-                    <span>📋</span> Full CV
-                </a>
-                <a href="/about/" class="doc-quick-link">
-                    <span>👤</span> About Me
-                </a>
-            </section>
-
-            <!-- PDF Viewer -->
-            <section id="viewer" class="content-section fade-in">
-                <div class="doc-section">
-                    <div class="doc-card">
-                        <div class="doc-header">
-                            <div class="doc-info">
-                                <h2>Garrett Berliner - Resume</h2>
-                                <p>Last updated December 2025</p>
-                            </div>
-                            <a href="/src/assets/Dec-25-Resume.pdf" download="Garrett_Berliner_Resume.pdf" class="btn btn-primary">Download →</a>
-                        </div>
-                        <iframe src="/src/assets/Dec-25-Resume.pdf" class="doc-embed" title="Resume PDF"></iframe>
-                        <div class="mobile-pdf-fallback">
-                            <span class="mobile-pdf-icon" aria-hidden="true">📄</span>
-                            <h3>View Resume</h3>
-                            <p>PDF viewing works best on desktop. Download for the full experience:</p>
-                            <a href="/src/assets/Dec-25-Resume.pdf" download="Garrett_Berliner_Resume.pdf" class="btn btn-primary">Download Resume PDF →</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <main id="main-content" tabindex="-1" class="document-link-page">
+            <h1>Resume</h1>
+            <a href="/src/assets/Dec-25-Resume.pdf" class="btn btn-primary">Open Resume PDF →</a>
         </main>
-
         <footer>
             <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>Garrett Miguel Berliner</h3>
-                    <p>Passionate about connecting people through technology 💻, data science 📊, &amp; education 📖.</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-links-group">
-                        <h4>Navigate</h4>
-                        <a href="/experience/">Experience</a>
-                        <a href="/research/">Research</a>
-                    </div>
-                    <div class="footer-links-group">
-                        <h4>Connect</h4>
-                        <a href="https://www.linkedin.com/in/garrettberliner" target="_blank" rel="noopener">LinkedIn</a>
-                        <a href="mailto:garrettberliner@gmail.com">Email</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span>&copy; <span class="current-year">2026</span> Garrett Miguel Berliner</span>
-                <span>Built with love 🫦 &amp; care 🌿</span>
+                <div class="footer-links"><div class="footer-links-group"><h2>Navigate</h2><a href="/experience/">Experience</a><a href="/research/">Research</a></div><div class="footer-links-group"><h2>Connect</h2><a href="https://www.linkedin.com/in/garrettberliner" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:garrettberliner@gmail.com">Email</a></div></div>
             </div>
         </footer>
     </div>
-
-    <script src="/src/scripts/main.js"></script>
+    <script src="/src/scripts/main.js" onerror="document.documentElement.classList.remove('js')"></script>
 </body>
 </html>
