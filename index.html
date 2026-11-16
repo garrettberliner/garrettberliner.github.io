@@ -15,16 +15,32 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>document.documentElement.classList.add('js');</script>
     <link rel="stylesheet" href="/src/styles/main.css">
 </head>
 <body>
-    <div id="navbar">
-        <noscript>
-            <nav style="display:flex;gap:1rem;padding:1rem 2rem;background:var(--color-cream,#F5EDE3);">
-                <a href="/about/">About</a><a href="/experience/">Experience</a><a href="/research/">Research</a><a href="/resume/">Resume</a><a href="/cv/">CV</a>
-            </nav>
-        </noscript>
-    </div>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <header>
+        <a href="/" class="header-logo header-logo--home" aria-label="Garrett Berliner - Home" title="Home">
+            <span aria-hidden="true">🌈</span>
+        </a>
+
+        <nav aria-label="Main navigation">
+            <ul class="nav-menu" id="primary-nav">
+                <li><a href="/about/">About</a></li>
+                <li><a href="/experience/">Experience</a></li>
+                <li><a href="/research/">Research</a></li>
+                <li><a href="/resume/">Resume</a></li>
+                <li><a href="/cv/">CV</a></li>
+            </ul>
+        </nav>
+
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
     <div class="page-wrapper page-wrapper--hero">
         <!-- Organic background shapes -->
         <div class="organic-shape organic-shape--red" style="width:500px;height:500px;top:-100px;right:-200px;"></div>
@@ -33,48 +49,48 @@
         <div class="organic-shape organic-shape--orange" style="width:250px;height:250px;top:40%;left:10%;opacity:0.07;"></div>
         <div class="organic-shape organic-shape--red" style="width:200px;height:200px;bottom:10%;left:30%;opacity:0.06;"></div>
 
-        <main id="main-content">
+        <main id="main-content" tabindex="-1">
             <!-- Hero Section -->
             <section class="hero">
-                <div class="hero-content hero-stagger fade-in">
+                <div class="hero-content">
                     <div class="hero-eyebrow">
-                        <div class="dot-pulse"></div>
+                        <div class="dot-pulse" aria-hidden="true"></div>
                         <span>Technical Program / Product Manager @ Microsoft</span>
                     </div>
                     <h1>Hi! I'm <span class="accent">Garrett 😄</span></h1>
                     <p class="hero-description">
-                        I'm forever curious about the intersection of technology, data science, &amp; education 🚀. Currently, I lead cross-organizational programs &amp; internal products within <a href="https://www.microsoft.com/en-us/windows">Windows + Devices</a> that improve the developer experience for over 6,000 software engineers through integrating &amp; leveraging AI in their workflows to empower over 1.2 billion monthly active Windows users. Before Microsoft, I worked as both a Software Engineer &amp; Machine Learning Engineer intern, along with conducted <a href="/research/">computing education research</a> at Oregon State University under <a href="https://web.engr.oregonstate.edu/~parhammj/">Dr. Jennifer Parham-Mocello</a>.
+                        I'm forever curious about the intersection of technology, data science, &amp; education 🚀. Currently, I lead cross-organizational programs &amp; internal products within <a href="https://www.microsoft.com/en-us/windows" target="_blank" rel="noopener">Windows + Devices</a> that improve the developer experience for over 6,000 software engineers and support more than 1.6 billion monthly active Windows devices. Before Microsoft, I worked as both a Software Engineer &amp; Machine Learning Engineer intern, along with conducting <a href="/research/">computing education research</a> at Oregon State University under <a href="https://web.engr.oregonstate.edu/~parhammj/" target="_blank" rel="noopener">Dr. Jennifer Parham-Mocello</a>.
                     </p>
                     <div class="hero-cta">
                         <a href="/experience/" class="btn btn-primary">View Experience →</a>
                         <a href="/about/" class="btn btn-secondary">About Me</a>
                     </div>
                 </div>
-                <div class="hero-visual fade-in-right">
+                <div class="hero-visual">
                     <div class="hero-image-wrapper">
-                        <img src="/src/assets/IMG_3456.jpg" alt="Garrett Berliner" loading="eager">
-                        <span class="hero-leaf">🍃</span>
-                        <span class="hero-leaf">🌿</span>
-                        <span class="hero-leaf">🍂</span>
+                        <img src="/src/assets/IMG_3456.jpg" alt="Portrait of Garrett Berliner" loading="eager">
+                        <span class="hero-leaf" aria-hidden="true">🍃</span>
+                        <span class="hero-leaf" aria-hidden="true">🌿</span>
+                        <span class="hero-leaf" aria-hidden="true">🍂</span>
                     </div>
                 </div>
             </section>
 
             <!-- Quick Highlights
-            <section class="content-section fade-in">
+            <section class="content-section">
                 <div class="section-header">
                     <div class="section-divider">
-                        <span class="leaf-icon">🌱</span>
+                        <span class="leaf-icon" aria-hidden="true">🌱</span>
                         <hr>
                     </div>
                     <h2>At a Glance</h2>
                     <p>A snapshot of what I've been up to:</p>
                 </div>
-                <div class="about-highlights stagger-children">
+                <div class="about-highlights">
                     <div class="highlight-item">
                         <span class="icon">💻</span>
                         <h4>Microsoft</h4>
-                        <p>TPM on Windows Engineering Systems, AI Developer Productivity</p>
+                        <p>TPM on Windows Engineering Systems &amp; Developer Productivity</p>
                     </div>
                     <div class="highlight-item">
                         <span class="icon">🎓</span>
@@ -97,33 +113,24 @@
 
         <!-- Footer -->
         <footer>
-            <div class="footer-gradient-bar"></div>
             <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>Garrett Miguel Berliner</h3>
-                    <p>Passionate about connecting people through technology 💻, data science 📊, &amp; education 📖.</p>
-                </div>
                 <div class="footer-links">
                     <div class="footer-links-group">
-                        <h4>Navigate</h4>
+                        <h2>Navigate</h2>
                         <a href="/about/">About</a>
                         <a href="/experience/">Experience</a>
                         <!-- <a href="/diary/">Diary</a> -->
                     </div>
                     <div class="footer-links-group">
-                        <h4>Connect</h4>
+                        <h2>Connect</h2>
                         <a href="https://www.linkedin.com/in/garrettberliner" target="_blank" rel="noopener">LinkedIn</a>
                         <a href="mailto:garrettberliner@gmail.com">Email</a>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <span>&copy; <span class="current-year">2026</span> Garrett Miguel Berliner</span>
-                <span>Built with love 🫶 &amp; care 🌿</span>
-            </div>
         </footer>
     </div>
 
-    <script src="/src/scripts/main.js"></script>
+    <script src="/src/scripts/main.js" onerror="document.documentElement.classList.remove('js')"></script>
 </body>
 </html>

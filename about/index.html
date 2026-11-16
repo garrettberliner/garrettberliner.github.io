@@ -15,111 +15,71 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>document.documentElement.classList.add('js');</script>
     <link rel="stylesheet" href="/src/styles/main.css">
 </head>
 <body>
-    <div id="navbar">
-        <noscript>
-            <nav style="display:flex;gap:1rem;padding:1rem 2rem;background:var(--color-cream,#F5EDE3);">
-                <a href="/about/">About</a><a href="/experience/">Experience</a><a href="/research/">Research</a><a href="/resume/">Resume</a><a href="/cv/">CV</a>
-            </nav>
-        </noscript>
-    </div>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <header>
+        <a href="/" class="header-logo header-logo--home" aria-label="Garrett Berliner - Home" title="Home">
+            <span aria-hidden="true">🌈</span>
+        </a>
+
+        <nav aria-label="Main navigation">
+            <ul class="nav-menu" id="primary-nav">
+                <li><a href="/about/" class="active" aria-current="page">About</a></li>
+                <li><a href="/experience/">Experience</a></li>
+                <li><a href="/research/">Research</a></li>
+                <li><a href="/resume/">Resume</a></li>
+                <li><a href="/cv/">CV</a></li>
+            </ul>
+        </nav>
+
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
     <div class="page-wrapper page-wrapper--about">
         <div class="organic-shape organic-shape--red" style="width:400px;height:400px;top:5%;right:-150px;"></div>
         <div class="organic-shape organic-shape--orange" style="width:350px;height:350px;bottom:10%;left:-100px;"></div>
         <div class="organic-shape organic-shape--brown" style="width:300px;height:300px;bottom:40%;right:-120px;"></div>
 
-        <main id="main-content">
+        <main id="main-content" tabindex="-1">
             <section class="content-section">
                 <div class="about-hero">
-                    <div class="about-hero-photo fade-in-left">
-                        <div class="about-hero-glow"></div>
-                        <img src="/src/assets/IMG_6428.jpg" alt="Garrett Berliner">
+                    <div class="about-hero-photo">
+                        <img src="/src/assets/IMG_6428.jpg" alt="Garrett Berliner outdoors">
                     </div>
-                    <div class="about-hero-card fade-in-right">
-                        <span class="about-hero-eyebrow">🧑 Here's a bit about myself :)!</span>
+                    <div class="about-hero-card">
+                        <h1 class="about-hero-eyebrow">About Me</h1>
                         <p>
-                            I grew up moving around the United States - in Puerto Rico, Texas, Virginia, Michigan, New York, Washington D.C., &amp; Oregon, which first-hand showed my the immense value &amp; importance diverse perspectives provide 🌎. During this time, the only way I could keep in touch with friends was through technology &amp; the internet, which spark my initial curiosity for compter science . 
-                        </p>
-                        <p>
-                            During my undergraduate &amp; master's, I spent over 4 years conducting <a href="/research/">Computing Education Research</a>  under <a href="https://web.engr.oregonstate.edu/~parhammj/">Dr. Jennifer Parham-Mocello</a>. We investigated innovative practices to make CS more accessible &amp; engaging through game-oriented curriculum, along with how to most effectively support &amp; empower K-12 CS teachers without a background in CS. This netted4 double-blind peer-reviewed <a href="/research/">publications</a> &amp; 2 theses.
-                        </p>
-                        <p>
-                            In my free time, I love travelling &amp; experience new things! I'm extremely fortunate to live in the Pacific Northwest &amp; take the opportunity to immerse myself in nature whenever I can. A life-goal of mine is to visit all 7 continents ✈️ &amp; all 50 states. Recently, I've been enjoying cooking, playing soccer, hosting board game nights with friends, &amp; hiking 🌲.
+                            I grew up across Puerto Rico, Texas, Virginia, Michigan, New York, Washington, D.C., &amp; Oregon, which taught me to value different perspectives and sparked my interest in technology. I later spent four years conducting <a href="/research/">computing education research</a> at Oregon State University, contributing to four peer-reviewed publications and two theses. Today, I work as a Technical Program Manager at Microsoft. Outside of work, I enjoy traveling, cooking, playing soccer, hosting board-game nights, &amp; hiking in the Pacific Northwest.
                         </p>
                     </div>
-                </div>
-            </section>
-
-            <!-- Skills & Highlights -->
-            <section class="content-section fade-in">
-                <div class="section-header">
-                    <div class="section-divider"><span class="leaf-icon">🍂</span><hr></div>
-                    <h2>Skills &amp; Interests</h2>
-                </div>
-                <div class="about-highlights stagger-children">
-                    <div class="highlight-item">
-                        <span class="icon">🏗️</span>
-                        <h4>Technical Product / Program Management</h4>
-                        <p>Cross-organizational coordination &amp; collaboration, customer interviews, stakeholder presentations, roadmapping, 0→1 product development</p>
-                    </div>
-                    <div class="highlight-item">
-                        <span class="icon">📊</span>
-                        <h4>Statistics &amp; Data Science</h4>
-                        <p>Data analysis, ML models, telemetry forecasting, Qualitative &amp; Quantitative Analysis, TensorFlow, Pandas, Databricks, PowerBI</p>
-                    </div>
-                    <div class="highlight-item">
-                        <span class="icon">🤖</span>
-                        <h4>Developer Experience &amp; Productivity</h4>
-                        <p>AI-forward developer tooling, onboarding optimization, data centralization, &amp; engineering systems health tracking</p>
-                    </div>
-                    <div class="highlight-item">
-                        <span class="icon">🧠</span>
-                        <h4>Artificial Intelligence &amp; Machine Learning</h4>
-                        <p>Undergraduate CS concentration in AI; additionally worked as a Machine Learning Engineer at HP Inc. in the summer of 2023.</p>
-                    </div>
-                    <div class="highlight-item">
-                        <span class="icon">📚</span>
-                        <h4>Curriculum Development &amp; Computing Education</h4>
-                        <p><a href="/research/">4 publications</a>, 2 theses, NSF Research Experience for Undergraduates (REU), SIGCSE presenter, K-12 CS education, &amp; computational thinking</p>
-                    </div>
-                    <div class="highlight-item">
-                        <span class="icon">🎓</span>
-                        <h4>Teaching &amp; Mentorship</h4>
-                        <p>GTA for 500+ students, product manager for student teams &amp; senior capstone project, held weekly recitations, grading demos &amp; hundreds of office hours</p>
-                    </div>
-
                 </div>
             </section>
         </main>
 
         <footer>
             <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>Garrett Miguel Berliner</h3>
-                    <p>Passionate about connecting people through technology 💻, data science 📊, &amp; education 📖.</p>
-                </div>
                 <div class="footer-links">
                     <div class="footer-links-group">
-                        <h4>Navigate</h4>
+                        <h2>Navigate</h2>
                         <a href="/experience/">Experience</a>
                         <a href="/research/">Research</a>
                     </div>
                     <div class="footer-links-group">
-                        <h4>Connect</h4>
+                        <h2>Connect</h2>
                         <a href="https://www.linkedin.com/in/garrettberliner" target="_blank" rel="noopener">LinkedIn</a>
                         <a href="mailto:garrettberliner@gmail.com">Email</a>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <span>&copy; <span class="current-year">2026</span> Garrett Miguel Berliner</span>
-                <span>Built with love 🫶 &amp; care 🌿</span>
-            </div>
         </footer>
     </div>
 
-    <script src="/src/scripts/main.js"></script>
+    <script src="/src/scripts/main.js" onerror="document.documentElement.classList.remove('js')"></script>
 </body>
 </html>

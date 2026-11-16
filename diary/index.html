@@ -15,68 +15,76 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>document.documentElement.classList.add('js');</script>
     <link rel="stylesheet" href="/src/styles/main.css">
 </head>
 <body>
-    <div id="navbar">
-        <noscript>
-            <nav style="display:flex;gap:1rem;padding:1rem 2rem;background:var(--color-cream,#F5EDE3);">
-                <a href="/about/">About</a><a href="/experience/">Experience</a><a href="/research/">Research</a><a href="/resume/">Resume</a><a href="/cv/">CV</a>
-            </nav>
-        </noscript>
-    </div>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <header>
+        <a href="/" class="header-logo header-logo--home" aria-label="Garrett Berliner - Home" title="Home">
+            <span aria-hidden="true">🌈</span>
+        </a>
+
+        <nav aria-label="Main navigation">
+            <ul class="nav-menu" id="primary-nav">
+                <li><a href="/about/">About</a></li>
+                <li><a href="/experience/">Experience</a></li>
+                <li><a href="/research/">Research</a></li>
+                <li><a href="/resume/">Resume</a></li>
+                <li><a href="/cv/">CV</a></li>
+            </ul>
+        </nav>
+
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
     <div class="page-wrapper page-wrapper--about">
         <div class="organic-shape organic-shape--green" style="width:400px;height:400px;top:5%;right:-150px;"></div>
         <div class="organic-shape organic-shape--orange" style="width:350px;height:350px;bottom:20%;left:-120px;"></div>
 
-        <main id="main-content">
+        <main id="main-content" tabindex="-1">
             <section class="content-section">
-                <div class="section-header fade-in">
-                    <div class="section-divider"><span class="leaf-icon">📔</span><hr></div>
-                    <h2>Diary &amp; Hobbies</h2>
+                <div class="section-header">
+                    <div class="section-divider"><span class="leaf-icon" aria-hidden="true">📔</span><hr></div>
+                    <h1>Diary &amp; Hobbies</h1>
                     <p>Personal reflections, adventures, &amp; things I enjoy outside of work.</p>
                 </div>
 
-                <div class="diary-intro fade-in">
+                <div class="diary-intro">
                     <p>
                         This is my little corner of the internet where I share thoughts, hobbies, travel stories, &amp; random things that make life interesting. New entries are added to <code>/diary/entries.json</code> - just add an object &amp; it shows up here automatically!
                     </p>
                 </div>
 
                 <!-- Filter buttons (auto-generated from tags in entries.json) -->
-                <div id="diary-filters" class="diary-filters fade-in"></div>
+                <div id="diary-filters" class="diary-filters"></div>
 
                 <!-- Diary cards (loaded from entries.json) -->
-                <div id="diary-grid" class="diary-grid"></div>
+                <div id="diary-grid" class="diary-grid" aria-live="polite"><p class="text-brown">Loading entries…</p></div>
             </section>
         </main>
 
         <footer>
             <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>Garrett Miguel Berliner</h3>
-                    <p>Passionate about connecting people through technology 💻, data science 📊, &amp; education 📖.</p>
-                </div>
                 <div class="footer-links">
                     <div class="footer-links-group">
-                        <h4>Navigate</h4>
+                        <h2>Navigate</h2>
                         <a href="/about/">About</a>
                         <a href="/experience/">Experience</a>
                     </div>
                     <div class="footer-links-group">
-                        <h4>Connect</h4>
+                        <h2>Connect</h2>
                         <a href="https://www.linkedin.com/in/garrettberliner" target="_blank" rel="noopener">LinkedIn</a>
                         <a href="mailto:garrettberliner@gmail.com">Email</a>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <span>&copy; <span class="current-year">2026</span> Garrett Miguel Berliner</span>
-                <span>Built with love 🫦 &amp; care 🌿</span>
-            </div>
         </footer>
     </div>
 
-    <script src="/src/scripts/main.js"></script>
+    <script src="/src/scripts/main.js" onerror="document.documentElement.classList.remove('js')"></script>
 </body>
 </html>

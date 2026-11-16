@@ -15,24 +15,40 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>document.documentElement.classList.add('js');</script>
     <link rel="stylesheet" href="/src/styles/main.css">
 </head>
 <body>
-    <div id="navbar">
-        <noscript>
-            <nav style="display:flex;gap:1rem;padding:1rem 2rem;background:var(--color-cream,#F5EDE3);">
-                <a href="/about/">About</a><a href="/experience/">Experience</a><a href="/research/">Research</a><a href="/resume/">Resume</a><a href="/cv/">CV</a>
-            </nav>
-        </noscript>
-    </div>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <header>
+        <a href="/" class="header-logo header-logo--home" aria-label="Garrett Berliner - Home" title="Home">
+            <span aria-hidden="true">🌈</span>
+        </a>
+
+        <nav aria-label="Main navigation">
+            <ul class="nav-menu" id="primary-nav">
+                <li><a href="/about/">About</a></li>
+                <li><a href="/experience/">Experience</a></li>
+                <li><a href="/research/">Research</a></li>
+                <li><a href="/resume/">Resume</a></li>
+                <li><a href="/cv/">CV</a></li>
+            </ul>
+        </nav>
+
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
     <div class="page-wrapper page-wrapper--about">
         <div class="organic-shape organic-shape--red" style="width:400px;height:400px;top:5%;right:-150px;"></div>
         <div class="organic-shape organic-shape--orange" style="width:300px;height:300px;bottom:20%;left:-100px;"></div>
 
-        <main id="main-content">
+        <main id="main-content" tabindex="-1">
             <section class="content-section">
-                <a href="/diary/" class="diary-back-link fade-in">← Back to Diary</a>
-                <div id="diary-entry-detail" class="diary-detail-container fade-in">
+                <a href="/diary/" class="diary-back-link">← Back to Diary</a>
+                <div id="diary-entry-detail" class="diary-detail-container">
                     <p class="text-brown" style="text-align:center;padding:3rem;">Loading entry...</p>
                 </div>
             </section>
@@ -40,30 +56,22 @@
 
         <footer>
             <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>Garrett Miguel Berliner</h3>
-                    <p>Passionate about connecting people through technology 💻, data science 📊, &amp; education 📖.</p>
-                </div>
                 <div class="footer-links">
                     <div class="footer-links-group">
-                        <h4>Navigate</h4>
+                        <h2>Navigate</h2>
                         <a href="/about/">About</a>
                         <!-- <a href="/diary/">Diary</a> -->
                     </div>
                     <div class="footer-links-group">
-                        <h4>Connect</h4>
+                        <h2>Connect</h2>
                         <a href="https://www.linkedin.com/in/garrettberliner" target="_blank" rel="noopener">LinkedIn</a>
                         <a href="mailto:garrettberliner@gmail.com">Email</a>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <span>&copy; <span class="current-year">2026</span> Garrett Miguel Berliner</span>
-                <span>Built with love 🫦 &amp; care 🌿</span>
-            </div>
         </footer>
     </div>
 
-    <script src="/src/scripts/main.js"></script>
+    <script src="/src/scripts/main.js" onerror="document.documentElement.classList.remove('js')"></script>
 </body>
 </html>

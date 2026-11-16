@@ -15,603 +15,126 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>document.documentElement.classList.add('js');</script>
     <link rel="stylesheet" href="/src/styles/main.css">
 </head>
 <body>
-    <div id="navbar">
-        <noscript>
-            <nav style="display:flex;gap:1rem;padding:1rem 2rem;background:var(--color-cream,#F5EDE3);">
-                <a href="/about/">About</a><a href="/experience/">Experience</a><a href="/research/">Research</a><a href="/resume/">Resume</a><a href="/cv/">CV</a>
-            </nav>
-        </noscript>
-    </div>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <header>
+        <a href="/" class="header-logo header-logo--home" aria-label="Garrett Berliner - Home" title="Home">
+            <span aria-hidden="true">🌈</span>
+        </a>
+
+        <nav aria-label="Main navigation">
+            <ul class="nav-menu" id="primary-nav">
+                <li><a href="/about/">About</a></li>
+                <li><a href="/experience/" class="active" aria-current="page">Experience</a></li>
+                <li><a href="/research/">Research</a></li>
+                <li><a href="/resume/">Resume</a></li>
+                <li><a href="/cv/">CV</a></li>
+            </ul>
+        </nav>
+
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
     <div class="page-wrapper page-wrapper--experience">
         <div class="organic-shape organic-shape--red" style="width:450px;height:450px;top:0;right:-200px;"></div>
         <div class="organic-shape organic-shape--orange" style="width:350px;height:350px;bottom:30%;left:-120px;"></div>
-        <div class="organic-shape organic-shape--brown" style="width:300px;height:300px;bottom:5%;right:-100px;"></div>
-        <div class="organic-shape organic-shape--orange" style="width:200px;height:200px;top:20%;left:5%;opacity:0.06;"></div>
 
-        <main id="main-content">
-            <section class="content-section">
-                <div class="section-header fade-in">
-                    <div class="section-divider"><span class="leaf-icon">🌿</span><hr></div>
-                    <h2>Experience</h2>
-                    <p>My professional journey across tech, <a href="/research/">research</a>, education, &amp; leadership.</p>
-                </div>
-
-                <!-- PROFESSIONAL -->
-                <div class="exp-category fade-in">
-                    <div class="exp-category-label">💼 Professional</div>
-                    <div class="exp-timeline">
-
-                        <div class="exp-item fade-in">
-                            <div class="card">
-                                <div class="exp-role">Technical Program Manager</div>
-                                <div class="exp-company">Microsoft</div>
-                                <div class="exp-meta">
-                                    <span>📅 Aug 2025 – Present</span>
-                                    <span>📍 Redmond, WA</span>
-                                </div>
-                                <ul class="exp-details">
-                                    <li>Lead cross-organizational programs &amp; products within Windows + Devices &amp; Windows Engineering Systems that help developers work more efficiently with AI to empower over 1.2 billion monthly active Windows users</li>
-                                    <li>Streamline onboarding experiences across Windows + Devices, building data-driven dashboards that track success &amp; engineering systems health</li>
-                                    <li>Coordinate across teams to get the right tools &amp; resources into the right hands at the right time</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="exp-item fade-in">
-                            <div class="card">
-                                <div class="exp-role">Technical Program Manager Intern</div>
-                                <div class="exp-company">Microsoft</div>
-                                <div class="exp-meta">
-                                    <span>📅 June 2024 – Sept 2024</span>
-                                    <span>📍 Redmond, WA</span>
-                                </div>
-                                <ul class="exp-details">
-                                    <li>Developed a 0→1 MVP status dashboard centralizing Azure &amp; Windows service health, performance, &amp; outage history into PowerBI to improve developer productivity &amp; experience</li>
-                                    <li>Interviewed 25+ developers, coordinated with 10+ internal team partners, presented to 4 VPs, &amp; integrated 28 Kusto Queries</li>
-                                </ul>
-                                <div class="exp-hidden">
-                                    <ul class="exp-details">
-                                        <li>Iterated feedback from UI/UX designers across 3 dashboard iterations &amp; created 5 future web-based Figma mockups</li>
-                                        <li>Established short-term (12-week) &amp; long-term (6 &amp; 12-month) project timelines through goals &amp; deliverables; completed initial scope in 7 weeks &amp; began expansion into separate business groups</li>
-                                        <li>Co-founded an Intern Co-Creation club centered around sustainability &amp; upcycling to foster community amongst interns</li>
-                                    </ul>
-                                </div>
-                                <button class="exp-toggle">Show more <span class="arrow">▼</span></button>
-                            </div>
-                        </div>
-
-                        <div class="exp-item fade-in">
-                            <div class="card">
-                                <div class="exp-role">Machine Learning Engineer Intern</div>
-                                <div class="exp-company">HP Inc.</div>
-                                <div class="exp-meta">
-                                    <span>📅 June 2023 – Sept 2023</span>
-                                    <span>📍 Vancouver, WA</span>
-                                </div>
-                                <ul class="exp-details">
-                                    <li>Won 1st place at HP Vancouver site-wide intern presentation fair - "Does That Seem Right? Pipelined Telemetry Event Forecasting + Alert System for Big Data Quality Assurance"</li>
-                                    <li>Created &amp; trained ML telemetry forecasting models using Prophet &amp; Pandas within Databricks Warehouses for big data quality assurance among millions of daily-collected records; developed, tested, &amp; deployed models through AWS cloud service data pipelines on live services</li>
-                                </ul>
-                                <div class="exp-hidden">
-                                    <ul class="exp-details">
-                                        <li>Completed initial forecasting project in 8 weeks, then expanded into two separate business areas including models for another business group/organization</li>
-                                        <li>Created schema &amp; started shifting a data warehouse with 15M+ records from 1NF to 3NF, reducing compute resources by ~35%</li>
-                                    </ul>
-                                </div>
-                                <button class="exp-toggle">Show more <span class="arrow">▼</span></button>
-                            </div>
-                        </div>
-
-                        <div class="exp-item fade-in">
-                            <div class="card">
-                                <div class="exp-role">Senior Software Engineer Intern</div>
-                                <div class="exp-company">Lockheed Martin</div>
-                                <div class="exp-meta">
-                                    <span>📅 June 2022 – Sept 2022</span>
-                                    <span>📍 Syracuse, NY</span>
-                                </div>
-                                <ul class="exp-details">
-                                    <li>Peer-elected AI/ML Software Team Lead on an intern project team of 12+ multidisciplinary engineer interns (Mechanical, Electrical, Software, etc.)</li>
-                                    <li>Generated ML models via PyTorch &amp; NumPy in Kubeflow to predict &amp; detect structures within a wildfire path via images; achieved ~87% accuracy using hyperparameter tuning &amp; Bayesian classification</li>
-                                </ul>
-                                <div class="exp-hidden">
-                                    <ul class="exp-details">
-                                        <li>Aided 4 team members on multiple projects utilizing Linux &amp; C++</li>
-                                        <li>Granted secret-level security clearance</li>
-                                    </ul>
-                                </div>
-                                <button class="exp-toggle">Show more <span class="arrow">▼</span></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Education -->
-                <section class="content-section fade-in">
+        <main id="main-content" tabindex="-1">
+            <section class="content-section simple-page">
                 <div class="section-header">
-                    <div class="exp-category-label">🎓 Education</div>
+                    <div class="section-divider"><span class="leaf-icon" aria-hidden="true">🌿</span><hr></div>
+                    <h1>Experience</h1>
                 </div>
-                <div class="exp-timeline">
-                    <!-- M.S. -->
-                    <div class="exp-item fade-in">
-                        <div class="card edu-card">
-                            <a href="https://engineering.oregonstate.edu/all-stories/computer-science-students-journey-masters-and-job-microsoft" target="_blank" rel="noopener" class="edu-thesis-icon" title="View M.S. Highlights">⭐</a>
-                            <div class="exp-role">Master of Science (M.S.) - Computer Science; Minor in Mathematics</div>
-                            <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a></div>
-                            <div class="exp-meta">
-                                <span>📅 Sept 2023 – June 2025</span>
-                                <span>📍 Corvallis, OR</span>
-                                <span>⭐ GPA: 4.00 / 4.00</span>
-                            </div>
-                            <p class="text-brown">Additionally obtained an 18-credit Graduate Certificate in College &amp; University Teaching <a href="https://graduate.oregonstate.edu/graduate-certificate-college-and-university-teaching" target="_blank" rel="noopener">(GCCUT)</a></p>
-                            <div class="edu-details">
-                                <div class="edu-detail-section">
-                                    <h4>📜 Thesis</h4>
-                                    <p><em>Impacts of Professional Development on Knowledge for Teaching Computer Science</em></p>
-                                    <p class="text-brown" style="font-size:0.85rem;">Committee: Dr. Jennifer Parham-Mocello, Dr. Mary Beisiegel, Dr. Mike Bailey, Dr. J. Nicole von Germeten </p>
-                                    <p class="text-brown" style="font-size:0.85rem;">Unanimous pass with no edits, defended June 4, 2025.</p>
-                                    <a href="/src/assets/ms-thesis.pdf" target="_blank" rel="noopener" class="thesis-link">View Thesis</a>
-                                </div>
-                                <div class="edu-detail-section">
-                                    <h4>🏛️ Activities</h4>
-                                    <p class="text-brown">President (Engineering) for Out in STEM (oSTEM) · GCCUT · Leadership Empowerment &amp; Purpose <a href="https://engineering.oregonstate.edu/student-life/leap" target="_blank" rel="noopener">(LEAP)</a></p>
-                                </div>
-                                <div class="edu-detail-section">
-                                    <h4>📚 Major Coursework</h4>
-                                    <p class="text-brown" style="font-size:0.85rem;">Advanced Artificial Intelligence · Advanced Software Development · Human-Computer Interaction · Intro to Computer Graphics · Algebraic &amp; Geometric Transformations I, II, &amp; III · Intro to Theory of Computation</p>
-                                </div>
-                                <div class="edu-detail-section">
-                                    <h4>🎓 GCCUT Coursework</h4>
-                                    <p class="text-brown" style="font-size:0.85rem;">Theories of Teaching &amp; Learning in Higher Education · Course Design &amp; Methods for College &amp; University Teaching · GCCUT Internship · GCCUT Capstone · Advanced Active Learning &amp; Equitable Mathematical Instruction · Mathematical Knowledge for Teaching</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- H.B.S. -->
-                    <div class="exp-item fade-in">
-                        <div class="card edu-card">
-                            <a href="https://honors.oregonstate.edu/envoy/garrett-miguel-berliner" target="_blank" rel="noopener" class="edu-thesis-icon" title="View B.S. Highlights">⭐</a>
-                            <div class="exp-role">Honors Bachelor of Science (H.B.S.) - Computer Science; Minor in Mathematics</div>
-                            <div class="exp-company"><a href="https://honors.oregonstate.edu/" target="_blank" rel="noopener">Oregon State University Honors College</a></div>
-                            <div class="exp-meta">
-                                <span>📅 Sept 2020 – June 2024</span>
-                                <span>📍 Corvallis, OR</span>
-                                <span>⭐ GPA: 3.96 / 4.00</span>
-                            </div>
-                            <p class="text-brown">Concentration in Artificial Intelligence (AI). Graduated Summa Cum Laude. Dean's List 15/15 academic terms.</p>
-                            <div class="edu-details">
-                                <div class="edu-detail-section">
-                                    <h4>📜 Honors Thesis</h4>
-                                    <p><em>Teaching Fundamental Computer Science Concepts Utilizing Manipulatives</em></p>
-                                    <p class="text-brown" style="font-size:0.85rem;">Committee: Dr. Jennifer Parham-Mocello, Dr. Mary Beisiegel, Dr. Robin Hess</p>
-                                    <p class="text-brown" style="font-size:0.85rem;">Defending a year early in June 2023.</p>
-                                    <a href="/src/assets/hc-thesis.pdf" target="_blank" rel="noopener" class="thesis-link">View Thesis</a>
-                                </div>
-                                <div class="edu-detail-section">
-                                    <h4>🏛️ Activities</h4>
-                                    <p class="text-brown">Secretary for Out in STEM (oSTEM) · Louis Stokes Alliances for Minority Participation <a href="https://www.nsf.gov/funding/opportunities/lsamp-louis-stokes-alliances-minority-participation" target="_blank" rel="noopener">(LSAMP)</a> · Leadership Academy Alumni</p>
-                                </div>
-                                <div class="edu-detail-section">
-                                    <h4>📚 Coursework</h4>
-                                    <p class="text-brown" style="font-size:0.85rem;">Data Structures · Honors Analysis of Algorithms · Machine Learning &amp; Data Mining · Operating Systems I &amp; II · AI Principles · Software Engineering I &amp; II · Cloud Application Development · Parallel Programming · Database Fundamentals · Computer Networks · Mobile Software Development · Web Development · Usability Engineering · Programming Language Fundamentals · Computer Architecture &amp; Assembly Language · Computer Graphics · Social &amp; Ethical Implications · Discrete Mathematics · Calculus I, II, &amp; III · Linear Algebra · Algebraic &amp; Geometric Transformations · Mathematical Statistics</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+                <section class="simple-list-section">
+                    <h2>Professional</h2>
+                    <ul class="simple-profile-list">
+                        <li>
+                            <strong>Technical Program Manager, Microsoft</strong>
+                            <span>August 2025–Present · Redmond, WA</span>
+                            Lead cross-organizational programs and internal products for Windows engineering teams, with a focus on developer experience, onboarding, service health, and engineering data.
+                        </li>
+                        <li>
+                            <strong>Technical Program Manager Intern, Microsoft</strong>
+                            <span>June–September 2024 · Redmond, WA</span>
+                            Developed a Power BI service-health dashboard, interviewed 25+ developers, coordinated with 10+ partner teams, presented to four vice presidents, and integrated 28 Kusto queries.
+                        </li>
+                        <li>
+                            <strong>Machine Learning Engineer Intern, HP Inc.</strong>
+                            <span>June–September 2023 · Vancouver, WA</span>
+                            Built telemetry forecasting and alerting models for data-quality monitoring across millions of daily records; won first place at the site-wide intern presentation fair.
+                        </li>
+                        <li>
+                            <strong>Senior Software Engineer Intern, Lockheed Martin</strong>
+                            <span>June–September 2022 · Syracuse, NY</span>
+                            Served as the peer-elected software team lead for a 12-person multidisciplinary intern team and developed image-classification models for wildfire-path analysis.
+                        </li>
+                    </ul>
                 </section>
 
-                <!-- RESEARCH & TEACHING -->
-                <div class="exp-category fade-in">
-                    <div class="exp-category-label">🔬 Research &amp; Teaching</div>
-                    <div class="exp-timeline">
+                <section class="simple-list-section">
+                    <h2>Education</h2>
+                    <ul class="simple-profile-list">
+                        <li>
+                            <strong>M.S. in Computer Science, Oregon State University</strong>
+                            <span>2025 · Minor in Mathematics · GPA 4.00</span>
+                            Graduate Certificate in College &amp; University Teaching. Thesis: <em>Impacts of Professional Development on Knowledge for Teaching Computer Science</em>.
+                        </li>
+                        <li>
+                            <strong>Honors B.S. in Computer Science, Oregon State University</strong>
+                            <span>2024 · Minor in Mathematics · GPA 3.96</span>
+                            Summa Cum Laude and Dean's List for all 15 academic terms. Honors thesis: <em>Teaching Fundamental Computer Science Concepts Utilizing Manipulatives</em>.
+                        </li>
+                    </ul>
+                </section>
 
-                        <div class="exp-item fade-in">
-                            <div class="card">
-                                <div class="exp-role">Graduate Teaching Assistant</div>
-                                <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a></div>
-                                <div class="exp-meta">
-                                    <span>📅 Sept 2024 – June 2025</span>
-                                    <span>📍 Corvallis, OR</span>
-                                </div>
-                                <ul class="exp-details">
-                                    <li>Spring '25: CS362 Software Engineering 2 - held weekly grading demos, meeting with 40 students each week for 10 min to grade &amp; provide feedback on programming assignments. 198-student class</li>
-                                    <li>Winter '25: CS362 - Product manager for 5 teams of 8 students each; met weekly to track progress &amp; provide feedback on each group's unique term-wide project. 133-student class</li>
-                                    <li>Fall '24: ENGR 100 Honors: The Oregon State Engineer - designed 3 hands-on computational thinking studio activities &amp; provided a lecture on research opportunities for undergrads. 147-student class</li>
-                                </ul>
-                            </div>
-                        </div>
+                <section class="simple-list-section">
+                    <h2>Research &amp; Teaching</h2>
+                    <ul class="simple-profile-list">
+                        <li>
+                            <strong>Graduate Teaching Assistant, Oregon State University</strong>
+                            <span>September 2024–June 2025</span>
+                            Supported Software Engineering II and Honors Engineering courses through project management, grading demonstrations, student feedback, and hands-on computational-thinking activities.
+                        </li>
+                        <li>
+                            <strong>Undergraduate Research Assistant, Oregon State University</strong>
+                            <span>June 2021–June 2024</span>
+                            Conducted computing education research with Dr. Jennifer Parham-Mocello, contributing to curriculum development, classroom observations, mixed-methods analysis, and four peer-reviewed publications.
+                        </li>
+                        <li>
+                            <strong>Undergraduate Learning Assistant, Oregon State University</strong>
+                            <span>September 2021–June 2023</span>
+                            Led Data Structures recitations and supported students through office hours, project debugging, and conceptual instruction.
+                        </li>
+                    </ul>
+                </section>
 
-                        <div class="exp-item fade-in">
-                            <div class="card">
-                                <div class="exp-role">Undergraduate CS Research Assistant</div>
-                                <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a></div>
-                                <div class="exp-meta">
-                                    <span>📅 June 2021 – June 2024</span>
-                                    <span>📍 Corvallis, OR</span>
-                                </div>
-                                <ul class="exp-details">
-                                    <li>Conducted CS education research under Dr. Jennifer Parham-Mocello for 3+ years - see <a href="/research/">all publications &amp; research →</a></li>
-                                    <li>Appointed to assist, develop, manage, &amp; optimize computer science curriculum, observations, &amp; <a href="/research/">research publications</a></li>
-                                    <li>Defended undergraduate honors thesis one year early (Spring 2023) - centered around developing &amp; implementing three innovative practices to increase student engagement with CS at the middle school level</li>
-                                </ul>
-                                <div class="exp-hidden">
-                                    <ul class="exp-details">
-                                        <li>Participated in NSF-funded CSforALL Research Experience for Undergraduates (REU) Summer 2021, working towards making CS more equitable through game-oriented curriculum &amp; a new functional programming language</li>
-                                        <li>Presented data analysis section of <a href="/research/">co-authored publication at SIGCSE 2023</a> in Toronto, ON - the largest ACM technical symposium (~30% acceptance rate, CORE A-ranked)</li>
-                                        <li>Presented synthesized Master's thesis <a href="/research/">publication at IEEE FIE 2025</a> in Nashville, TN</li>
-                                        <li>Research focused on empowering K-12 CS teachers &amp; making CS more accessible through innovative, game-based approaches</li>
-                                    </ul>
-                                </div>
-                                <button class="exp-toggle">Show more <span class="arrow">▼</span></button>
-                            </div>
-                        </div>
-
-                        <div class="exp-item fade-in">
-                            <div class="card">
-                                <div class="exp-role">Undergraduate Learning Assistant</div>
-                                <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a> - College of Engineering</div>
-                                <div class="exp-meta">
-                                    <span>📅 Sept 2021 – June 2023</span>
-                                    <span>📍 Corvallis, OR</span>
-                                </div>
-                                <ul class="exp-details">
-                                    <li>Assigned CS261: Data Structures &amp; ENGR 10x Intro to Engineering; supervised classes with 150+ undergraduate students</li>
-                                    <li>Delegated entire responsibility for teaching 30+ students &amp; administering quizzes during weekly recitations for Data Structures</li>
-                                    <li>Supported students through in-person office hours with problem-solving, project debugging, &amp; conceptual understanding</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PRESENTATIONS -->
-                <div class="exp-category fade-in">
-                    <div class="exp-category-label">🎤 Presentations</div>
-                    <div class="exp-timeline">
-
-                        <div class="exp-item fade-in">
-                            <div class="card">
-                                <div class="exp-role">oSTEM 2024 National Conference - Workshop Host</div>
-                                <div class="exp-company">Portland, OR</div>
-                                <div class="exp-meta"><span>📅 October 2024</span></div>
-                                <ul class="exp-details">
-                                    <li>Hosted "Improving Meeting Attendance: Recruitment and Retention" workshop with 50+ attendees</li>
-                                    <li>Highlighted how Oregon State's oSTEM chapter netted a ~250% increase in club engagement over the 2023–2024 year</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="exp-item fade-in">
-                            <div class="card">
-                                <div class="exp-role">Family &amp; Community Health Spring Conference - Poster</div>
-                                <div class="exp-company">Bend, OR</div>
-                                <div class="exp-meta">
-                                    <span>📅 May 2024</span>
-                                    <span>🏷️ Y'all Means All</span>
-                                </div>
-                                <ul class="exp-details">
-                                    <li>Presented undergraduate senior capstone project poster: "Food Hero Calculator: Fun and Informative - A Nutritional App for Middle School Students to Understand Their Food Choices"</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="exp-item fade-in">
-                            <div class="card">
-                                <div class="exp-role">Oregon State LEAP Summit - Top 5 Presentation</div>
-                                <div class="exp-company">Corvallis, OR</div>
-                                <div class="exp-meta"><span>📅 May 2024</span></div>
-                                <ul class="exp-details">
-                                    <li>Presented "LinkedIn Workshop for Queer Individuals" - selected as one of the top 5 out of 46 total LEAP participants</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="exp-item fade-in">
-                            <div class="card">
-                                <div class="exp-role">ACM SIGCSE Technical Symposium - Conference Presenter</div>
-                                <div class="exp-company">Toronto, ON</div>
-                                <div class="exp-meta"><span>📅 March 2023</span></div>
-                                <ul class="exp-details">
-                                    <li>Presented the data analysis section of a <a href="/research/">co-authored publication</a> at the largest ACM technical symposium (~30% acceptance rate, CORE A-ranked)</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- LEADERSHIP & INVOLVEMENT -->
-                <div class="exp-category fade-in">
-                    <div class="exp-category-label">🌟 Leadership &amp; Involvement</div>
-                    <div class="exp-timeline">
-
-                        <div class="exp-item fade-in">
-                            <div class="card">
-                                <div class="exp-role">Out in STEM (oSTEM) - Member → Secretary → President</div>
-                                <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a></div>
-                                <div class="exp-meta">
-                                    <span>📅 Sept 2021 – June 2025</span>
-                                    <span>📍 Corvallis, OR</span>
-                                </div>
-                                <ul class="exp-details">
-                                    <li>oSTEM empowers LGBTQ+ people in STEM to succeed personally, academically, &amp; professionally by cultivating environments that nurture innovation, leadership, &amp; advocacy</li>
-                                    <li>Elected to co-orchestrate bi-weekly club meetings &amp; represent 550+ members at university-wide administrative meetings</li>
-                                    <li>Member of the 4-person committee that worked with a $10,000 budget to send 9 club members to oSTEM 2023 national conference - the first national conference attendance in the chapter's history</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="exp-item fade-in">
-                            <div class="card">
-                                <div class="exp-role">LEAP - Leadership, Empowerment, &amp; Purpose (2× Graduate)</div>
-                                <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a> - College of Engineering</div>
-                                <div class="exp-meta">
-                                    <span>📅 2022–2023 &amp; 2024–2025</span>
-                                    <span>📍 Corvallis, OR</span>
-                                </div>
-                                <ul class="exp-details">
-                                    <li>Two-time graduate of the <a href="https://engineering.oregonstate.edu/student-life/leap" target="_blank" rel="noopener">LEAP program</a> - a year-long leadership development experience designed to help students discover strengths, develop leadership skills, &amp; build meaningful connections with industry mentors</li>
-                                    <li>Summit project "LinkedIn Workshop for Queer Individuals" - selected as one of top 5 presentations out of 46 participants</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="exp-item fade-in">
-                            <div class="card">
-                                <div class="exp-role">College of Engineering Ambassador</div>
-                                <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a></div>
-                                <div class="exp-meta">
-                                    <span>📅 Sept 2023 – June 2024</span>
-                                    <span>📍 Corvallis, OR</span>
-                                </div>
-                                <ul class="exp-details">
-                                    <li>Selected as 1 of ~35 representatives of over 10,000 College of Engineering students through engagement with industry partners &amp; alumni via college-wide events</li>
-                                    <li>Memorized a 15-page script &amp; provided weekly tours to prospective students; answered a wide range of factual &amp; anecdotal questions</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="exp-item fade-in">
-                            <div class="card">
-                                <div class="exp-role">Out 4 Undergraduate (O4U) - Campus Ambassador</div>
-                                <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a></div>
-                                <div class="exp-meta">
-                                    <span>📅 Sept 2022 – June 2024</span>
-                                    <span>📍 Corvallis, OR</span>
-                                    <span>🏷️ Engineering [2022–2023] · Digital [2023–2024]</span>
-                                </div>
-                                <ul class="exp-details">
-                                    <li>O4U's mission is to help high-achieving LGBTQ+ undergraduates reach their full potential through a fully funded trip to an annual conference to connect with peers &amp; network with working LGBTQ+ professionals</li>
-                                    <li>Created marketing &amp; promotional material to advertise the Out4Undergraduate conferences to OSU LGBTQIA+ students in STEM</li>
-                                    <li>Met monthly with campus ambassador coordinators to relay updates &amp; coordinate with ambassadors from across the country</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="exp-item fade-in">
-                            <div class="card">
-                                <div class="exp-role">Purdue GradTrack Scholar (GTS) Participant</div>
-                                <div class="exp-company">Purdue University - Virtual Program</div>
-                                <div class="exp-meta">
-                                    <span>📅 Sept 2023 – June 2024</span>
-                                    <span>🌐 Virtual</span>
-                                </div>
-                                <ul class="exp-details">
-                                    <li>Partook in an online mentoring program designed to help undergraduate seniors from underrepresented identities apply to graduate school in engineering through mentorship &amp; professional development</li>
-                                    <li>Member of an 8-person team of undergraduates from across the United States to assist each other with graduate applications</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="exp-item fade-in">
-                            <div class="card">
-                                <div class="exp-role">Louis Stokes Alliances for Minority Participation (LSAMP)</div>
-                                <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a> - NSF-funded Program</div>
-                                <div class="exp-meta"><span>📍 Corvallis, OR</span></div>
-                                <ul class="exp-details">
-                                    <li>Member of the <a href="https://www.nsf.gov/funding/opportunities/lsamp-louis-stokes-alliances-minority-participation" target="_blank" rel="noopener">LSAMP</a> program - an NSF-funded initiative to diversify the nation's STEM workforce by increasing degrees awarded to underrepresented populations</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PROFESSIONAL DEVELOPMENT -->
-                <div class="exp-category fade-in">
-                    <div class="exp-category-label">📋 Professional Development</div>
-                    <div class="exp-timeline">
-
-                        <div class="exp-item fade-in">
-                            <div class="card">
-                                <div class="exp-role">Graduate Certificate of College &amp; University Teaching</div>
-                                <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a></div>
-                                <div class="exp-meta">
-                                    <span>📅 June 2025</span>
-                                    <span>📍 Corvallis, OR</span>
-                                </div>
-                                <ul class="exp-details">
-                                    <li>Obtained an 18-credit certificate in College &amp; University Teaching; completed coursework on theories &amp; applications of adult learning theory, along with a capstone seminar &amp; internship</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="exp-item fade-in">
-                            <div class="card">
-                                <div class="exp-role">Columbia University EngAGE</div>
-                                <div class="exp-company">New York, NY</div>
-                                <div class="exp-meta"><span>📅 March 2023</span></div>
-                                <ul class="exp-details">
-                                    <li>One of 23 students selected from 120+ applicants across the U.S. to participate in Engineering Achievers in Graduate Education (EngAGE) - a weekend-long prospective engineering Ph.D. mentorship program for high-achieving STEM students from historically marginalized backgrounds</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="exp-item fade-in">
-                            <div class="card">
-                                <div class="exp-role">Conferences &amp; Symposiums Attended</div>
-                                <div class="exp-company">Various Locations</div>
-                                <div class="exp-meta"><span>📅 2022 – 2024</span></div>
-                                <ul class="exp-details">
-                                    <li>ACM SIGCSE Technical Symposium - Portland, OR (Mar 2024)</li>
-                                    <li>SACNAS National Diversity in STEM Conference - Portland, OR (Oct 2023) - Self-advocated to acquire $750 in funding through the OSU Honors College</li>
-                                    <li>Out 4 Undergraduate Digital Conference - New York, NY (Oct 2023)</li>
-                                    <li>oSTEM 2023 National Conference - Anaheim, CA (Oct 2023)</li>
-                                    <li>Out 4 Undergraduate Engineering Conference - St. Paul, MN (Oct 2022)</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- GCCUT Showcase -->
-                <!-- <section class="content-section fade-in">
-                    <div class="section-header">
-                        <div class="exp-category-label">🎖️ Graduate Certificate in College & University Teaching</div>
-                    </div>
-
-                    <div class="card gccut-showcase fade-in">
-                        <div class="gccut-header">
-                            <div class="gccut-badge">🎓</div>
-                            <div>
-                                <h3>GCCUT: <a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a></h3>
-                                <p class="text-brown">Completed alongside M.S. in Computer Science · 18 credits · 2023–2025</p>
-                            </div>
-                        </div>
-
-                        <p class="gccut-description">
-                            The <a href="https://graduate.oregonstate.edu/graduate-certificate-college-and-university-teaching" target="_blank" rel="noopener">Graduate Certificate in College &amp; University Teaching (GCCUT)</a> is a graduate-level program that prepares students for instructional roles in higher education. This interdisciplinary certificate develops skills in course design, evidence-based pedagogy, equitable instruction, &amp; reflective teaching practice - qualifying recipients to teach at the college &amp; university level.
-                        </p>
-
-                        <div class="gccut-grid">
-                            <div class="edu-detail-section">
-                                <h4>📚 Coursework (18 credits)</h4>
-                                <ul class="gccut-courses">
-                                    <li>Theories of Teaching &amp; Learning in Higher Education</li>
-                                    <li>Course Design &amp; Methods for College &amp; University Teaching</li>
-                                    <li>GCCUT Internship</li>
-                                    <li>GCCUT Capstone</li>
-                                    <li>Advanced Active Learning &amp; Equitable Mathematical Instruction</li>
-                                    <li>Mathematical Knowledge for Teaching</li>
-                                </ul>
-                            </div>
-                            <div class="edu-detail-section">
-                                <h4>💡 Skills Developed</h4>
-                                <ul class="gccut-courses">
-                                    <li>Evidence-based course design &amp; syllabus creation</li>
-                                    <li>Active learning &amp; equitable instruction strategies</li>
-                                    <li>Assessment design &amp; student learning outcomes</li>
-                                    <li>Reflective teaching practice &amp; peer observation</li>
-                                    <li>Inclusive pedagogy for diverse learners</li>
-                                    <li>Teaching portfolio development</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <a href="https://graduate.oregonstate.edu/graduate-certificate-college-and-university-teaching" target="_blank" rel="noopener" class="btn btn-secondary mt-2">Learn more about GCCUT →</a>
-                    </div>
-                </section> -->
-
-                <!-- Certifications & Honors -->
-                <section class="content-section fade-in">
-                    <div class="section-header">
-                        <div class="section-divider"><span class="leaf-icon">📋</span><hr></div>
-                        <h2>Certifications &amp; Honors</h2>
-                    </div>
-                    <div class="about-highlights stagger-children">
-                        <div class="highlight-item">
-                            <span class="icon">🏅</span>
-                            <h4>Graduate Certificate in College &amp; University Teaching</h4>
-                            <p>18-credit GCCUT from <a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a> - completed alongside M.S.</p>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="icon">🎖️</span>
-                            <h4>Summa Cum Laude</h4>
-                            <p>Graduated with top honors from OSU Honors College (3.96 GPA)</p>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="icon">📋</span>
-                            <h4>Dean's List: 15/15 Terms</h4>
-                            <p>Every single academic term during undergraduate studies at Oregon State</p>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="icon">🌈</span>
-                            <h4>oSTEM Leadership</h4>
-                            <p>President (Engineering) for Out in STEM during M.S., Secretary during B.S.</p>
-                        </div>
-                    </div>
-                </section> 
-                
-                <!-- EDUCATION -->
-                <!-- <div class="exp-category fade-in">
-                    <div class="exp-category-label">🎓 Education</div>
-                    <div class="exp-timeline">
-                        <div class="exp-item fade-in">
-                            <div class="card">
-                                <div class="exp-role">Master of Science - Computer Science</div>
-                                <div class="exp-company"><a href="https://oregonstate.edu/" target="_blank" rel="noopener">Oregon State University</a></div>
-                                <div class="exp-meta">
-                                    <span>📅 Sept 2023 – June 2025</span>
-                                    <span>📍 Corvallis, OR</span>
-                                    <span>⭐ 4.00 / 4.00</span>
-                                </div>
-                                <ul class="exp-details">
-                                    <li>Minor in Mathematics · 18-credit GCCUT · Concentration in AI</li>
-                                    <li>Thesis: <em>Impacts of Professional Development on Knowledge for Teaching CS</em> - Unanimous pass, no edits</li>
-                                    <li>Advised by Dr. Jennifer Parham-Mocello · See <a href="/research/">research &amp; publications →</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="exp-item fade-in">
-                            <div class="card">
-                                <div class="exp-role">Honors Bachelor of Science - Computer Science</div>
-                                <div class="exp-company"><a href="https://honors.oregonstate.edu/" target="_blank" rel="noopener">Oregon State University Honors College</a></div>
-                                <div class="exp-meta">
-                                    <span>📅 Sept 2020 – June 2024</span>
-                                    <span>📍 Corvallis, OR</span>
-                                    <span>⭐ 3.96 / 4.00</span>
-                                </div>
-                                <ul class="exp-details">
-                                    <li>Minor in Mathematics · AI Concentration · Summa Cum Laude · Dean's List 15/15 terms</li>
-                                    <li>Thesis: <em>Teaching Fundamental CS Concepts Utilizing Manipulatives</em> - Defended one year early in June 2023</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
+                <section class="simple-list-section">
+                    <h2>Leadership &amp; Presentations</h2>
+                    <ul class="simple-profile-list">
+                        <li><strong>Out in STEM, Oregon State University</strong><span>Secretary and President · 2021–2025</span>Helped lead a chapter serving more than 550 members and organized its first national-conference delegation.</li>
+                        <li><strong>Selected presentations</strong><span>2023–2025</span>IEEE Frontiers in Education, ACM SIGCSE, Out in STEM National Conference, and the Oregon State LEAP Summit.</li>
+                        <li><strong>College of Engineering Ambassador</strong><span>2023–2024</span>Represented more than 10,000 engineering students at industry, alumni, and prospective-student events.</li>
+                    </ul>
+                </section>
             </section>
         </main>
 
         <footer>
             <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>Garrett Miguel Berliner</h3>
-                    <p>Passionate about connecting people through technology 💻, data science 📊, &amp; education 📖.</p>
-                </div>
                 <div class="footer-links">
-                    <div class="footer-links-group">
-                        <h4>Navigate</h4>
-                        <a href="/about/">About</a>
-                        <a href="/research/">Research</a>
-                    </div>
-                    <div class="footer-links-group">
-                        <h4>Connect</h4>
-                        <a href="https://www.linkedin.com/in/garrettberliner" target="_blank" rel="noopener">LinkedIn</a>
-                        <a href="mailto:garrettberliner@gmail.com">Email</a>
-                    </div>
+                    <div class="footer-links-group"><h2>Navigate</h2><a href="/about/">About</a><a href="/research/">Research</a></div>
+                    <div class="footer-links-group"><h2>Connect</h2><a href="https://www.linkedin.com/in/garrettberliner" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:garrettberliner@gmail.com">Email</a></div>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                <span>&copy; <span class="current-year">2026</span> Garrett Miguel Berliner</span>
-                <span>Built with love 🫶 &amp; care 🌿</span>
             </div>
         </footer>
     </div>
-
-    <script src="/src/scripts/main.js"></script>
+    <script src="/src/scripts/main.js" onerror="document.documentElement.classList.remove('js')"></script>
 </body>
 </html>
